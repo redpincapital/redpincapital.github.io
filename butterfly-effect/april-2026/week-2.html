@@ -65,13 +65,13 @@ a{color:var(--red);}
 
 /* ── DATA STRIP ── */
 .data-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border:1px solid var(--border);}
-.data-cell{padding:18px 20px;border-right:1px solid var(--border);background:var(--paper);}
+.data-cell{padding:22px 24px;border-right:1px solid var(--border);background:var(--paper);}
 .data-cell:last-child{border-right:none;}
-.data-label{font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+.data-label{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;}
 .data-value{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--ink);line-height:1;margin-bottom:4px;}
 .data-value.up{color:#1a7a3c;}
 .data-value.down{color:var(--red);}
-.data-anchor{font-family:var(--mono);font-size:8px;color:var(--muted);letter-spacing:0.05em;}
+.data-anchor{font-family:var(--mono);font-size:10px;color:var(--body);letter-spacing:0.05em;line-height:1.7;margin-top:4px;}
 
 /* ── SECTION HEADER ── */
 .sec-head{margin-top:48px;margin-bottom:24px;padding-bottom:12px;border-bottom:2px solid var(--ink);display:flex;align-items:baseline;justify-content:space-between;gap:16px;}
@@ -109,13 +109,13 @@ a{color:var(--red);}
 .chart-verdict{font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:0.08em;color:var(--red);margin-top:12px;border-top:1px solid var(--border);padding-top:10px;}
 
 /* ── BAR CHART ── */
-.bar-chart{display:flex;align-items:flex-end;gap:6px;height:120px;}
-.bar-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;height:100%;}
-.bar-fill{width:100%;background:var(--ink);transition:background 0.2s;}
+.bar-chart{display:flex;align-items:flex-end;gap:8px;height:160px;}
+.bar-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:6px;}
+.bar-fill{width:100%;flex-shrink:0;}
 .bar-fill.red{background:var(--red);}
 .bar-fill.muted{background:var(--border);}
-.bar-label{font-family:var(--mono);font-size:7.5px;color:var(--muted);text-align:center;white-space:nowrap;}
-.bar-value{font-family:var(--mono);font-size:8px;font-weight:500;color:var(--ink);text-align:center;}
+.bar-label{font-family:var(--mono);font-size:8px;color:var(--muted);text-align:center;line-height:1.5;}
+.bar-value{font-family:var(--mono);font-size:9px;font-weight:500;color:var(--ink);text-align:center;}
 
 /* ── LINE CHART ── */
 .line-chart-wrap{position:relative;height:100px;margin:8px 0;}
@@ -167,7 +167,7 @@ a{color:var(--red);}
 .footer-body p:last-child{margin-bottom:0;border-top:1px solid rgba(255,255,255,0.08);padding-top:14px;margin-top:14px;}
 
 /* ── SOURCE CITE ── */
-.source{font-family:var(--mono);font-size:8.5px;color:var(--muted);font-style:italic;margin-top:6px;}
+.source{font-family:var(--mono);font-size:9px;color:var(--body);font-style:italic;margin-top:8px;}
 
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
@@ -190,6 +190,15 @@ a{color:var(--red);}
   .closing{padding:28px 20px;}
   .footer{padding:24px 20px;}
   .cf-cta-bar{flex-direction:column;align-items:flex-start;}
+  .geo-section{margin:0;padding:28px 20px;}
+  .geo-inner{padding:0 4px;}
+  .geo-grid{grid-template-columns:1fr;gap:20px;}
+  .sec-head{flex-direction:column;gap:4px;}
+  .chart-wrap{padding:16px;}
+  .bar-chart{gap:4px;}
+  .pull-stat .stat-num{font-size:28px;}
+  .data-strip{grid-template-columns:1fr 1fr;}
+  .data-cell{border-bottom:1px solid var(--border);}
 }
 
 /* ── SCROLLING TICKER ── */
@@ -331,31 +340,31 @@ a{color:var(--red);}
     <div class="bar-chart">
       <div class="bar-item">
         <div class="bar-value">$109</div>
-        <div class="bar-fill" style="height:91%;"></div>
+        <div class="bar-fill" style="height:128px;background:var(--ink);"></div>
         <div class="bar-label">Mon</div>
       </div>
       <div class="bar-item">
         <div class="bar-value">$111</div>
-        <div class="bar-fill red" style="height:93%;"></div>
+        <div class="bar-fill red" style="height:130px;background:var(--red);"></div>
         <div class="bar-label">Tue</div>
       </div>
       <div class="bar-item">
         <div class="bar-value">$95</div>
-        <div class="bar-fill muted" style="height:79%;"></div>
-        <div class="bar-label">Wed<br><span style="font-size:6.5px">Ceasefire</span></div>
+        <div class="bar-fill muted" style="height:111px;background:var(--border);"></div>
+        <div class="bar-label">Wed<br><span style="font-size:8px">Ceasefire</span></div>
       </div>
       <div class="bar-item">
         <div class="bar-value">$101</div>
-        <div class="bar-fill red" style="height:84%;"></div>
-        <div class="bar-label">Thu<br><span style="font-size:6.5px">Strait still closed</span></div>
+        <div class="bar-fill red" style="height:118px;background:var(--red);"></div>
+        <div class="bar-label">Thu<br><span style="font-size:8px">Strait still closed</span></div>
       </div>
       <div class="bar-item">
         <div class="bar-value">$96</div>
-        <div class="bar-fill" style="height:80%;"></div>
-        <div class="bar-label">Fri<br><span style="font-size:6.5px">Week close</span></div>
+        <div class="bar-fill" style="height:113px;background:var(--ink);"></div>
+        <div class="bar-label">Fri<br><span style="font-size:8px">Week close</span></div>
       </div>
     </div>
-    <div class="chart-verdict">The market priced the ceasefire on Wednesday. The strait remained closed on Thursday. Down 12% WTD. Up 49% YoY. The cascade continues.</div>
+    <div class="chart-verdict">The market priced the ceasefire on Wednesday. The strait remained closed on Thursday. Down 12% WTD. Up 49% YoY. The shock continues.</div>
   </div>
 
   <!-- ══════════════════ 03 MACRO AND FX ══════════════════ -->
