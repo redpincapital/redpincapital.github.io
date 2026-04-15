@@ -209,6 +209,26 @@ a{color:var(--red);}
 .ticker-scroll span.item{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:#FFFFFF;padding:0 32px;flex-shrink:0;}
 .ticker-scroll span.sep{color:rgba(255,255,255,0.35);font-size:10px;flex-shrink:0;}
 @keyframes scroll-left{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ── DISTRIBUTION FORM ── */
+.dist-section{margin:0;padding:32px 48px;background:var(--paper);border-top:3px solid var(--ink);}
+.dist-hdr{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.dist-desc{font-family:var(--sans);font-size:12px;font-weight:300;color:var(--muted);line-height:1.65;margin-bottom:0;}
+.dist-form{background:var(--off);border:1px solid var(--border);padding:16px;}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.form-field{display:flex;flex-direction:column;gap:4px;}
+.form-field label{font-family:var(--mono);font-size:8.5px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--muted);}
+.form-field input,.form-field select{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--body);background:var(--paper);border:1px solid var(--border);padding:10px 12px;outline:none;width:100%;-webkit-appearance:none;appearance:none;min-height:44px;border-radius:0;}
+.form-field input:focus,.form-field select:focus{border-color:var(--red);}
+.dist-btn{display:block;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:0.13em;text-transform:uppercase;padding:14px 24px;background:var(--ink);color:#fff;border:none;cursor:pointer;margin-top:6px;width:100%;min-height:48px;border-radius:0;-webkit-appearance:none;}
+.dist-btn:hover{background:var(--red);}
+.dist-note{font-family:var(--mono);font-size:8.5px;color:var(--muted);margin-top:10px;line-height:1.7;font-style:italic;}
+.dist-success{display:none;font-family:var(--sans);font-size:13px;color:#2D6A4F;padding:12px;background:#f0f8f4;border:1px solid #2D6A4F;margin-top:10px;}
+.dist-error{display:none;font-family:var(--sans);font-size:13px;color:var(--red);padding:12px;background:#fdf0f0;border:1px solid var(--red);margin-top:10px;}
+
+/* ── DISCLAIMER ── */
+.disc{background:var(--ink);border-top:none;padding:28px 48px;font-family:var(--mono);font-size:8.5px;letter-spacing:0.03em;color:rgba(255,255,255,0.4);line-height:1.9;}
+.disc strong{color:rgba(255,255,255,0.75);}
 </style>
 </head>
 <body>
@@ -595,16 +615,85 @@ a{color:var(--red);}
 </div>
 
 <!-- ══════════════════ FOOTER ══════════════════ -->
-<div class="footer">
-  <div class="footer-inner">
-    <div class="footer-top">Red Pin Capital &nbsp;|&nbsp; The Butterfly Effect &nbsp;|&nbsp; Week Ending 11 April 2026</div>
-    <div class="footer-body">
-      <p>For professional investors, family offices and qualifying private investors only. Not investment advice. Past performance is not a reliable indicator of future results.</p>
-      <p>The information contained in this publication is for informational purposes only and does not constitute an offer or solicitation to invest. Red Pin Capital acts as a principal investor and not as a financial adviser.</p>
-      <p>&copy; 2026 Red Pin Capital. All rights reserved. &nbsp;|&nbsp; KC@redpincapital.com &nbsp;|&nbsp; www.redpincapital.com</p>
+
+
+
+<!-- ── JOIN THE DISTRIBUTION ── -->
+<div class="dist-section">
+  <div style="max-width:var(--max);margin:0 auto;display:flex;align-items:flex-start;gap:48px;flex-wrap:wrap;">
+    <div style="flex:1;min-width:220px;">
+      <div class="dist-hdr">Join the Distribution</div>
+      <div class="dist-desc">Published every Friday. Distributed to family offices, institutional allocators and investment professionals globally. To request inclusion, complete the form or contact KC@redpincapital.com directly.</div>
+    </div>
+    <div class="dist-form" style="flex:2;min-width:300px;">
+      <div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;">
+        <div class="form-field"><label>First Name</label><input type="text" id="inp-first" placeholder="First name" autocomplete="given-name"></div>
+        <div class="form-field"><label>Last Name</label><input type="text" id="inp-last" placeholder="Last name" autocomplete="family-name"></div>
+        <div class="form-field"><label>Email</label><input type="email" id="inp-email" placeholder="your@firm.com" autocomplete="email"></div>
+        <div class="form-field"><label>Firm</label><input type="text" id="inp-firm" placeholder="Organisation"></div>
+        <div class="form-field"><label>Role</label><input type="text" id="inp-role" placeholder="e.g. CIO"></div>
+        <div class="form-field"><label>Focus</label>
+          <select id="inp-focus">
+            <option value="">Select focus</option>
+            <option>Real Estate and Real Assets</option>
+            <option>Structured Credit</option>
+            <option>Growth and 4IR</option>
+            <option>Sports, Media and Entertainment</option>
+            <option>Secondaries</option>
+            <option>Multi-Asset</option>
+          </select>
+        </div>
+      </div>
+      <button type="button" class="dist-btn" onclick="sendDistRequest()">Request Distribution Access</button>
+      <div class="dist-success" id="ds">Thank you. Your request has been received. We will confirm your inclusion shortly.</div>
+      <div class="dist-error" id="de">Please email KC@redpincapital.com directly.</div>
     </div>
   </div>
 </div>
+
+<!-- ── DISCLAIMER ── -->
+<div class="disc">
+  <strong>Disclaimer</strong><br><br>
+  This document has been prepared by Red Pin Capital for informational purposes only. It does not constitute an offer to sell or a solicitation of an offer to buy any interest in any fund, investment vehicle or other financial product. The information contained herein is based on sources believed to be reliable. However, no representation or warranty, express or implied, is made as to its accuracy, completeness or fairness. Any views or opinions expressed reflect the judgement of Red Pin Capital as of the date of publication and are subject to change without notice. This document may contain forward-looking statements which involve known and unknown risks and uncertainties. Actual outcomes may differ materially from those expressed or implied. Past performance is not indicative of future results. Any investment involves a high degree of risk, including the potential loss of capital. This document is intended solely for professional investors, qualified purchasers and institutional counterparties. It is not intended for distribution to, or use by, any person or entity in any jurisdiction where such distribution or use would be contrary to applicable law or regulation. Red Pin Capital does not provide legal, tax or regulatory advice. Recipients should conduct their own independent analysis and consult their own advisers prior to making any investment decision. No part of this document may be reproduced, distributed or transmitted without the prior written consent of Red Pin Capital.<br><br>
+  <span style="color:rgba(255,255,255,0.85);font-weight:500;">&copy; 2026 Red Pin Capital. All rights reserved. &nbsp;|&nbsp; KC@redpincapital.com &nbsp;|&nbsp; www.redpincapital.com</span>
+</div>
+
+<script>
+function sendDistRequest() {
+  var first = document.getElementById('inp-first').value.trim();
+  var last  = document.getElementById('inp-last').value.trim();
+  var email = document.getElementById('inp-email').value.trim();
+  var firm  = document.getElementById('inp-firm').value.trim()  || 'Not provided';
+  var role  = document.getElementById('inp-role').value.trim()  || 'Not provided';
+  var focus = document.getElementById('inp-focus').value        || 'Not provided';
+
+  if (!first || !last) { alert('Please enter your first and last name.'); return; }
+  var at  = email.indexOf('@');
+  var dot = email.lastIndexOf('.');
+  if (at < 1 || dot <= at + 1 || dot >= email.length - 1) { alert('Please enter a valid email address.'); return; }
+
+  var subject = 'Butterfly Effect Distribution Request - ' + first + ' ' + last;
+  var body =
+    'Hi,%0A%0A' +
+    'I would like to join the Red Pin Capital Butterfly Effect distribution list.%0A%0A' +
+    'Name: '  + encodeURIComponent(first + ' ' + last) + '%0A' +
+    'Email: ' + encodeURIComponent(email)              + '%0A' +
+    'Firm: '  + encodeURIComponent(firm)               + '%0A' +
+    'Role: '  + encodeURIComponent(role)               + '%0A' +
+    'Focus: ' + encodeURIComponent(focus)              + '%0A%0A' +
+    'Thank you.';
+
+  var mailLink = document.createElement('a');
+  mailLink.href = 'mailto:KC@redpincapital.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+  mailLink.target = '_blank';
+  mailLink.rel = 'noopener';
+  mailLink.style.display = 'none';
+  document.body.appendChild(mailLink);
+  mailLink.click();
+  document.body.removeChild(mailLink);
+  document.getElementById('ds').style.display = 'block';
+}
+</script>
 
 </body>
 </html>
