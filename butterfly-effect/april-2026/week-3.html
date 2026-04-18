@@ -205,10 +205,6 @@ a{color:var(--red);}
   .tldr li{font-size:13px;padding-left:12px;}
   .tldr-label{font-size:10px;}
 
-  /* ── Data strip ── */
-  div[style*="grid-template-columns:1fr 1fr 1fr 1fr"]{display:grid !important;grid-template-columns:1fr 1fr !important;}
-  .data-row{display:grid !important;grid-template-columns:1fr 1fr !important;}
-
   /* ── Sections ── */
   .sec-head{flex-direction:column;gap:4px;margin-top:28px;}
   .sec-title{font-size:16px !important;}
@@ -234,7 +230,6 @@ a{color:var(--red);}
 
   /* ── Inline grids in charts — collapse to 1 col ── */
   div[style*="display:grid;grid-template-columns:1fr 1fr 1fr"]{display:grid !important;grid-template-columns:1fr !important;}
-  div[style*="display:grid;grid-template-columns:1fr 1fr"]{display:grid !important;grid-template-columns:1fr !important;}
   div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr 1fr !important;}
   div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important;}
 
@@ -355,77 +350,83 @@ a{color:var(--red);}
 <div class="main" style="max-width:var(--max);margin:0 auto;padding:0 48px;">
 
 <div style="max-width:var(--max);margin:0 auto;">
-  <style>
-.data-grid-4 {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-@media screen and (max-width: 640px) {
-  .data-grid-4 {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  .data-grid-4 > div {
-    border-right: none !important;
-  }
-  .data-grid-4 > div:nth-child(odd) {
-    border-right: 1px solid #D8D2CA !important;
-  }
+  <!-- ── INSTITUTIONAL DATA STRIP ── -->
+<style>
+.ds-outer{border:1px solid #D8D2CA;margin-top:24px;background:#FFFFFF;}
+.ds-row{display:flex;flex-wrap:wrap;}
+.ds-row-border{border-bottom:1px solid #D8D2CA;}
+.ds-cell{flex:0 0 25%;box-sizing:border-box;padding:18px 20px;border-right:1px solid #D8D2CA;}
+.ds-cell:last-child{border-right:none;}
+.ds-cell-label{font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;}
+.ds-cell-value{font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;line-height:1;margin-bottom:8px;}
+.ds-cell-sub{font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;}
+.ds-cell-note{font-family:'IBM Plex Mono',monospace;font-size:8px;margin-top:3px;}
+.mob-break{display:inline;}
+.mob-block{display:inline;}
+@media screen and (max-width:640px){
+  .ds-cell{flex:0 0 50% !important;box-sizing:border-box !important;border-right:1px solid #D8D2CA !important;padding:14px 12px !important;}
+  .ds-cell:nth-child(2n){border-right:none !important;}
+  .ds-cell:nth-child(n+3){border-top:1px solid #D8D2CA !important;}
+  .ds-row-border .ds-cell:nth-child(n+3){border-top:none !important;}
+  .ds-cell-value{font-size:20px !important;}
+  .ds-cell-label{font-size:7.5px !important;}
+  .ds-cell-sub{font-size:8px !important;}
+  .ds-cell-note{font-size:7.5px !important;}
+  .mob-break{display:none !important;}
+  .mob-block{display:block !important;margin-top:2px;}
 }
 </style>
-<!-- ── INSTITUTIONAL DATA STRIP ── -->
-  <div style="border:1px solid #D8D2CA;margin-top:24px;background:#FFFFFF;">
-    <!-- Row 1: Energy + Equities -->
-    <div class="data-grid-4">
-      <div style="padding:18px 20px;border-right:1px solid #D8D2CA;border-bottom:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">Brent Crude</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#BF1922;line-height:1;margin-bottom:8px;">$88.96</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8595;&thinsp;10.5% WTD &nbsp;&middot;&nbsp; &#8593;&thinsp;31% YoY</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#BF1922;margin-top:3px;">Hormuz declared open by Iran</div>
+  <div class="ds-outer">
+    <div class="ds-row ds-row-border">
+      <div class="ds-cell">
+        <div class="ds-cell-label">Brent Crude</div>
+        <div class="ds-cell-value" style="color:#BF1922;">$88.96</div>
+        <div class="ds-cell-sub">&#8595;&thinsp;10.5% WTD &nbsp;&middot;&nbsp; &#8593;&thinsp;31% YoY</div>
+        <div class="ds-cell-note" style="color:#BF1922;">Hormuz declared open by Iran</div>
       </div>
-      <div style="padding:18px 20px;border-right:1px solid #D8D2CA;border-bottom:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">WTI Crude</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#BF1922;line-height:1;margin-bottom:8px;">$81.38</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8595;&thinsp;12.0% WTD &nbsp;&middot;&nbsp; Spread $7.58</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#6B6460;margin-top:3px;">Brent/WTI narrows sharply</div>
+      <div class="ds-cell">
+        <div class="ds-cell-label">WTI Crude</div>
+        <div class="ds-cell-value" style="color:#BF1922;">$81.38</div>
+        <div class="ds-cell-sub">&#8595;&thinsp;12.0% WTD &nbsp;&middot;&nbsp; Spread $7.58</div>
+        <div class="ds-cell-note" style="color:#6B6460;">Brent/WTI narrows sharply</div>
       </div>
-      <div style="padding:18px 20px;border-right:1px solid #D8D2CA;border-bottom:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">S&amp;P 500</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">7,143</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8593;&thinsp;4.8% WTD &nbsp;&middot;&nbsp; &#8593;&thinsp;33% YoY</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#1A5C38;margin-top:3px;">New all-time high</div>
+      <div class="ds-cell">
+        <div class="ds-cell-label">S&amp;P 500</div>
+        <div class="ds-cell-value" style="color:#1A5C38;">7,143</div>
+        <div class="ds-cell-sub">&#8593;&thinsp;4.8% WTD &nbsp;&middot;&nbsp; &#8593;&thinsp;33% YoY</div>
+        <div class="ds-cell-note" style="color:#1A5C38;">New all-time high</div>
       </div>
-      <div style="padding:18px 20px;border-bottom:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">FTSE 100</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">10,668</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8593;&thinsp;1.4% WTD &nbsp;&middot;&nbsp; Week close</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#6B6460;margin-top:3px;">Energy drag offset by financials</div>
+      <div class="ds-cell">
+        <div class="ds-cell-label">FTSE 100</div>
+        <div class="ds-cell-value" style="color:#1A5C38;">10,668</div>
+        <div class="ds-cell-sub">&#8593;&thinsp;1.4% WTD &nbsp;&middot;&nbsp; Week close</div>
+        <div class="ds-cell-note" style="color:#6B6460;">Energy drag offset by financials</div>
       </div>
     </div>
-    <!-- Row 2: Macro -->
-    <div class="data-grid-4">
-      <div style="padding:18px 20px;border-right:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">Gold</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">$4,885</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8593;&thinsp;1.60% &nbsp;&middot;&nbsp; All-time record</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#1A5C38;margin-top:3px;">Safe-haven bid holds</div>
+    <div class="ds-row">
+      <div class="ds-cell">
+        <div class="ds-cell-label">Gold</div>
+        <div class="ds-cell-value" style="color:#1A5C38;">$4,885</div>
+        <div class="ds-cell-sub">&#8593;&thinsp;1.60% &nbsp;&middot;&nbsp; All-time record</div>
+        <div class="ds-cell-note" style="color:#1A5C38;">Safe-haven bid holds</div>
       </div>
-      <div style="padding:18px 20px;border-right:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">EUR / USD</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">1.1800</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">GS target 1.25 &nbsp;&middot;&nbsp; DXY 97.77</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#6B6460;margin-top:3px;">Dollar erasing 2026 gains</div>
+      <div class="ds-cell">
+        <div class="ds-cell-label">EUR / USD</div>
+        <div class="ds-cell-value" style="color:#1A5C38;">1.1800</div>
+        <div class="ds-cell-sub">GS target 1.25 &nbsp;&middot;&nbsp; DXY 97.77</div>
+        <div class="ds-cell-note" style="color:#6B6460;">Dollar erasing 2026 gains</div>
       </div>
-      <div style="padding:18px 20px;border-right:1px solid #D8D2CA;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">10Y UST</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">4.23%</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8722;9bps &nbsp;&middot;&nbsp; Fed holds 3.75%</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#6B6460;margin-top:3px;">Largest drop since March</div>
+      <div class="ds-cell">
+        <div class="ds-cell-label">10Y UST</div>
+        <div class="ds-cell-value" style="color:#1A5C38;">4.23%</div>
+        <div class="ds-cell-sub">&#8722;9bps &nbsp;&middot;&nbsp; Fed holds 3.75%</div>
+        <div class="ds-cell-note" style="color:#6B6460;">Largest drop since March</div>
       </div>
-      <div style="padding:18px 20px;">
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">China GDP Q1</div>
-        <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">5.0%</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;line-height:1.6;">&#8593;&thinsp;4.8% consensus &nbsp;&middot;&nbsp; Beat</div>
-        <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;color:#6B6460;margin-top:3px;">Nikkei &#8595; 1.1% on yen strength</div>
+      <div class="ds-cell">
+        <div class="ds-cell-label">China GDP Q1</div>
+        <div class="ds-cell-value" style="color:#1A5C38;">5.0%</div>
+        <div class="ds-cell-sub">&#8593;&thinsp;4.8% consensus &nbsp;&middot;&nbsp; Beat</div>
+        <div class="ds-cell-note" style="color:#6B6460;">Nikkei &#8595; 1.1% on yen strength</div>
       </div>
     </div>
   </div>
@@ -702,7 +703,7 @@ a{color:var(--red);}
 
 
 <div class="chart-wrap" style="margin-top:32px;background:#FFFFFF;border:1px solid #D8D2CA;padding:24px 28px;">
-    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#0D0C0C;margin-bottom:4px;">Who Feeds the Middle East &nbsp;|&nbsp; And Who Has Stepped In</div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:#0D0C0C;margin-bottom:4px;">Who Feeds the Middle East<span class="mob-break"> &nbsp;|&nbsp; </span><span class="mob-block">And Who Has Stepped In</span></span></div>
     <div style="font-family:'IBM Plex Mono',monospace;font-size:8.5px;color:#6B6460;margin-bottom:20px;letter-spacing:0.04em;">Gulf states import 80% of caloric intake. 70% of food import routes are currently disrupted. Urea at $693/tonne — up 49% since conflict began.</div>
 
     <!-- Legend -->
