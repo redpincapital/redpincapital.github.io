@@ -62,8 +62,8 @@ a{color:var(--red);}
 .tldr{background:var(--ink);padding:32px 36px;margin-top:40px;}
 .tldr-label{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--red);border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:14px;margin-bottom:18px;}
 .tldr ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
-.tldr li{font-family:var(--sans);font-size:14.5px;font-weight:400;color:rgba(255,255,255,0.55);line-height:1.65;padding-left:16px;border-left:2px solid var(--red);}
-.tldr li strong{color:#FFFFFF;font-weight:700;letter-spacing:0.01em;}
+.tldr li{font-family:var(--sans);font-size:14.5px;font-weight:400;color:rgba(255,255,255,0.92);line-height:1.65;padding-left:16px;border-left:2px solid var(--red);}
+.tldr li strong{color:#E32832;font-weight:700;letter-spacing:0.01em;}
 
 /* ── DATA STRIP ── */
 .data-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:36px;border:1px solid var(--border);}
@@ -100,7 +100,7 @@ a{color:var(--red);}
 .geo-section{background:var(--cream);padding:36px 40px;margin:40px -48px;}
 .geo-inner{max-width:var(--max);margin:0 auto;}
 .geo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:20px;}
-.geo-region{border-top:none;padding-top:14px;}
+.geo-region{border-top:2px solid var(--ink);padding-top:14px;}
 .geo-region-label{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
 .geo-region-text{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--body);line-height:1.7;}
 .geo-region-text strong{font-weight:500;color:var(--ink);}
@@ -173,34 +173,107 @@ a{color:var(--red);}
 
 /* ── RESPONSIVE ── */
 @media(max-width:640px){
-.mast-white{padding:16px 20px;}
-.mast-black{padding:36px 20px 32px;}
-.ticker{padding:10px 20px;}
-.pos-strip{padding:14px 20px;}
-.main{padding:0 20px;}
-.data-strip{grid-template-columns:1fr 1fr;}
-.data-cell{border-bottom:1px solid var(--border);}
-.geo-section{margin:32px -20px;padding:28px 20px;}
-.geo-grid{grid-template-columns:1fr;}
-.connect{grid-template-columns:1fr;}
-.cf-grid{grid-template-columns:1fr;}
-.cf-section{padding:32px 20px 28px;}
-.mast-inner{flex-direction:column;align-items:flex-start;gap:10px;}
-.brand-block{align-items:flex-start;}
-.mast-logo{max-height:28px;max-width:200px;}
-.pipeline{padding:32px 20px;}
-.closing{padding:28px 20px;}
-.footer{padding:24px 20px;}
-.cf-cta-bar{flex-direction:column;align-items:flex-start;}
-.geo-section{margin:0;padding:28px 20px;}
-.geo-inner{padding:0 4px;}
-.geo-grid{grid-template-columns:1fr;gap:20px;}
-.sec-head{flex-direction:column;gap:4px;}
-.chart-wrap{padding:16px;}
-.bar-chart{gap:4px;}
-.pull-stat.stat-num{font-size:28px;}
-.data-strip{grid-template-columns:1fr 1fr;}
-.data-cell{border-bottom:1px solid var(--border);}
+  /* ── Global ── */
+  *{box-sizing:border-box;}
+  body{overflow-x:hidden;}
+
+  /* ── Masthead ── */
+  .mast-white{padding:14px 16px;overflow:hidden;}
+  .mast-inner{flex-direction:column;align-items:flex-start;gap:8px;}
+  .brand-block{align-items:flex-start;}
+  .mast-logo{max-height:26px !important;max-width:160px !important;width:auto !important;height:auto !important;}
+  .mast-black{padding:28px 16px 24px;}
+  .mast-black h1{font-size:clamp(20px,5vw,32px) !important;line-height:1.2;}
+  .mast-sub{font-size:8px;line-height:1.6;}
+  .brand-title{font-size:15px;}
+  .brand-date{font-size:7.5px;}
+  .brand-sub{font-size:7px;}
+
+  /* ── Ticker ── */
+  .ticker{overflow:hidden !important;width:100% !important;}
+  .ticker-inner{height:32px;}
+  .ticker-scroll span.item{font-size:9px;padding:0 20px;}
+
+  /* ── Positioning strip ── */
+  .pos-strip{padding:14px 16px;font-size:13px;}
+
+  /* ── Main content ── */
+  .main{padding:0 14px !important;}
+
+  /* ── TL;DR ── */
+  .tldr{padding:20px 14px;}
+  .tldr li{font-size:13px;padding-left:12px;}
+  .tldr-label{font-size:10px;}
+
+  /* ── Data strip ── */
+  div[style*="grid-template-columns:1fr 1fr 1fr 1fr"]{display:grid !important;grid-template-columns:1fr 1fr !important;}
+
+  /* ── Sections ── */
+  .sec-head{flex-direction:column;gap:4px;margin-top:28px;}
+  .sec-title{font-size:16px !important;}
+  .sec-tag{font-size:7px;margin-top:2px;}
+  .sec-num{font-size:8px;}
+
+  /* ── Prose ── */
+  .prose{font-size:13.5px;}
+  .prose p{margin-bottom:14px;}
+
+  /* ── Geo section ── */
+  .geo-section{margin:0;padding:16px 14px;}
+  .geo-inner{padding:0 4px;}
+  .geo-grid{grid-template-columns:1fr !important;gap:16px;}
+  .geo-region{padding-top:10px;}
+  .geo-region-label{font-size:10px;}
+
+  /* ── Chart containers ── */
+  .chart-wrap{padding:14px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .chart-wrap svg{display:block;max-width:100%;height:auto;}
+  .chart-title{font-size:9px !important;}
+  .chart-verdict{font-size:11px;line-height:1.6;}
+
+  /* ── Inline grids in charts — collapse to 1 col ── */
+  div[style*="display:grid;grid-template-columns:1fr 1fr 1fr"]{display:grid !important;grid-template-columns:1fr !important;}
+  div[style*="display:grid;grid-template-columns:1fr 1fr"]{display:grid !important;grid-template-columns:1fr !important;}
+  div[style*="grid-template-columns:repeat(4,1fr)"]{grid-template-columns:1fr 1fr !important;}
+  div[style*="grid-template-columns:repeat(3,1fr)"]{grid-template-columns:1fr !important;}
+
+  /* ── Tables — horizontal scroll ── */
+  table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch;width:100%;font-size:9px !important;}
+  th,td{white-space:nowrap;padding:8px 10px !important;font-size:9px !important;}
+
+  /* ── Connect section ── */
+  .connect{grid-template-columns:1fr !important;margin:0 !important;max-width:100% !important;}
+  .connect-dark,.connect-red{padding:20px 14px;}
+  .connect-title{font-size:16px;}
+  .connect-body{font-size:12px;}
+
+  /* ── CF section ── */
+  .cf-section{padding:24px 14px 20px;}
+  .cf-grid{grid-template-columns:1fr !important;}
+  .cf-card{padding:16px;}
+  .cf-title{font-size:20px;}
+  .cf-cta-bar{flex-direction:column;align-items:flex-start;gap:10px;padding:16px;}
+
+  /* ── Distribution form ── */
+  .dist-section{padding:20px 14px;}
+  .dist-section div[style*="display:flex"]{flex-direction:column !important;gap:12px !important;}
+  .form-grid{grid-template-columns:1fr !important;}
+  .form-field input,.form-field select{font-size:16px !important;min-height:44px;}
+  .dist-btn{font-size:13px;min-height:50px;}
+  .dist-hdr{font-size:17px;}
+
+  /* ── Closing / footer ── */
+  .closing{padding:20px 14px;}
+  .footer{padding:20px 14px;}
+  .footer-inner{flex-direction:column;gap:10px;}
+  .disc{padding:20px 14px;font-size:8px;}
+}
+
+/* ── Very small screens ── */
+@media(max-width:380px){
+  .mast-black h1{font-size:18px !important;}
+  .main{padding:0 10px !important;}
+  .prose{font-size:13px;}
 }
 
 /* ── SCROLLING TICKER ── */
@@ -256,7 +329,7 @@ a{color:var(--red);}
 <!-- ═══════════════════════════════════════════ HERO ═══ -->
 <div class="mast-black">
   <div style="max-width:var(--max);margin:0 auto;">
-    <div class="brand-date" style="color:#E32832;">EDITION 03 &nbsp;&nbsp; <span style="color:rgba(255,255,255,0.55);font-size:7.5px;">17 APRIL 2026 &nbsp;|&nbsp; BREAKING: HORMUZ CLOSED AGAIN — IRAN RESPONDS TO US BLOCKADE</span></div>
+    <div class="brand-date" style="color:#E32832;">EDITION 03 &nbsp;&nbsp; <span style="color:rgba(255,255,255,0.55);font-size:7.5px;">17 APRIL 2026</span></div>
     <h1 style="margin-top:16px;">The market just priced <em>resolution.</em><br>The resolution does not yet exist.<br>That is the only sentence that matters.</h1>
     <p class="mast-sub">Real Estate and Real Assets &nbsp;|&nbsp; Structured Credit &nbsp;|&nbsp; Growth and 4th Industrial Revolution (4IR) &nbsp;|&nbsp; Sports, Media and Entertainment</p>
   </div>
@@ -265,7 +338,7 @@ a{color:var(--red);}
 <!-- ═══════════════════════════════════════════ TICKER ═══ -->
 <div class="ticker">
   <div class="ticker-inner">
-    <div class="ticker-scroll"><span class="item">BRENT $88.96 | ↓ 10.5%% WTD | ↑ 31%% YoY</span><span class="ticker-sep">|</span><span class="item">IRAN DECLARES HORMUZ OPEN | CEASEFIRE EXPIRES 21 APR | BLOCKADE REMAINS</span><span class="ticker-sep">|</span><span class="item">IEA: EUROPE HAS 6 WEEKS OF JET FUEL LEFT</span><span class="ticker-sep">|</span><span class="item">CHINA Q1 GDP 5.0% | BEATS 4.8% CONSENSUS</span><span class="ticker-sep">|</span><span class="item">BOJ HOLDS 0.75% | APRIL HIKE EXPECTED</span><span class="ticker-sep">|</span><span class="item">EUR/USD 1.1800 | DOLLAR ERASING YTD GAINS</span><span class="ticker-sep">|</span><span class="item">GOLD $4,885 | SAFE-HAVEN BID HOLDS</span><span class="ticker-sep">|</span><span class="item">US CPI MARCH 3.3% YOY | HIGHEST SINCE MAY 2024</span><span class="ticker-sep">|</span><span class="item">UREA PRICE $693/TONNE | UP 49% SINCE CONFLICT BEGAN</span><span class="ticker-sep">|</span><span class="item">VENEZUELA: 303BN BARRELS | US CONTROLS PDVSA</span><span class="ticker-sep">|</span><span class="item">S&amp;P 500 7,143 | UP ~3% WTD</span><span class="ticker-sep">|</span><span class="item">DUTCH TTF GAS UP 50%+ SINCE 28 FEB</span><span class="ticker-sep">|</span><span class="item">9.1M BPD GULF PRODUCTION SHUT IN</span><span class="ticker-sep">|</span><span class="item">SAUDI EAST WEST PIPELINE HIT | 600K BPD LOST</span><span class="ticker-sep">|</span><span class="item">EU GRIDS PACKAGE: EUR 584BN NEEDED BY 2030</span><span class="ticker-sep">|</span><span class="item">CORN AND WHEAT PLANTING DOWN EST. 3% IN 2026</span><span class="ticker-sep">|</span><span class="item">FED HOLDS 3.75% | MEETS 28 APRIL</span><span class="ticker-sep">|</span><span class="item">10Y UST 4.23%</span><span class="ticker-sep">|</span><span class="item">DXY PROJECTED TO FALL TO 92 BY Q2 2027</span><span class="ticker-sep">|</span><span class="item">NFP MARCH +178K VS +60K CONSENSUS</span><span class="ticker-sep">|</span><span class="item">MICROGRID MARKET $29BN | GROWING 10% PA IN EUROPE</span><span class="ticker-sep">|</span><span class="item">BANGLADESH CLOSED 4 OF 5 FERTILISER FACTORIES</span><span class="ticker-sep">|</span><span class="item">GOLD AT HIGHEST SINCE RECORDS BEGAN</span><span class="ticker-sep">|</span><span class="item">BRENT $88.96 | ↓ 10.5%% WTD | ↑ 31%% YoY</span><span class="ticker-sep">|</span><span class="item">IRAN DECLARES HORMUZ OPEN | CEASEFIRE EXPIRES 21 APR | BLOCKADE REMAINS</span><span class="ticker-sep">|</span><span class="item">IEA: EUROPE HAS 6 WEEKS OF JET FUEL LEFT</span><span class="ticker-sep">|</span><span class="item">CHINA Q1 GDP 5.0% | BEATS 4.8% CONSENSUS</span><span class="ticker-sep">|</span><span class="item">BOJ HOLDS 0.75% | APRIL HIKE EXPECTED</span><span class="ticker-sep">|</span><span class="item">EUR/USD 1.1800 | DOLLAR ERASING YTD GAINS</span><span class="ticker-sep">|</span><span class="item">GOLD $4,885 | SAFE-HAVEN BID HOLDS</span><span class="ticker-sep">|</span><span class="item">US CPI MARCH 3.3% YOY | HIGHEST SINCE MAY 2024</span><span class="ticker-sep">|</span><span class="item">UREA PRICE $693/TONNE | UP 49% SINCE CONFLICT BEGAN</span><span class="ticker-sep">|</span><span class="item">VENEZUELA: 303BN BARRELS | US CONTROLS PDVSA</span><span class="ticker-sep">|</span><span class="item">S&amp;P 500 7,143 | UP ~3% WTD</span><span class="ticker-sep">|</span><span class="item">DUTCH TTF GAS UP 50%+ SINCE 28 FEB</span><span class="ticker-sep">|</span><span class="item">9.1M BPD GULF PRODUCTION SHUT IN</span><span class="ticker-sep">|</span><span class="item">SAUDI EAST WEST PIPELINE HIT | 600K BPD LOST</span><span class="ticker-sep">|</span><span class="item">EU GRIDS PACKAGE: EUR 584BN NEEDED BY 2030</span><span class="ticker-sep">|</span><span class="item">CORN AND WHEAT PLANTING DOWN EST. 3% IN 2026</span><span class="ticker-sep">|</span><span class="item">FED HOLDS 3.75% | MEETS 28 APRIL</span><span class="ticker-sep">|</span><span class="item">10Y UST 4.23%</span><span class="ticker-sep">|</span><span class="item">DXY PROJECTED TO FALL TO 92 BY Q2 2027</span><span class="ticker-sep">|</span><span class="item">NFP MARCH +178K VS +60K CONSENSUS</span><span class="ticker-sep">|</span><span class="item">MICROGRID MARKET $29BN | GROWING 10% PA IN EUROPE</span><span class="ticker-sep">|</span><span class="item">BANGLADESH CLOSED 4 OF 5 FERTILISER FACTORIES</span><span class="ticker-sep">|</span><span class="item">GOLD AT HIGHEST SINCE RECORDS BEGAN</span></div>
+    <div class="ticker-scroll"><span class="item">BRENT $88.96 | ↓ 10.5% WTD | ↑ 31% YoY</span><span class="ticker-sep">|</span><span class="item">IRAN DECLARES HORMUZ OPEN | CEASEFIRE EXPIRES 21 APR | BLOCKADE REMAINS</span><span class="ticker-sep">|</span><span class="item">IEA: EUROPE HAS 6 WEEKS OF JET FUEL LEFT</span><span class="ticker-sep">|</span><span class="item">CHINA Q1 GDP 5.0% | BEATS 4.8% CONSENSUS</span><span class="ticker-sep">|</span><span class="item">BOJ HOLDS 0.75% | APRIL HIKE EXPECTED</span><span class="ticker-sep">|</span><span class="item">EUR/USD 1.1800 | DOLLAR ERASING YTD GAINS</span><span class="ticker-sep">|</span><span class="item">GOLD $4,885 | SAFE-HAVEN BID HOLDS</span><span class="ticker-sep">|</span><span class="item">US CPI MARCH 3.3% YOY | HIGHEST SINCE MAY 2024</span><span class="ticker-sep">|</span><span class="item">UREA PRICE $693/TONNE | UP 49% SINCE CONFLICT BEGAN</span><span class="ticker-sep">|</span><span class="item">VENEZUELA: 303BN BARRELS | US CONTROLS PDVSA</span><span class="ticker-sep">|</span><span class="item">S&amp;P 500 7,143 | UP ~3% WTD</span><span class="ticker-sep">|</span><span class="item">DUTCH TTF GAS UP 50%+ SINCE 28 FEB</span><span class="ticker-sep">|</span><span class="item">9.1M BPD GULF PRODUCTION SHUT IN</span><span class="ticker-sep">|</span><span class="item">SAUDI EAST WEST PIPELINE HIT | 600K BPD LOST</span><span class="ticker-sep">|</span><span class="item">EU GRIDS PACKAGE: EUR 584BN NEEDED BY 2030</span><span class="ticker-sep">|</span><span class="item">CORN AND WHEAT PLANTING DOWN EST. 3% IN 2026</span><span class="ticker-sep">|</span><span class="item">FED HOLDS 3.75% | MEETS 28 APRIL</span><span class="ticker-sep">|</span><span class="item">10Y UST 4.23%</span><span class="ticker-sep">|</span><span class="item">DXY PROJECTED TO FALL TO 92 BY Q2 2027</span><span class="ticker-sep">|</span><span class="item">NFP MARCH +178K VS +60K CONSENSUS</span><span class="ticker-sep">|</span><span class="item">MICROGRID MARKET $29BN | GROWING 10% PA IN EUROPE</span><span class="ticker-sep">|</span><span class="item">BANGLADESH CLOSED 4 OF 5 FERTILISER FACTORIES</span><span class="ticker-sep">|</span><span class="item">GOLD AT HIGHEST SINCE RECORDS BEGAN</span><span class="ticker-sep">|</span><span class="item">BRENT $88.96 | ↓ 10.5% WTD | ↑ 31% YoY</span><span class="ticker-sep">|</span><span class="item">IRAN DECLARES HORMUZ OPEN | CEASEFIRE EXPIRES 21 APR | BLOCKADE REMAINS</span><span class="ticker-sep">|</span><span class="item">IEA: EUROPE HAS 6 WEEKS OF JET FUEL LEFT</span><span class="ticker-sep">|</span><span class="item">CHINA Q1 GDP 5.0% | BEATS 4.8% CONSENSUS</span><span class="ticker-sep">|</span><span class="item">BOJ HOLDS 0.75% | APRIL HIKE EXPECTED</span><span class="ticker-sep">|</span><span class="item">EUR/USD 1.1800 | DOLLAR ERASING YTD GAINS</span><span class="ticker-sep">|</span><span class="item">GOLD $4,885 | SAFE-HAVEN BID HOLDS</span><span class="ticker-sep">|</span><span class="item">US CPI MARCH 3.3% YOY | HIGHEST SINCE MAY 2024</span><span class="ticker-sep">|</span><span class="item">UREA PRICE $693/TONNE | UP 49% SINCE CONFLICT BEGAN</span><span class="ticker-sep">|</span><span class="item">VENEZUELA: 303BN BARRELS | US CONTROLS PDVSA</span><span class="ticker-sep">|</span><span class="item">S&amp;P 500 7,143 | UP ~3% WTD</span><span class="ticker-sep">|</span><span class="item">DUTCH TTF GAS UP 50%+ SINCE 28 FEB</span><span class="ticker-sep">|</span><span class="item">9.1M BPD GULF PRODUCTION SHUT IN</span><span class="ticker-sep">|</span><span class="item">SAUDI EAST WEST PIPELINE HIT | 600K BPD LOST</span><span class="ticker-sep">|</span><span class="item">EU GRIDS PACKAGE: EUR 584BN NEEDED BY 2030</span><span class="ticker-sep">|</span><span class="item">CORN AND WHEAT PLANTING DOWN EST. 3% IN 2026</span><span class="ticker-sep">|</span><span class="item">FED HOLDS 3.75% | MEETS 28 APRIL</span><span class="ticker-sep">|</span><span class="item">10Y UST 4.23%</span><span class="ticker-sep">|</span><span class="item">DXY PROJECTED TO FALL TO 92 BY Q2 2027</span><span class="ticker-sep">|</span><span class="item">NFP MARCH +178K VS +60K CONSENSUS</span><span class="ticker-sep">|</span><span class="item">MICROGRID MARKET $29BN | GROWING 10% PA IN EUROPE</span><span class="ticker-sep">|</span><span class="item">BANGLADESH CLOSED 4 OF 5 FERTILISER FACTORIES</span><span class="ticker-sep">|</span><span class="item">GOLD AT HIGHEST SINCE RECORDS BEGAN</span></div>
   </div>
 </div>
 
@@ -273,7 +346,6 @@ a{color:var(--red);}
 <div class="pos-strip">
   <div style="max-width:var(--max);margin:0 auto;">
     <p>Red Pin Capital is a global alternatives investment firm allocating across real estate and real assets, structured credit, growth in the 4th Industrial Revolution (4IR) and sports, media and entertainment. Through The Butterfly Effect, we identify how shifts in macro conditions, capital availability and technology create both unique primary and secondary market dislocations, creating opportunities to deploy capital into mispriced assets and constrained segments.</p>
-    <p style="margin-top:12px;">Red Pin Capital acts as a principal investor in all transactions. We do not distribute third-party fund opportunities. Qualified co-investors are invited to participate through our dedicated vehicles on a deal-by-deal basis. To join the distribution or discuss co-investment, contact <a href="mailto:KC@redpincapital.com" style="color:var(--red);text-decoration:none;">KC@redpincapital.com</a></p>
   </div>
 </div>
 
@@ -362,7 +434,7 @@ a{color:var(--red);}
       <text x="614" y="168" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460">Fri</text>
       <text x="614" y="180" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460">Week close</text>
     </svg>
-    <div class="chart-verdict">The market priced the ceasefire on Wednesday. The blockade deepened on Thursday. The physical world and the financial world are telling different stories. We are reading both. <strong>Update 18<sup>th</sup> April 15:00 BST:</strong> Iran closed the strait again on Saturday evening. The Friday close of $88.96 was priced on the morning opening. Monday gaps higher.</div>
+    <div class="chart-verdict">The market priced the ceasefire on Wednesday. The blockade deepened on Thursday. The physical world and the financial world are telling different stories. We are reading both.</div>
   </div>
 
 <!-- ── TL;DR ── -->
@@ -391,8 +463,6 @@ a{color:var(--red);}
   </div>
 
   <div class="prose">
-    <p style="border-left:3px solid #BF1922;padding-left:16px;margin-bottom:24px;font-style:italic;color:var(--body);"><strong style="font-style:normal;color:var(--ink);">Editorial note, Saturday 18<sup>th</sup> April 2026, 15:00 BST.</strong> The analysis below was written at Friday's close, when Iran's Foreign Minister had declared the Strait of Hormuz open to commercial shipping for the remaining ceasefire period. By Saturday evening, Iran had closed it again. The IRGC stated that Hormuz has "returned to its previous state" and that the closure will remain until the United States lifts its blockade of Iranian ports. Iranian gunboats fired on at least one merchant vessel attempting to transit. The Friday close of Brent at $88.96, priced on the morning opening, will not hold on Monday. Every line of analysis in this edition remains intact. The master thesis of this newsletter was written before this happened and is now confirmed in real time: <em>the market priced resolution. The resolution does not exist.</em></p>
-
     <p>At midday on Friday 17<sup>th</sup> April, Iran's Foreign Minister declared the Strait of Hormuz completely open to commercial shipping for the remaining period of the ceasefire. Oil prices collapsed. The S&P 500 rose 0.6% and the Nasdaq jumped 1%, both touching new all-time highs in early trade. Trump posted on Truth Social to thank Tehran. Then, in the same hour, he stated that the US naval blockade of Iranian ports "will remain in full force" until a complete peace deal is signed. The ceasefire expires on 21<sup>st</sup> April.</p>
 
     <p>The market priced a resolution. The resolution does not yet exist. That distinction is the only analytical point that matters this week, because the trade it implies is significant. WTI crude fell approximately 10% to around $85 per barrel. Brent fell approximately 8% to around $90. Heating oil fell 13%. Equity markets surged. Gold, the one instrument that has no reason to lie, held near $4,885 per troy ounce. If the strait were truly resolved, gold would be selling off hard alongside oil. It is not. Gold is reading the physical world. Equity markets and oil futures are reading the press release.</p>
@@ -520,7 +590,7 @@ a{color:var(--red);}
     <!-- ── GOLD AND THE MONETARY WAVE ── -->
   <div class="chart-wrap" style="margin-top:32px;">
     <div class="chart-title">Central Bank Gold Buying | The Sovereign Signal That Precedes Currency Repricing</div>
-    <svg width="100%" viewBox="0 0 680 266" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:100%;margin:8px 0;">
+    <svg width="100%" viewBox="0 0 680 245" xmlns="http://www.w3.org/2000/svg" style="display:block;max-width:100%;margin:8px 0;">
       <!-- Bar chart of CB gold buying by year -->
       <text x="8" y="14" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460">Net central bank gold purchases (tonnes per year). Source: World Gold Council.</text>
       <!-- 2010-2021 avg -->
@@ -563,27 +633,26 @@ a{color:var(--red);}
       <text x="560" y="127" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#6B6460">590t | strategic build</text>
       <text x="560" y="142" font-family="IBM Plex Mono,monospace" font-size="8" fill="#0D0C0C" font-weight="500">Singapore (MAS)</text>
       <text x="560" y="153" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#6B6460">127t | growing</text>
-      <line x1="560" y1="170" x2="672" y2="170" stroke="#D8D2CA" stroke-width="0.5"/>
-      <text x="560" y="172" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#0D0C0C" font-style="italic">*Stopped reporting May '24.</text>
-      <text x="560" y="182" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#0D0C0C" font-style="italic">Real holdings above</text>
-      <text x="560" y="192" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#0D0C0C" font-style="italic">c.5,000t</text>
+      <line x1="560" y1="162" x2="672" y2="162" stroke="#D8D2CA" stroke-width="0.5"/>
+      <text x="560" y="174" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#6B6460">*Stopped reporting May '24.</text>
+      <text x="560" y="184" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="#6B6460">Real holdings est. above 5,000t</text>
       <!-- 15 year streak callout -->
-      <rect x="0" y="204" width="680" height="54" fill="#0D0C0C" rx="0"/>
-      <text x="340" y="224" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" font-weight="600" fill="#FFFFFF">15 consecutive years of net central bank gold buying since the 2008 financial crisis</text>
-      <text x="340" y="244" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" font-weight="600" fill="#E32832">Gold at $4,885 today  |  The sovereign signal that precedes currency repricing</text>
+      <rect x="0" y="190" width="680" height="48" fill="#0D0C0C" rx="0"/>
+      <text x="340" y="208" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" font-weight="600" fill="#FFFFFF">15 consecutive years of net central bank gold buying since the 2008 financial crisis</text>
+      <text x="340" y="226" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="10" font-weight="600" fill="#E32832">Gold at $4,885 today  |  The sovereign signal that precedes currency repricing</text>
     </svg>
     <div class="chart-verdict">When money is printed it moves through the economy in a recognisable sequence. Sovereign buyers move into gold first, then the dollar weakens, then hard assets reprice, then risk assets run. Central banks purchased over 1,000 tonnes per year in 2022, 2023 and 2024, three consecutive record years at more than double the prior decade's average. They bought 1,237 tonnes in 2025. The gold price at $4,885 is not a speculative trade. It is sovereign capital re-rating the reserve system. That re-rating is exactly what drives the structural EUR/USD move discussed above  to  and it is why the XCCY opportunity for investors holding USD, JPY or BRL is structural rather than tactical.</div>
   </div>
 
-<div class="geo-section" style="margin-top:0;padding-top:24px;background:transparent;">
+<div class="geo-section">
   <div class="geo-inner">
-    <div class="sec-head" style="margin-top:0;">
-    <div>
-      <div class="sec-num">04</div>
-      <div class="sec-title">Geopolitics &nbsp;|&nbsp; Region by Region</div>
+    <div class="sec-head" style="border-bottom-color:rgba(0,0,0,0.15);margin-top:0;">
+      <div>
+        <div class="sec-num">04</div>
+        <div class="sec-title">Geopolitics &nbsp;|&nbsp; Region by Region</div>
+      </div>
+      <div class="sec-tag">Second-Order Dislocations</div>
     </div>
-    <div class="sec-tag">Second-Order Dislocations</div>
-  </div>
     
   <!-- ── FOOD AND AGRICULTURAL IMPORT FLOWS ── -->
   <div style="margin:20px 0;">
