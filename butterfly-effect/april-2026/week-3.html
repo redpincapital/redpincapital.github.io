@@ -355,10 +355,27 @@ a{color:var(--red);}
 <div class="main" style="max-width:var(--max);margin:0 auto;padding:0 48px;">
 
 <div style="max-width:var(--max);margin:0 auto;">
-  <!-- ── INSTITUTIONAL DATA STRIP ── -->
+  <style>
+.data-grid-4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+@media screen and (max-width: 640px) {
+  .data-grid-4 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .data-grid-4 > div {
+    border-right: none !important;
+  }
+  .data-grid-4 > div:nth-child(odd) {
+    border-right: 1px solid #D8D2CA !important;
+  }
+}
+</style>
+<!-- ── INSTITUTIONAL DATA STRIP ── -->
   <div style="border:1px solid #D8D2CA;margin-top:24px;background:#FFFFFF;">
     <!-- Row 1: Energy + Equities -->
-    <div class="data-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;">
+    <div class="data-grid-4">
       <div style="padding:18px 20px;border-right:1px solid #D8D2CA;border-bottom:1px solid #D8D2CA;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">Brent Crude</div>
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#BF1922;line-height:1;margin-bottom:8px;">$88.96</div>
@@ -385,7 +402,7 @@ a{color:var(--red);}
       </div>
     </div>
     <!-- Row 2: Macro -->
-    <div class="data-row" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;">
+    <div class="data-grid-4">
       <div style="padding:18px 20px;border-right:1px solid #D8D2CA;">
         <div style="font-family:'IBM Plex Mono',monospace;font-size:8px;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:#6B6460;margin-bottom:10px;">Gold</div>
         <div style="font-family:'Playfair Display',Georgia,serif;font-size:26px;font-weight:700;color:#1A5C38;line-height:1;margin-bottom:8px;">$4,885</div>
