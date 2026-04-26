@@ -151,6 +151,7 @@ em{font-style:italic;}
 .fb p:last-child{margin-bottom:0;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:14px;}
 /* RESPONSIVE */
 @media(max-width:640px){
+  /* MASTHEAD */
   .mast-white{padding:14px 16px;}
   .mast-inner{flex-direction:column;align-items:flex-start;}
   .brand-block{align-items:flex-start;}
@@ -158,27 +159,56 @@ em{font-style:italic;}
   .mast-black{padding:28px 16px 24px;}
   .mast-black h1{font-size:clamp(20px,5vw,32px) !important;}
   .pos-strip{padding:14px 16px;}
+  /* MAIN CONTENT */
   .main{padding:0 14px !important;}
-  .tldr{padding:20px 14px;}
-  .tldr li{font-size:13px;}
+  /* DATA STRIP */
   .ds-cell{flex:0 0 50% !important;padding:14px 12px !important;}
   .ds-cell:nth-child(2n){border-right:none !important;}
   .ds-cell:nth-child(n+3){border-top:1px solid var(--border) !important;}
   .ds-row-border .ds-cell:nth-child(n+3){border-top:none !important;}
   .ds-cell-value{font-size:20px !important;}
+  /* TL;DR */
+  .tldr{padding:20px 14px;}
+  .tldr li{font-size:13px;}
+  /* SECTIONS */
   .sec-head{flex-direction:column;gap:4px;margin-top:28px;}
-  .sec-title{font-size:16px !important;}
+  .sec-title{font-size:16px !important;white-space:normal !important;}
+  .sec-tag{font-size:8px;}
+  /* RETURN TABLE - horizontal scroll on mobile */
+  .rtable-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -14px;padding:0 14px;}
+  .rtable{font-size:9px;min-width:500px;}
+  .rtable th,.rtable td{padding:6px 8px;}
+  /* XCCY CHART - horizontal scroll */
+  .chart-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -14px;padding:14px;}
+  .chart-wrap svg{min-width:640px;}
+  /* PULL STAT */
+  .pull-num{font-size:36px;}
+  /* EDITORIAL */
+  .editorial{padding:28px 0 24px;}
+  .ed-inner{padding:0 16px !important;}
+  .ed-quote{font-size:18px !important;}
+  /* GEO SECTION */
   .geo-section{margin:0;padding:16px 14px;}
   .geo-grid{grid-template-columns:1fr !important;}
+  /* CAPITAL FORMATION */
   .cf{padding:24px 14px 20px;}
-  .cf-grid{grid-template-columns:1fr !important;} .cf div[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr !important;display:block !important;}
-  .editorial{padding:28px 0 24px;} .ed-inner{padding:0 16px !important;}
+  .cf-grid{grid-template-columns:1fr !important;}
+  .cf-title{font-size:20px;}
+  .cf-cta{flex-direction:column;gap:10px;}
+  .cf-cta-link{width:100%;text-align:center;padding:12px;}
+  /* CLOSING */
   .closing-bagehot{padding:20px 16px;}
+  /* DISTRIBUTION */
   .dist-section{padding:20px 14px;}
   .fg{grid-template-columns:1fr !important;}
+  .ff input,.ff select{font-size:16px;}
+  /* FOOTER */
   .footer{padding:20px 14px;}
-  .rtable{font-size:10px;}
-  .rtable th,.rtable td{padding:7px 8px;}
+  .fb{font-size:8px;}
+  /* SUBHEAD */
+  .subhead{font-size:15px;}
+  /* PROSE */
+  .prose p{font-size:14px;}
 }
 </style>
 </head>
@@ -347,7 +377,7 @@ em{font-style:italic;}
 </div>
 
 <!-- RETURN TABLE -->
-<table class="rtable">
+<div class="rtable-wrap"><table class="rtable">
   <thead>
     <tr><th>Instrument</th><th>Yield / IRR</th><th>Security</th><th>LTV / Cushion</th><th>USD Total Return</th></tr>
   </thead>
@@ -358,7 +388,7 @@ em{font-style:italic;}
     <tr><td>EUR Mezzanine (Transitional, 65&#8211;75% LTV)</td><td>10&#8211;12%</td><td>2nd charge, contractual</td><td>25&#8211;35% cushion</td><td class="hi">14&#8211;20%*</td></tr>
     <tr><td>Preferred Equity (Recap)</td><td>13&#8211;16%</td><td>Structural seniority</td><td>Asset-backed</td><td class="hi">17&#8211;24%*</td></tr>
   </tbody>
-</table>
+</table></div>
 <div class="source">*USD total return includes 4&#8211;8% EUR/USD appreciation on Goldman Sachs, JP Morgan, MUFG consensus targets and structural cross-currency basis. Before leverage. Source: Red Pin Capital analysis, MUFG April 2026 FX Outlook, BIS Quarterly Review.</div><div class="prose" style="margin-top:12px;"><p style="font-size:13px;font-style:italic;color:var(--muted);">The comparison is not symmetrical. Corporate credit is unsecured and mark-to-market. Real estate lending is asset-backed, income-producing and governed by contractual security over physical property. The return premium in the table above compensates partly for illiquidity. The risk profile is structurally more defensive than the yield differential suggests.</p></div>
 
 <div class="prose">
