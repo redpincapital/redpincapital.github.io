@@ -1048,14 +1048,14 @@ em{font-style:italic;}
   <div class="chart-eyebrow">Music IP &nbsp;·&nbsp; Artist Revenue Waterfall &nbsp;·&nbsp; May 2026</div>
   <div class="chart-headline">100 million streams. $400,000 to the rights holder. $20,000 to $60,000 to the artist. The catalogue owner receives the $400,000 first.</div>
   <div class="chart-sub">Verified waterfall of $400,000 in Spotify streaming income from 100 million streams through the intermediary chain to the artist, based on standard industry deal terms and verified royalty rates per Spotify Loud &amp; Clear 2025.</div>
-  <svg viewBox="0 0 860 400" style="min-width:320px;width:100%;display:block;">
+  <svg viewBox="0 0 860 440" style="min-width:320px;width:100%;display:block;">
     <defs>
       <pattern id="wm06v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
         <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
       </pattern>
     </defs>
-    <rect width="860" height="400" fill="#FFFFFF"/>
-    <rect width="860" height="400" fill="url(#wm06v2)"/>
+    <rect width="860" height="440" fill="#FFFFFF"/>
+    <rect width="860" height="440" fill="url(#wm06v2)"/>
     <!-- Step labels above -->
     <text x="118" y="18" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle" font-weight="600">Platform</text>
     <text x="118" y="30" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">Payout</text>
@@ -1070,44 +1070,48 @@ em{font-style:italic;}
     <!-- Step 1: Platform $400k -->
     <rect x="63" y="70" width="110" height="240" fill="#D8D2CA" opacity="0.75" rx="2"/>
     <text x="118" y="180" font-family="IBM Plex Mono,monospace" font-size="13" fill="#0D0C0C" text-anchor="middle" font-weight="700">$400,000</text>
-    <text x="118" y="196" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">100M streams</text>
-    <text x="118" y="209" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">$0.004/stream</text>
-    <!-- FIX 3: arrows shortened to stay between bars, not overlapping -->
+    <!-- FIX 2a: darker colour for 100M streams and rate -->
+    <text x="118" y="198" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle" font-weight="500">100M streams</text>
+    <text x="118" y="213" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle" font-weight="500">$0.004/stream</text>
     <line x1="178" y1="190" x2="186" y2="190" stroke="#D8D2CA" stroke-width="2"/>
     <polygon points="186,185 191,190 186,195" fill="#D8D2CA"/>
-    <!-- Step 2: Label -->
+    <!-- Step 2: Label — FIX 3a: -$320,000 same size as $400,000 -->
     <rect x="191" y="70" width="110" height="192" fill="#BF1922" opacity="0.2" rx="1"/>
-    <text x="246" y="150" font-family="IBM Plex Mono,monospace" font-size="11" fill="#0D0C0C" text-anchor="middle" font-weight="700">-$320,000</text>
-    <text x="246" y="165" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle">label retains 80%</text>
-    <rect x="191" y="262" width="110" height="48" fill="#9B9390" opacity="0.6" rx="2"/>
-    <text x="246" y="289" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">$80,000</text>
-    <text x="246" y="302" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="rgba(255,255,255,.85)" text-anchor="middle">remaining</text>
-    <line x1="306" y1="286" x2="314" y2="286" stroke="#9B9390" stroke-width="2"/>
-    <polygon points="314,281 319,286 314,291" fill="#9B9390"/>
-    <!-- Step 3: Publisher -->
-    <rect x="319" y="262" width="110" height="12" fill="#BF1922" opacity="0.35" rx="1"/>
-    <text x="374" y="258" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">-$20,000</text>
-    <rect x="319" y="274" width="110" height="36" fill="#9B9390" opacity="0.55" rx="2"/>
-    <text x="374" y="296" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">$60,000</text>
-    <text x="374" y="308" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(255,255,255,.85)" text-anchor="middle">remaining</text>
-    <line x1="434" y1="292" x2="442" y2="292" stroke="#9B9390" stroke-width="2"/>
-    <polygon points="442,287 447,292 442,297" fill="#9B9390"/>
-    <!-- Step 4: Distributor -->
-    <rect x="447" y="274" width="110" height="9" fill="#BF1922" opacity="0.3" rx="1"/>
-    <text x="502" y="269" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">-$9,000</text>
-    <rect x="447" y="283" width="110" height="27" fill="#9B9390" opacity="0.5" rx="2"/>
-    <text x="502" y="300" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">$51,000</text>
-    <line x1="562" y1="296" x2="570" y2="296" stroke="#9B9390" stroke-width="2"/>
-    <polygon points="570,291 575,296 570,301" fill="#9B9390"/>
+    <text x="246" y="152" font-family="IBM Plex Mono,monospace" font-size="13" fill="#0D0C0C" text-anchor="middle" font-weight="700">-$320,000</text>
+    <text x="246" y="168" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle">label retains 80%</text>
+    <!-- FIX 2b: $80,000 remaining — raise rect opacity for readability -->
+    <rect x="191" y="262" width="110" height="48" fill="#6B6460" opacity="0.85" rx="2"/>
+    <text x="246" y="283" font-family="IBM Plex Mono,monospace" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="700">$80,000</text>
+    <text x="246" y="299" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.95)" text-anchor="middle" font-weight="500">remaining</text>
+    <line x1="306" y1="286" x2="314" y2="286" stroke="#6B6460" stroke-width="2"/>
+    <polygon points="314,281 319,286 314,291" fill="#6B6460"/>
+    <!-- Step 3: Publisher — FIX 3b: -$20,000 same size as $400,000 -->
+    <text x="374" y="257" font-family="IBM Plex Mono,monospace" font-size="13" fill="#0D0C0C" text-anchor="middle" font-weight="700">-$20,000</text>
+    <rect x="319" y="262" width="110" height="48" fill="#6B6460" opacity="0.75" rx="2"/>
+    <!-- FIX 2c+d: $60,000 aligned to same height as $80,000, white readable -->
+    <text x="374" y="283" font-family="IBM Plex Mono,monospace" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="700">$60,000</text>
+    <text x="374" y="299" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.95)" text-anchor="middle" font-weight="500">remaining</text>
+    <line x1="434" y1="286" x2="442" y2="286" stroke="#6B6460" stroke-width="2"/>
+    <polygon points="442,281 447,286 442,291" fill="#6B6460"/>
+    <!-- Step 4: Distributor — FIX 3c: -$9,000 same size as $400,000 -->
+    <text x="502" y="257" font-family="IBM Plex Mono,monospace" font-size="13" fill="#0D0C0C" text-anchor="middle" font-weight="700">-$9,000</text>
+    <rect x="447" y="262" width="110" height="48" fill="#6B6460" opacity="0.65" rx="2"/>
+    <text x="502" y="283" font-family="IBM Plex Mono,monospace" font-size="13" fill="#FFFFFF" text-anchor="middle" font-weight="700">$51,000</text>
+    <text x="502" y="299" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.95)" text-anchor="middle" font-weight="500">remaining</text>
+    <line x1="562" y1="286" x2="570" y2="286" stroke="#6B6460" stroke-width="2"/>
+    <polygon points="570,281 575,286 570,291" fill="#6B6460"/>
     <!-- Step 5: Artist -->
-    <rect x="575" y="286" width="110" height="24" fill="#1A5C38" opacity="0.85" rx="2"/>
-    <text x="630" y="302" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">$20k - $60k</text>
-    <!-- FIX 1+2: Remove black box, replace with light background and black text -->
-    <rect x="63" y="324" width="780" height="58" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
-    <text x="453" y="340" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle">Platform generated $1.1bn from 100M streams across all formats  ·  Artist received: $20,000 to $60,000  ·  Catalogue owner received: $400,000</text>
-    <text x="453" y="356" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="700">The catalogue is the asset. The artist is the input. At current deal terms, the artist receives between 5% and 15% of the income generated by their own work. Red Pin is actively exploring structures in which artists retain a meaningful economic interest in their catalogue whilst accessing institutional capital, aligning musician and investor incentives rather than separating them.</text>
-    <text x="453" y="370" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">Catalogue entry multiples 2026: 12-18x NPS (tier-1)  ·  8-12x NPS (mid-market)  ·  Down from 18-25x peak 2021  ·  Source: Chartlex updated 28 April 2026</text>
-    <text x="798" y="392" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+    <rect x="575" y="262" width="110" height="48" fill="#1A5C38" opacity="0.9" rx="2"/>
+    <text x="630" y="283" font-family="IBM Plex Mono,monospace" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">$20k-$60k</text>
+    <text x="630" y="299" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.95)" text-anchor="middle" font-weight="500">to artist</text>
+    <!-- FIX 1: Bottom box enlarged to fit all text comfortably -->
+    <rect x="63" y="328" width="780" height="104" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="453" y="346" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="500">Platform generated $1.1bn from 100M streams across all formats  ·  Artist received: $20,000 to $60,000  ·  Catalogue owner received: $400,000</text>
+    <text x="453" y="360" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">The catalogue is the asset. The artist is the input.</text>
+    <text x="453" y="374" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">At current deal terms the artist receives between 5% and 15% of income generated by their own work.</text>
+    <text x="453" y="390" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="600">Red Pin is developing structures where artists retain equity alongside institutional capital. Same side of the trade.</text>
+    <text x="453" y="410" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle">Catalogue multiples 2026: 12-18x NPS tier-1  ·  8-12x mid-market  ·  Down from 18-25x peak 2021  ·  Source: Chartlex 28 April 2026</text>
+    <text x="836" y="428" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".08em">© RED PIN CAPITAL 2026</text>
   </svg>
   <div class="chart-verdict">
     <div class="verdict-bar"></div>
