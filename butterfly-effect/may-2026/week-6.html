@@ -1,1 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#F4F1EC">
+<title>The Butterfly Effect | Edition 06 | 9 May 2026 | Red Pin Capital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700;1,900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light only;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{-webkit-font-smoothing:antialiased;}
+:root{
+  --red:#BF1922;--ink:#0D0C0C;--body:#1A1818;--muted:#6B6460;
+  --border:#D8D2CA;--paper:#FFFFFF;--off:#F4F1EC;--cream:#EDE8DF;
+  --serif:"Playfair Display",Georgia,serif;
+  --mono:"IBM Plex Mono",monospace;
+  --sans:"Inter",system-ui,-apple-system,sans-serif;
+  --max:920px;
+}
+body{background:var(--off);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;overflow-x:hidden;max-width:100vw;}
+img{display:block;max-width:100%;height:auto;}
+table{max-width:100%;}
+a{color:var(--red);}
+em{font-style:italic;}
+.mast-white{background:var(--paper);padding:22px 48px 20px;border-bottom:3px solid var(--ink);}
+.mast-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;max-width:var(--max);margin:0 auto;}
+.mast-logo{height:auto;width:auto;max-height:40px;max-width:280px;}
+.brand-block{display:flex;flex-direction:column;gap:3px;align-items:flex-end;}
+.brand-title{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink);line-height:1;}
+.brand-sub{font-family:var(--mono);font-size:8px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);}
+.brand-date{font-family:var(--mono);font-size:8px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--red);}
+.mast-black{background:var(--ink);padding:52px 48px 44px;}
+.mast-black h1{font-family:var(--serif);font-size:clamp(32px,5vw,58px);font-weight:900;color:var(--paper);line-height:1.05;margin-bottom:20px;max-width:820px;}
+.mast-black h1 em{color:var(--red);font-style:italic;}
+.mast-sub{font-family:var(--mono);font-size:9px;font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);}
+.ticker{background:var(--red);overflow:hidden;height:36px;}
+.ticker-inner{display:flex;align-items:center;height:100%;}
+.ticker-scroll{display:flex;align-items:center;animation:scrolll 55s linear infinite;white-space:nowrap;}
+@keyframes scrolll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+.ticker-scroll .ti{font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:#fff;padding:0 28px;}
+.ticker-scroll .ts{color:rgba(255,255,255,.35);padding:0 4px;}
+.pos-strip{background:var(--paper);border-left:3px solid var(--red);padding:18px 48px;}
+.pos-strip p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--body);line-height:1.65;max-width:var(--max);margin:0 auto;}
+.main{max-width:var(--max);margin:0 auto;padding:0 48px;}
+.ds-outer{border:1px solid var(--border);margin-top:24px;background:var(--paper);}
+.ds-row{display:flex;flex-wrap:wrap;}
+.ds-row-border{border-bottom:1px solid var(--border);}
+.ds-cell{flex:0 0 25%;box-sizing:border-box;padding:18px 20px;border-right:1px solid var(--border);}
+.ds-cell:last-child{border-right:none;}
+.ds-cell-label{font-family:var(--mono);font-size:8px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.ds-cell-value{font-family:var(--serif);font-size:26px;font-weight:700;line-height:1;margin-bottom:8px;}
+.ds-cell-sub{font-family:var(--mono);font-size:8px;color:var(--muted);line-height:1.35;}
+.ds-cell-note{font-family:var(--mono);font-size:8px;margin-top:2px;line-height:1.3;}
+.tldr{background:var(--ink);padding:32px 36px;margin-top:40px;}
+.tldr-label{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--red);border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:14px;margin-bottom:18px;}
+.tldr ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.tldr li{font-family:var(--sans);font-size:14.5px;font-weight:400;color:rgba(255,255,255,.92);line-height:1.65;padding-left:16px;border-left:2px solid var(--red);}
+.tldr li strong{color:#E32832;font-weight:700;}
+.sec-head{margin-top:48px;margin-bottom:22px;padding-bottom:12px;border-bottom:2px solid var(--ink);display:flex;flex-direction:column;gap:4px;}
+.sec-head-top{display:flex;justify-content:flex-end;}
+.sec-head-bottom{display:flex;align-items:baseline;gap:10px;}
+.sec-num{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.2em;color:var(--red);}
+.sec-title{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);}
+.sec-tag{font-family:var(--mono);font-size:8.5px;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);text-align:right;width:100%;}
+.prose p{font-family:var(--sans);font-size:14.5px;font-weight:300;color:var(--body);line-height:1.78;margin-bottom:18px;}
+.prose p:last-child{margin-bottom:0;}
+.prose strong{font-weight:500;color:var(--ink);}
+.subhead{font-family:var(--serif);font-size:17px;font-weight:700;color:var(--ink);margin:28px 0 12px;border-bottom:1px solid var(--border);padding-bottom:6px;}
+.pull-stat{background:var(--cream);border-left:3px solid var(--red);padding:20px 24px;margin:24px 0;}
+.pull-num{font-family:var(--serif);font-size:44px;font-weight:900;color:var(--ink);line-height:1;}
+.pull-label{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin-top:4px;}
+.pull-ctx{font-family:var(--sans);font-size:12.5px;font-weight:300;color:var(--muted);margin-top:8px;line-height:1.5;}
+.chart-wrap{margin:28px 0;background:var(--paper);border:1px solid var(--border);padding:28px 32px;}
+.chart-eyebrow{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:9px;}
+.chart-headline{font-family:var(--serif);font-size:18px;font-weight:700;color:var(--ink);line-height:1.25;margin-bottom:5px;}
+.chart-sub{font-family:var(--sans);font-size:12px;font-weight:300;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+.chart-verdict{margin-top:18px;padding-top:14px;border-top:1px solid var(--border);display:flex;align-items:flex-start;gap:13px;}
+.verdict-bar{width:3px;min-height:36px;background:var(--red);flex-shrink:0;margin-top:2px;}
+.verdict-text{font-family:var(--sans);font-size:12.5px;font-weight:400;color:var(--ink);line-height:1.7;}
+.verdict-text strong{font-weight:600;}
+.chart-source{margin-top:8px;font-family:var(--mono);font-size:8px;color:var(--muted);line-height:1.6;}
+.chart-copy{font-family:var(--mono);font-size:10px;font-weight:700;color:var(--red);letter-spacing:.08em;text-align:right;margin-top:8px;}
+.rtable{width:100%;border-collapse:collapse;margin:24px 0;font-family:var(--mono);font-size:11px;}
+.rtable th{background:var(--ink);color:#fff;padding:10px 14px;text-align:left;letter-spacing:.1em;font-weight:500;}
+.rtable td{padding:9px 14px;border-bottom:1px solid var(--border);color:var(--body);}
+.rtable tr:nth-child(even) td{background:var(--off);}
+.rtable td.hi{color:#1A5C38;font-weight:500;}
+.rtable td.red{color:var(--red);font-weight:500;}
+.geo-section{background:var(--cream);padding:36px 40px;margin:40px -48px;}
+.geo-inner{max-width:var(--max);margin:0 auto;}
+.geo-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:20px;}
+.geo-region{padding-top:14px;}
+.geo-grid .geo-region{border-top:1px solid var(--border);padding-top:14px;}
+.geo-region-label{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.geo-region-text p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--body);line-height:1.7;margin-bottom:10px;}
+.geo-region-text p:last-child{margin-bottom:0;}
+.geo-region-text strong{font-weight:500;color:var(--ink);}
+.editorial{background:var(--ink);padding:48px 0 40px;}
+.ed-inner{max-width:var(--max);margin:0 auto;padding:0 48px;}
+.ed-prose p{font-family:var(--sans);font-size:14.5px;font-weight:300;color:rgba(255,255,255,.88);line-height:1.82;margin-bottom:20px;}
+.ed-prose p:last-child{margin-bottom:0;}
+.ed-prose strong{font-weight:500;color:rgba(255,255,255,.98);}
+.ed-quote{font-family:var(--serif);font-size:clamp(18px,2.8vw,24px);font-weight:700;font-style:italic;color:var(--paper);line-height:1.3;border-left:3px solid var(--red);padding-left:20px;margin:28px 0 8px;}
+.ed-attrib{font-family:var(--mono);font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.35);padding-left:23px;margin-bottom:24px;}
+.cf{background:var(--ink);padding:44px 40px 36px;margin-top:0;}
+.cf-inner{max-width:var(--max);margin:0 auto;}
+.cf-eyebrow{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+.cf-title{font-family:var(--serif);font-size:24px;font-weight:700;color:var(--paper);margin-bottom:12px;line-height:1.15;}
+.cf-intro{font-family:var(--sans);font-size:13px;font-weight:300;color:rgba(255,255,255,.7);line-height:1.75;border-left:2px solid var(--red);padding-left:18px;margin-bottom:28px;}
+.cf-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-bottom:2px;}
+.cf-card{background:rgba(255,255,255,.05);padding:22px 20px;border-top:2px solid var(--red);}
+.cf-pillar{font-family:var(--mono);font-size:8px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin-bottom:8px;}
+.cf-card-title{font-family:var(--serif);font-size:14px;font-weight:700;color:var(--paper);margin-bottom:8px;line-height:1.25;}
+.cf-card-body{font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(255,255,255,.62);line-height:1.68;}
+.cf-card-body p{margin-bottom:8px;}
+.cf-card-body p:last-child{margin-bottom:0;}
+.cf-cta{background:var(--red);padding:18px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.cf-cta-text{font-family:var(--sans);font-size:12px;font-weight:300;color:rgba(255,255,255,.9);line-height:1.5;}
+.cf-cta-text strong{font-weight:500;color:#fff;}
+.cf-cta-link{font-family:var(--mono);font-size:9.5px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.5);padding:9px 14px;white-space:nowrap;flex-shrink:0;}
+.closing-bagehot{background:var(--paper);border-top:3px solid var(--ink);padding:32px 48px;}
+.closing-bagehot p{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--muted);line-height:1.75;max-width:var(--max);margin:0 auto;}
+.closing-bagehot p strong{color:var(--ink);font-weight:500;}
+.dist-section{padding:32px 48px;background:var(--off);border-top:1px solid var(--border);}
+.dist-section .dist-inner{max-width:var(--max);margin:0 auto;}
+.dist-hdr{font-family:var(--serif);font-size:20px;font-weight:700;color:var(--ink);margin-bottom:8px;}
+.dist-sub{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--muted);margin-bottom:18px;line-height:1.6;}
+.fg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px;}
+.ff{display:flex;flex-direction:column;gap:4px;}
+.ff label{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);}
+.ff input,.ff select{border:1px solid var(--border);background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:13px;font-weight:300;padding:9px 12px;outline:none;}
+.ff input:focus,.ff select:focus{border-color:var(--ink);}
+.dist-btn{background:var(--ink);color:#fff;font-family:var(--mono);font-size:10px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;padding:14px 28px;border:none;cursor:pointer;width:100%;margin-top:4px;}
+#ds{display:none;margin-top:12px;font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:.08em;}
+.footer{background:var(--ink);padding:36px 48px;}
+.footer-inner{max-width:var(--max);margin:0 auto;}
+.ft{font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:14px;}
+.fb{font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.4);line-height:2;letter-spacing:.03em;}
+.fb p{margin-bottom:10px;}
+.fb p:last-child{margin-bottom:0;border-top:1px solid rgba(255,255,255,.08);padding-top:14px;margin-top:14px;}
+@media(max-width:640px){
+  .mast-white{padding:14px 16px;}
+  .mast-inner{flex-direction:column;align-items:flex-start;gap:10px;}
+  .brand-block{align-items:flex-start;}
+  .mast-logo{max-height:28px !important;max-width:180px !important;}
+  .mast-black{padding:24px 16px 20px;}
+  .mast-black h1{font-size:clamp(22px,6vw,34px) !important;margin-bottom:14px;}
+  .mast-sub{font-size:8px !important;letter-spacing:.1em;}
+  .pos-strip{padding:12px 16px;}
+  .pos-strip p{font-size:12px;}
+  .main{padding:0 14px !important;}
+  .ds-outer{margin-top:16px;}
+  .ds-cell{flex:0 0 50% !important;padding:12px 10px !important;border-right:1px solid var(--border) !important;}
+  .ds-cell:nth-child(2n){border-right:none !important;}
+  .ds-cell:nth-child(n+3){border-top:1px solid var(--border) !important;}
+  .ds-cell-value{font-size:20px !important;}
+  .ds-cell-label{font-size:7px !important;}
+  .ds-cell-sub,.ds-cell-note{font-size:7px !important;}
+  .ticker{height:30px;}
+  .ticker-scroll .ti{font-size:9px;padding:0 16px;}
+  .tldr{padding:20px 14px;margin-top:20px;}
+  .tldr li{font-size:13px;}
+  .editorial{padding:32px 0 28px;}
+  .ed-inner{padding:0 16px;}
+  .ed-prose p{font-size:13.5px;}
+  .ed-quote{font-size:clamp(16px,4vw,20px) !important;}
+  .sec-head{flex-direction:column;gap:4px;margin-top:32px !important;}
+  .sec-head-top{justify-content:flex-end;}
+  .sec-tag{font-size:7.5px !important;}
+  .sec-title{font-size:16px !important;}
+  .prose p{font-size:14px !important;line-height:1.72 !important;}
+  .subhead{font-size:15px !important;}
+  .pull-stat{padding:16px 14px;}
+  .pull-num{font-size:34px !important;}
+  .chart-wrap{padding:16px 10px;overflow-x:auto;}
+  .chart-wrap svg{min-width:320px;}
+  .geo-section{padding:24px 14px;margin:28px -14px;}
+  .geo-grid{grid-template-columns:1fr !important;}
+  .cf{padding:32px 14px 24px;}
+  .cf-title{font-size:18px !important;}
+  .cf-grid{grid-template-columns:1fr !important;gap:1px !important;}
+  .cf-card{padding:18px 14px;}
+  .cf-cta{flex-direction:column;align-items:flex-start;gap:12px;padding:16px 14px;}
+  .cf-cta-link{width:100%;text-align:center;padding:12px 14px;}
+  .closing-bagehot{padding:24px 16px;}
+  .dist-section{padding:24px 16px;}
+  .fg{grid-template-columns:1fr !important;}
+  .ff input,.ff select{font-size:16px !important;}
+  .dist-btn{font-size:10px !important;padding:14px !important;}
+  .footer{padding:24px 16px;}
+  .fb{font-size:8.5px !important;}
+  input,select,textarea{font-size:16px !important;}
 
+  .weekly-read-grid{grid-template-columns:1fr!important;}
+  .weekly-read-panel{padding-bottom:16px;border-bottom:1px solid var(--border);margin-bottom:0;}
+  .hero-subtitle{font-size:clamp(22px,6vw,36px)!important;}
+  .mast-black .mast-sub{font-size:7.5px!important;letter-spacing:.08em;}
+}
+@media(max-width:380px){
+  .mast-black h1{font-size:20px !important;}
+  .ds-cell-value{font-size:18px !important;}
+  .tldr li{font-size:12.5px;}
+  .prose p{font-size:13.5px !important;}
+}
+/* ENHANCED MOBILE */
+@media(max-width:768px){
+  .mast-white{padding:14px 16px;}
+  .mast-inner{flex-direction:column;align-items:flex-start;gap:10px;}
+  .brand-block{align-items:flex-start;}
+  .mast-logo{max-height:32px!important;max-width:160px!important;}
+  .mast-black{padding:28px 16px 24px;}
+  .mast-black h1{font-size:clamp(28px,7vw,46px)!important;}
+  .mast-black p{font-size:13px!important;}
+  .pos-strip{padding:12px 16px;}
+  .pos-strip p{font-size:12.5px;}
+  .main{padding:0 14px!important;}
+  .ds-outer{margin-top:16px;overflow-x:auto;}
+  .ds-row{flex-wrap:wrap;}
+  .ds-cell{flex:0 0 50%!important;padding:12px 10px!important;border-right:1px solid var(--border)!important;}
+  .ds-cell:nth-child(2n){border-right:none!important;}
+  .ds-cell:nth-child(n+3){border-top:1px solid var(--border)!important;}
+  .ds-cell-value{font-size:20px!important;}
+  .ds-cell-label,.ds-cell-sub,.ds-cell-note{font-size:7.5px!important;}
+  .ticker{height:30px;}
+  .ticker-scroll .ti{font-size:9px;padding:0 14px;}
+  .tldr{padding:20px 14px;margin-top:20px;}
+  .tldr li{font-size:13px;line-height:1.65;}
+  .editorial{padding:28px 0;}
+  .ed-inner{padding:0 16px;}
+  .ed-prose p{font-size:13.5px!important;}
+  .ed-quote{font-size:clamp(15px,4.5vw,20px)!important;padding-left:14px;}
+  .sec-head{margin-top:32px!important;}
+  .sec-title{font-size:15px!important;}
+  .sec-tag{font-size:7.5px!important;}
+  .prose p{font-size:13.5px!important;line-height:1.72!important;}
+  .subhead{font-size:14px!important;}
+  .chart-wrap{padding:14px 8px;overflow-x:auto;-webkit-overflow-scrolling:touch;}
+  .chart-wrap svg{min-width:360px;}
+  .chart-headline{font-size:14px!important;}
+  .chart-sub{font-size:11.5px!important;}
+  .verdict-text{font-size:12px!important;}
+  .chart-source{font-size:8px!important;}
+  .geo-section{padding:20px 14px;margin:24px -14px;}
+  .geo-grid{grid-template-columns:1fr!important;}
+  .cf{padding:28px 14px 24px;}
+  .cf-title{font-size:17px!important;}
+  .cf-intro{font-size:12px!important;}
+  .cf-grid{grid-template-columns:1fr!important;gap:1px!important;}
+  .cf-card{padding:18px 14px;}
+  .cf-card-title{font-size:13px!important;}
+  .cf-card-body{font-size:11.5px!important;}
+  .cf-cta{flex-direction:column;align-items:flex-start;gap:10px;padding:14px;}
+  .cf-cta-link{width:100%;text-align:center;padding:12px;}
+  .closing-bagehot{padding:20px 16px;}
+  .closing-bagehot p{font-size:13.5px!important;}
+  .dist-section{padding:20px 16px;}
+  .fg{grid-template-columns:1fr!important;}
+  input,select,textarea{font-size:16px!important;}
+  .dist-btn{padding:14px!important;font-size:10px!important;}
+  .footer{padding:20px 16px;}
+  .ft{font-size:8.5px!important;}
+  .fb{font-size:8.5px!important;}
+
+  .weekly-read-grid{grid-template-columns:1fr!important;gap:16px!important;}
+  .weekly-read-panel p{font-size:13px!important;}
+}
+@media(max-width:380px){
+  .mast-black h1{font-size:26px!important;}
+  .ds-cell-value{font-size:18px!important;}
+  .tldr li{font-size:12.5px;}
+  .prose p{font-size:13px!important;}
+  .cf-card-title{font-size:12.5px!important;}
+}
+
+</style>
+</head>
+<body>
+<!-- MASTHEAD -->
+<div class="mast-white">
+  <div class="mast-inner">
+    <svg class="mast-logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 3200 452.59" style="height:40px;width:auto;max-width:280px;display:block;"><defs><linearGradient id="rpcGrad"><stop stop-color="#7d141d" offset="0"/><stop stop-color="#ff1e27" offset="1"/></linearGradient></defs><g transform="scale(10) translate(10,10)"><g transform="matrix(1.871,0,0,1.871,-1.16,-12.424)" fill="url(#rpcGrad)"><path d="M0.62 20 l0 -0.3 l1.74 0 l0 -12.62 l-1.74 0 l0 -0.3 l5.64 0 c3.72 0 5 1.38 5 3.36 c0 1.58 -1.02 2.84 -3.92 3.24 l0 0.04 c1.82 0.3 3.26 1.24 3.5 3.32 c0.16 1.48 0.1 2.88 0.94 2.88 c0.52 0 0.86 -0.6 0.86 -1.36 l0.3 0 c-0.02 1.22 -0.6 1.84 -1.82 1.84 c-2.44 0 -2.84 -2.14 -2.94 -3.52 c-0.08 -1.08 -0.22 -3.02 -1.74 -3.02 l-1.64 0 l0 6.14 l1.72 0 l0 0.3 l-5.9 0 z M4.8 13.26 l1.6 0 c1.74 0 2.28 -1 2.28 -3 c0 -2.06 -0.6 -3.18 -2.38 -3.18 l-1.5 0 l0 6.18 z M13.68 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l10.24 0 s-0.42 1.58 -0.58 3.74 l-0.3 0 l0 -1.98 c0 -1.16 -0.28 -1.46 -1.12 -1.46 l-4.08 0 l0 6.24 l3.12 0 l0 -1.76 l0.3 0 l0 4 l-0.3 0 l0 -1.94 l-3.12 0 l0 6.08 l4.06 0 c1.18 0 1.4 -1.24 1.76 -3.66 l0.32 0 s-0.3 1.82 -0.3 3.96 l-10 0 z M25.46 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l5.98 0 c4.84 0 6.86 2.52 6.86 6.4 c0 3.78 -1.88 6.82 -6.86 6.82 l-5.98 0 z M29.62 19.7 l1.86 0 c2.84 0 4.2 -2.18 4.2 -6.3 c0 -4.3 -1.36 -6.32 -4.2 -6.32 l-1.86 0 l0 12.62 z M44.32 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l5.54 0 c4.08 0 5.36 1.68 5.36 3.78 c0 2.42 -1.86 4 -4.74 4 c-0.5 0 -0.74 -0.04 -0.74 -0.04 l0 -0.3 s0.28 0.04 0.6 0.04 c1.68 0 2.3 -1.52 2.3 -3.64 c0 -2.24 -0.6 -3.54 -2.8 -3.54 l-1.36 0 l0 12.62 l1.92 0 l0 0.3 l-6.08 0 z M56.36 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l5.9 0 l0 0.3 l-1.74 0 l0 12.62 l1.74 0 l0 0.3 l-5.9 0 z M63.56 20 l0 -0.3 l0.6 0 c0.88 0 1.2 -0.44 1.2 -1.2 l0 -10.36 l-0.1 -0.14 c-0.4 -0.56 -0.7 -0.92 -1.54 -0.92 l-0.36 0 l0 -0.3 l3.96 0 l7.22 9.6 l0 -8.1 c0 -0.76 -0.32 -1.2 -1.2 -1.2 l-0.6 0 l0 -0.3 l3.9 0 l0 0.3 l-0.62 0 c-0.88 0 -1.18 0.44 -1.18 1.2 l0 11.8 l-0.54 0 l-8.64 -11.54 l0 9.96 c0 0.76 0.3 1.2 1.18 1.2 l0.62 0 l0 0.3 l-3.9 0 z M92.78 16.06 l0.32 0 c0 1.48 -1 4.08 -4.38 4.08 c-3.82 0 -6.24 -2.82 -6.24 -6.82 c0 -3.96 2.54 -6.68 6.24 -6.68 c1.24 0 2.34 0.38 3.12 1.1 c0.58 0 0.88 -0.22 1.16 -0.96 l0.26 0 c-0.1 0.34 -0.38 2.06 -0.38 2.88 l0 1.24 l-0.3 0 l0 -0.76 c0 -1.9 -1.6 -3.2 -3.86 -3.2 c-3.02 0 -3.62 3.28 -3.62 6.48 c0 3.4 0.68 6.42 3.66 6.42 c0.92 0 1.74 -0.24 2.36 -0.64 c1.1 -0.72 1.66 -1.98 1.66 -3.14 z M93.48 20 l0 -0.3 l0.4 0 c0.62 0 0.96 -0.3 1.3 -1.18 l4.52 -11.8 l0.54 0 l5.3 12.98 l0.98 0 l0 0.3 l-4.94 0 l0 -0.3 l1.4 0 l-1.78 -4.34 l-4.5 0 l-1.2 3.16 c-0.28 0.72 0.16 1.18 1.08 1.18 l0.6 0 l0 0.3 l-3.7 0 z M96.82 15.06 l4.26 0 l-2.2 -5.38 z M106.88 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l5.54 0 c4.08 0 5.36 1.68 5.36 3.78 c0 2.42 -1.86 4 -4.74 4 c-0.5 0 -0.74 -0.04 -0.74 -0.04 l0 -0.3 s0.28 0.04 0.6 0.04 c1.68 0 2.3 -1.52 2.3 -3.64 c0 -2.24 -0.6 -3.54 -2.8 -3.54 l-1.36 0 l0 12.62 l1.92 0 l0 0.3 l-6.08 0 z M118.92 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l5.9 0 l0 0.3 l-1.74 0 l0 12.62 l1.74 0 l0 0.3 l-5.9 0 z M128.64 20 l0 -0.3 l1.72 0 l0 -12.62 l-2.44 0 c-1.02 0 -1.44 0.54 -1.6 2 l-0.16 1.44 l-0.3 0 s0.12 -1.8 0.12 -2.48 l0 -1.26 l11.22 0 l0 1.26 c0 0.68 0.08 2.48 0.08 2.48 l-0.3 0 l-0.14 -1.48 c-0.12 -1.36 -0.5 -1.96 -1.54 -1.96 l-2.5 0 l0 12.62 l1.74 0 l0 0.3 l-5.9 0 z M137.3 20 l0 -0.3 l0.4 0 c0.62 0 0.96 -0.3 1.3 -1.18 l4.52 -11.8 l0.54 0 l5.3 12.98 l0.98 0 l0 0.3 l-4.94 0 l0 -0.3 l1.4 0 l-1.78 -4.34 l-4.5 0 l-1.2 3.16 c-0.28 0.72 0.16 1.18 1.08 1.18 l0.6 0 l0 0.3 l-3.7 0 z M140.64 15.06 l4.26 0 l-2.2 -5.38 z M150.7 20 l0 -0.3 l1.72 0 l0 -12.62 l-1.72 0 l0 -0.3 l5.9 0 l0 0.3 l-1.74 0 l0 12.62 l3.96 0 c1.22 0 1.44 -1.24 1.82 -3.66 l0.32 0 s-0.3 1.78 -0.3 3.96 l-9.96 0 z"/></g></g></svg>
+    <div class="brand-block">
+      <div class="brand-title">The Butterfly Effect</div>
+      <div class="brand-sub">A Red Pin Capital Publication &nbsp;|&nbsp; Weekly Alternatives Intelligence</div>
+      <div class="brand-date">Week Ending 9 May 2026</div>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="mast-black">
+  <div style="max-width:var(--max);margin:0 auto;">
+    <div style="font-family:var(--mono);font-size:9px;font-weight:500;letter-spacing:.3em;text-transform:uppercase;color:#E32832;margin-bottom:16px;">EDITION 06 &nbsp;&nbsp; <span style="color:rgba(255,255,255,.45);font-size:7.5px;letter-spacing:.1em;">9 MAY 2026</span></div>
+    <h1>Zugzwang.</h1>
+    <p style="font-family:'Playfair Display',serif;font-size:clamp(20px,5.5vw,52px);font-style:italic;font-weight:900;color:#E32832;line-height:1.05;margin-top:6px;margin-bottom:20px;">Every move makes it worse. Except one.</p>
+    <p class="mast-sub">Real Estate and Real Assets &nbsp;|&nbsp; Structured Credit &nbsp;|&nbsp; Growth and 4th Industrial Revolution (4IR) Strategies &nbsp;|&nbsp; Sports, Media and Entertainment</p>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker"><div class="ticker-inner"><div class="ticker-scroll">
+<span class="ti">S&amp;P 500 7,398.93 &middot; Record close 8 May 2026 &middot; Fwd P/E 20.9x per FactSet</span><span class="ts">|</span>
+<span class="ti">DXY 97.84 &middot; Near multi-year low</span><span class="ts">|</span>
+<span class="ti">EUR/USD 1.1748 &middot; ECB pricing two hikes by year-end</span><span class="ts">|</span>
+<span class="ti">Brent $97.50 &middot; Ceasefire holds &middot; Strait remains closed</span><span class="ts">|</span>
+<span class="ti">10Y UST 4.38% &middot; Fed funds 3.5-3.75% &middot; Held 29 April</span><span class="ts">|</span>
+<span class="ti">Kevin Warsh confirmation vote &middot; Week of 11 May &middot; Powell exits 15 May</span><span class="ts">|</span>
+<span class="ti">April payrolls 115,000 &middot; Double consensus &middot; Unemployment 4.3%</span><span class="ts">|</span>
+<span class="ti">Global factoring turnover &euro;4.04 trillion 2025 &middot; Europe 58% share &middot; FCI verified</span><span class="ts">|</span>
+<span class="ti">Longevity investment $8.49bn 2024 &middot; 331 deals &middot; More than doubled YoY &middot; Longevity.Technology</span><span class="ts">|</span>
+<span class="ti">Spotify paid $11bn to music industry 2025 &middot; Largest in history</span><span class="ts">|</span>
+<span class="ti">India YouTube CPM $0.75 &middot; US CPM $32.75 &middot; 40-to-1 ratio</span><span class="ts">|</span>
+<span class="ti">Branded residences 910 active projects 2025 &middot; Up from 323 in 2015 &middot; Savills</span><span class="ts">|</span>
+<span class="ti">Music catalogue multiples 12-18x NPS 2026 &middot; Down from 18-25x peak 2021 &middot; Chartlex</span><span class="ts">|</span>
+<span class="ti">FOMC dissent &middot; Four votes &middot; Highest since 1992 &middot; Fed historical records</span><span class="ts">|</span>
+<span class="ti">S&amp;P 500 7,398.93 &middot; Record close 8 May 2026 &middot; Fwd P/E 20.9x per FactSet</span><span class="ts">|</span>
+</div></div></div>
+
+<!-- POSITIONING STRIP -->
+<div class="pos-strip">
+  <p>Red Pin Capital is a global alternatives investment firm and holding company, allocating across Real Estate and Real Assets, Structured Credit, growth in the 4th Industrial Revolution and Sports, Media and Entertainment. Through The Butterfly Effect, we identify how shifts in macro conditions, capital availability and technology create persistent dislocations and the opportunities to deploy capital into mispriced assets and constrained segments in private markets. Contact: <a href="mailto:KC@redpincapital.com?utm_source=newsletter&utm_medium=edition06&utm_campaign=general">KC@redpincapital.com</a></p>
+</div>
+
+<!-- MAIN -->
+<div class="main">
+
+<!-- DATA STRIP -->
+<div class="ds-outer">
+  <div class="ds-row ds-row-border">
+    <div class="ds-cell">
+      <div class="ds-cell-label">S&amp;P 500</div>
+      <div class="ds-cell-value" style="color:#1A5C38;">7,399</div>
+      <div class="ds-cell-sub">Record close &middot; 8 May 2026</div>
+      <div class="ds-cell-note" style="color:#BF1922;">Fwd P/E 21.0x &middot; Above 10yr avg 18.9x (FactSet)</div>
+    </div>
+    <div class="ds-cell">
+      <div class="ds-cell-label">DXY / EUR-USD</div>
+      <div class="ds-cell-value" style="color:#BF1922;">97.84</div>
+      <div class="ds-cell-sub">EUR/USD 1.1748 &middot; Near 3-year high</div>
+      <div class="ds-cell-note" style="color:#1A5C38;">ECB pricing two hikes by year-end</div>
+    </div>
+    <div class="ds-cell">
+      <div class="ds-cell-label">Brent Crude</div>
+      <div class="ds-cell-value" style="color:#6B6460;">$97.50</div>
+      <div class="ds-cell-sub">Ceasefire holds &middot; Strait closed</div>
+      <div class="ds-cell-note" style="color:#BF1922;">Trading $90-$100 on daily diplomacy signals</div>
+    </div>
+    <div class="ds-cell">
+      <div class="ds-cell-label">10Y UST / Fed</div>
+      <div class="ds-cell-value">4.38%</div>
+      <div class="ds-cell-sub">Fed funds 3.5-3.75% &middot; Held 29 April</div>
+      <div class="ds-cell-note" style="color:#BF1922;">Four dissenters &middot; Highest since 1992</div>
+    </div>
+  </div>
+  <div class="ds-row">
+    <div class="ds-cell">
+      <div class="ds-cell-label">April Payrolls</div>
+      <div class="ds-cell-value" style="color:#1A5C38;">115K</div>
+      <div class="ds-cell-sub">Above consensus of 62,000</div>
+      <div class="ds-cell-note" style="color:#BF1922;">Deepens the stagflation trap</div>
+    </div>
+    <div class="ds-cell">
+      <div class="ds-cell-label">Factoring Market</div>
+      <div class="ds-cell-value" style="color:#1A5C38;">&euro;4.04tr</div>
+      <div class="ds-cell-sub">Global turnover 2025 &middot; FCI verified 5 May 2026</div>
+      <div class="ds-cell-note" style="color:#1A5C38;">Europe 58% &middot; 6.12% CAGR &middot; &euro;6.3tr by 2031</div>
+    </div>
+    <div class="ds-cell">
+      <div class="ds-cell-label">Longevity Investment</div>
+      <div class="ds-cell-value" style="color:#1A5C38;">$8.49bn</div>
+      <div class="ds-cell-sub">2024 &middot; 331 deals &middot; More than doubled 2023</div>
+      <div class="ds-cell-note" style="color:#1A5C38;">Eli Lilly &amp; AbbVie entered 2025 &middot; PE transition</div>
+    </div>
+    <div class="ds-cell">
+      <div class="ds-cell-label">Music Catalogue</div>
+      <div class="ds-cell-value" style="color:#BF1922;">12-18x</div>
+      <div class="ds-cell-sub">NPS multiples 2026 &middot; Down from 18-25x peak</div>
+      <div class="ds-cell-note" style="color:#1A5C38;">Entry window open for institutional buyers</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- WEEKLY READ / MACRO COMMENTARY -->
+<div style="background:#FFFFFF;border-left:3px solid #BF1922;padding:28px 48px;margin-top:0;">
+  <div style="max-width:var(--max);margin:0 auto;">
+    <div style="font-family:var(--mono);font-size:9px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#BF1922;padding-bottom:12px;margin-bottom:20px;border-bottom:1px solid #D8D2CA;">The Weekly Read &nbsp;|&nbsp; Macro Commentary &nbsp;|&nbsp; 9 May 2026</div>
+    <div class="weekly-read-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+      <div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#0D0C0C;margin-bottom:8px;">Equities: record close, narrow breadth</div>
+        <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:#1A1818;line-height:1.72;margin:0;">The S&amp;P 500 closed at 7,398.93 on 8 May, a new all-time high. Breadth was narrow. Mega-cap technology and AI infrastructure drove the majority of the move. Forward P/E sits at 21.0x against a 10-year average of 18.9x per FactSet. The equity risk premium against the 10Y UST is at a 20-year low. The market is pricing near-perfect execution on AI revenue delivery for the next five years. That is not a valuation for capital preservation.</p>
+      </div>
+      <div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#0D0C0C;margin-bottom:8px;">Dollar: structural deterioration continues</div>
+        <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:#1A1818;line-height:1.72;margin:0;">The DXY fell to 97.84, its lowest level in several years. EUR/USD touched 1.1748. Goldman Sachs targets 1.22 by year-end. MUFG targets 1.20 in Q4. The cross-currency basis has widened materially. For USD-denominated capital deploying into EUR-denominated assets, the currency tailwind is structural rather than tactical. The move is not finished. A weaker dollar re-rates every EUR hard asset upward in USD terms before a single transaction closes.</p>
+      </div>
+      <div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#0D0C0C;margin-bottom:8px;">Rates: the Warsh transition premium</div>
+        <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:#1A1818;line-height:1.72;margin:0;">The 10Y UST sits at 4.38%. Kevin Warsh is widely expected to succeed Jerome Powell as Fed Chair as Powell's term ends on 15 May. The FOMC voted four ways at the last meeting, the highest internal disagreement since 1992. Three governors want to remove the easing bias entirely. One wants an immediate cut. Warsh has called for a new inflation framework and a regime change in policy conduct. The market does not yet have a settled view of his reaction function. Until it does, duration pricing carries an institutional uncertainty premium. Fixed-rate EUR debt originated at closing carries none of it.</p>
+      </div>
+      <div>
+        <div style="font-family:'Playfair Display',Georgia,serif;font-size:15px;font-weight:700;color:#0D0C0C;margin-bottom:8px;">Commodities: Hormuz optionality</div>
+        <p style="font-family:var(--sans);font-size:13px;font-weight:300;color:#1A1818;line-height:1.72;margin:0;">Brent trades at approximately $97.50. The Strait of Hormuz remains closed following Iran's retaliatory strikes. Iran has reportedly communicated ceasefire proposals through Pakistani mediators in recent days. Brent has traded between $95 and $110 on daily diplomacy signals. Gold reached $4,730 per oz on safe-haven flows and dollar weakness. VIX closed at 17.19, relatively contained despite the geopolitical backdrop. Both an oil resolution and an escalation scenario route capital toward European hard assets. The direction of the trade differs. The destination does not.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TL;DR -->
+<div class="tldr">
+  <div class="tldr-label"><span style="color:#E32832;">TL;DR</span> &nbsp;|&nbsp; Eight Theses This Week</div>
+  <ul>
+    <li><strong>Zugzwang.</strong> The Fed cannot cut without losing a committee vote. It cannot raise without defying the president who appointed Warsh. Brent trades on daily diplomacy signals between $95 and $110. Every domestic dollar asset carries an institutional uncertainty premium that did not exist a fortnight ago. EUR private credit priced at origination carries none of it.</li>
+    <li><strong>Factoring is a &euro;4.04 trillion market that institutional allocators have almost entirely ignored.</strong> To contextualise: the entire US high-yield bond market is smaller. Basel IV is withdrawing bank capital from exactly this asset class. Private non-bank platforms are filling the gap at 8 to 14% yields secured against named investment-grade buyers. The underwriting is against the receivable, not the company. US healthcare receivables alone represent a $5.3 trillion addressable market with payment terms running 90 to 180 days, the widest payment gap and the lowest current penetration of any major sector.</li>
+    <li><strong>PBSA in Iberia is a highly compelling development finance opportunity in European real estate right now.</strong> Lisbon and Madrid have among the lowest purpose-built student bed ratios in Europe. Indian, Nigerian and South-East Asian students are redirecting from the UK post-visa tightening. Entry yields on development finance run 7 to 9%. Occupancy is at or near 100% in both markets.</li>
+    <li><strong>Branded residences command a verified 25 to 45% premium over non-branded equivalents.</strong> The sector has tripled since 2015. The failure cases are as instructive as the successes: brand-geography mismatch destroys value faster than any other variable in luxury real estate. The cities and cultures where the model fails are not obvious until you understand why buyers buy.</li>
+    <li><strong>The longevity sector raised $8.49 billion across 331 deals in 2024, more than double 2023.</strong> That peak triggered a structural shift. Eli Lilly invested in NewLimit. AbbVie Ventures led Oisin Biotechnologies. Manulife launched a $350 million Longevity Institute. By the time a published annual total exists for 2025, the PE and pharma entry it catalysed will be the story. The longevity infrastructure layer, clinical networks, diagnostics platforms, hospitalit y and real estate, is the asset class being built right now.</li>
+    <li><strong>An artist with 100 million Spotify streams earns c.$400,000 before anyone else takes a cut.</strong> After the label, publisher, distributor and collection society, the artist receives between $20,000 and $60,000. Music catalogue at 12 to 18 times NPS is the entry point for institutional capital before emerging market streaming growth re-rates the asset upward.</li>
+    <li><strong>India has 491 million YouTube users and a $0.75 CPM.</strong> The US has fewer users and a $32.75 CPM. The 40-to-1 ratio exists because the platform prices geography, not brand intent. The investor who owns emerging market content IP today benefits from the full upside of the repricing without having built the advertising infrastructure that causes it.</li>
+    <li><strong>Office-to-residential conversion represents one of the most time-limited capital deployment windows in European real estate right now.</strong> France passed legislation in June 2025 enabling up to one million new homes through conversion. The value arbitrage between impaired secondary office and residential in core cities runs 40 to 60% in several markets. The supply of suitable buildings is finite and narrows with every conversion completed.</li>
+  </ul>
+</div>
+
+</div><!-- /main -->
+
+<!-- EDITORIAL -->
+<div class="editorial">
+  <div class="ed-inner">
+    <div class="ed-prose">
+      <p>In chess, zugzwang describes the position where every legal move makes your situation worse. The optimal strategy is to not move at all. The problem is that not moving is not a legal option. You must play. Every play deteriorates your position further.</p>
+      <p>The Federal Reserve is in zugzwang. Kevin Warsh inherits an institution where four members publicly dissented at the last meeting, the highest count since 1992. He cannot cut rates without losing a committee vote for the first time in the Fed's history. He cannot raise without defying a president who appointed him specifically to deliver lower rates. He cannot hold without becoming the symbol of institutional paralysis in an economy where PCE inflation sits above 4%, the labour market added 115,000 jobs in April against a consensus of 55,000 and productivity grew at only 0.8% in Q1 2026. Strong employment. Rising inflation. Falling productivity. The trap is complete.</p>
+      <p>The Strait of Hormuz is in zugzwang. A ceasefire exists. The strait remains closed. Iran's 14-point peace proposal is being negotiated through Pakistan. Neither side has blinked. Oil trades between $95 and $110 on 24-hour diplomatic signals. The physical infrastructure of global energy supply is paused, waiting for a move that neither party can make without giving up something it cannot afford to give.</p>
+      <p>The equity market is in zugzwang. The S&amp;P 500 closed at 7,399 on 8 May 2026, a new record. The forward 12-month price-to-earnings ratio stands at 20.9 times, above both the five-year average of 19.9 and the ten-year average of 18.9, according to FactSet's verified earnings data published this week. The AI productivity premium that the market has priced in advance is not yet showing up in aggregate output data. Investors who sell are wrong if the AI thesis is correct. Investors who hold are exposed if the stagflation thesis is correct. There is no good move.</p>
+      <p>The one position that does not require a move is EUR hard asset income. A contractual rate, agreed at origination, secured against physical real estate in a jurisdiction with established enforcement. It does not care whether Warsh cuts or holds. It does not care whether the strait opens or stays closed. It does not care whether the S&amp;P is at 7,000 or 9,000. The income accrues. The building stands. The loan pays.</p>
+      <div class="ed-quote">"In the middle of difficulty lies opportunity."</div>
+      <div class="ed-attrib">Albert Einstein</div>
+      <p>This edition covers eight arguments. Not all of them are about European real estate. Some are about the infrastructure layer of markets that do not yet have an institutional capital structure: longevity, music IP, creator economics in emerging markets, receivables finance. The unifying thesis across all eight is the same. Every market has a gap between what it pays its participants and what the underlying asset is worth. Capital that positions in that gap before consensus forms is where the return lives.</p>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+
+<!-- GEOPOLITICS SECTION -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">Hormuz · Warsh · Tariffs · The Three Binary Scenarios</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">00</div><div class="sec-title">Geopolitics &nbsp;|&nbsp; Why Every Scenario This Week Points to European Hard Assets</div></div>
+</div>
+<div class="prose">
+<p>Three geopolitical variables are unresolved as of 9 May 2026. Each one is binary. The combination of their outcomes creates eight possible macroeconomic environments. In six of the eight, the optimal portfolio response is the same. In the remaining two, it is close to the same. That is the thesis in its simplest form.</p>
+
+<div class="subhead">Variable one: Hormuz</div>
+<p>The Strait of Hormuz remains severely disrupted following the escalation between Iran and Israel in April, with markets pricing a binary path between negotiated reopening and renewed escalation. Approximately 20% of global petroleum liquids consumption transits the strait. Iran has reportedly communicated ceasefire proposals through Pakistani mediators in recent days. The two binary outcomes are resolution and escalation. Resolution would likely send Brent back toward the $85 to $90 range, reduce inflation expectations and support a broader risk-on rotation across global markets. Escalation could drive Brent materially higher toward $130, increase Gulf petrodollar recycling into global hard assets including Europe and accelerate discussions around non-dollar energy settlement mechanisms. Both roads end at the same allocation.</p>
+
+<div class="subhead">Variable two: the Warsh Fed</div>
+<p>Kevin Warsh is widely expected to succeed Jerome Powell as Fed Chair as Powell's term ends on 15 May. The FOMC recorded four dissents at its most recent meeting, the largest split within the committee since the early 1990s. Warsh has publicly argued for a new inflation framework and a communications regime change. The committee he inherits disagrees on whether the next move should be a cut, a hold or a hike. The two binary outcomes are: Warsh establishes authority quickly and the committee coalesces around his framework within two meetings, or the committee fractures further and Warsh faces three or four public dissents at his first presiding vote. The first outcome reduces UST volatility but signals a hawkish regime, which is negative for US duration. The second outcome increases UST volatility, which is also negative for US duration. In neither case does the argument for fixed-rate EUR private credit originated at closing change.</p>
+
+<div class="subhead">Variable three: the tariff architecture</div>
+<p>The US tariff regime introduced in Q1 2026 materially increased trade friction for European exporters through broad-based and sector-specific tariff measures. The two binary outcomes are negotiated reduction and escalation. Negotiated reduction strengthens EUR further against USD and increases the attractiveness of European assets for USD-denominated capital. Escalation would likely accelerate European supply chain regionalisation, increase demand for logistics and industrial infrastructure and support further growth in EUR-denominated private credit markets. Both roads end at the same allocation.</p>
+
+<div class="subhead">The conclusion</div>
+<p>Six of the eight binary scenario combinations produce the same optimal portfolio response: increase allocation to EUR-denominated hard asset income. The two exceptions involve simultaneous rapid de-escalation across energy markets, Fed policy uncertainty and global trade tensions, a scenario that currently appears lower probability. Capital that waits for certainty on all three variables before moving will move after the repricing has already occurred.</p>
+</div>
+
+<!-- SECTION 01: FACTORING -->
+<div class="sec-head">
+  <div class="sec-head-top"><div class="sec-tag">A &euro;4.04 Trillion Market. Larger Than US High-Yield. Institutionally Undiscovered.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">01</div><div class="sec-title">Factoring and Receivables Finance &nbsp;|&nbsp; The Overlooked Asset Class</div></div>
+</div>
+<div class="prose">
+<p>The global factoring market recorded total turnover of &euro;4.04 trillion in 2025, according to FCI, the global association for the receivables finance industry, which published its verified annual statistics on 5 May 2026. Europe accounts for 58% of global volume. The market is growing at a compound annual rate of 6.12% and is projected to reach &euro;6.3 trillion by 2031. To contextualise the scale: the entire US high-yield bond market is smaller. The global trade finance gap, documented by the Asian Development Bank, runs to $2.5 trillion annually. Factoring addresses a material share of that gap and is almost entirely absent from the alternatives allocations of institutional investors.</p>
+
+<div class="subhead">What Factoring Is and Why It Is Misunderstood</div>
+<p>Factoring is not lending. That distinction matters and it is the reason most credit allocators have not engaged with the asset class. When a business factors its receivables, it sells an invoice to a factor at a discount. The factor then collects payment from the buyer named on the invoice. The underwriting is against the creditworthiness of the buyer, not the seller. A small construction company selling invoices against a contract with a FTSE 100 developer is not a small company risk. It is a FTSE 100 credit risk at a discount to face value.</p>
+<p>Non-recourse factoring is the structure that generates the cleanest return profile for institutional capital: a short-duration claim against a named creditworthy counterparty, with a known maturity, a contractual discount and no residual exposure to the originating business. Non-recourse factoring is the fastest-growing segment of the market and is expected to maintain the highest compound annual growth rate through 2034.</p>
+
+<div class="subhead">How Basel IV Has Created the Entry Point Across All Credit Instruments</div>
+<p>Basel IV is not a real estate story. It is a credit market story that happens to affect receivables finance with particular force. The framework, which came into full effect across EU member states in January 2025, revises capital requirements across the entire spectrum of bank credit instruments: corporate loans, trade finance, real estate lending, specialised finance and receivables. Under the standardised approach, risk weights increase for a broad range of commercial exposures. For a bank operating with a return on equity target of 12 to 15%, higher capital requirements compress the economics of lending across every category where the regulatory charge outweighs the margin available.</p>
+<p>The practical consequence is that banks are rationing credit selectively across all instruments, real estate, trade finance, SME lending, receivables and the assets that generate the least margin relative to their new capital charge are the first to be cut. Factoring and trade receivables finance fall into that category for most European bank treasury functions. The non-bank private capital market is the direct beneficiary. Every basis point of margin that banks give up by withdrawing from a credit instrument is available to the private capital provider who replaces them. For factoring, that withdrawal is happening now, measurably, in bank market share data. For Red Pin Capital, the factoring opportunity is not simply a yield play. It is the foundation of a structured credit business that addresses the same withdrawal across multiple credit instruments simultaneously.</p>
+<p>The yield to the private capital provider on non-recourse factoring against investment-grade buyers runs at 8 to 14% depending on sector, geography and payment term length. That yield is contractual, short-duration and secured against a named corporate counterparty that the factor has underwritten independently.</p>
+
+<div class="subhead">Sector by Sector: The Geographic Opportunity Map</div>
+<p>Manufacturing holds the largest share of the global factoring market at c.41% of volume. Payment terms average 45 to 90 days and supply chains are long, creating structural demand for working capital solutions at every tier of the chain. Construction runs payment terms of 60 to 135 days and has historically had the lowest factoring penetration relative to receivables outstanding.</p>
+<p>Healthcare is the sector where the factoring opportunity is most significant from a Red Pin Capital perspective. US healthcare expenditure reached c.$5.3 trillion in 2024, according to CMS National Health Expenditure data. Of that total, approximately 85% relates to chronic disease treatment and hospital services, both of which generate receivables against government payers and insurance companies. Government healthcare receivables, including Medicare and Medicaid in the US and NHS and government insurance in Europe, carry effectively sovereign credit risk on the buyer side. Payment terms run 90 to 180 days. Penetration of non-recourse factoring against these receivables is below 10% in both the US and European markets. The combination of creditworthy buyers, long payment terms, large receivables pools and low institutional participation makes healthcare the most attractive single sector for a structured receivables programme.</p>
+<p>The investment structure for institutional capital is through a dedicated receivables fund or a co-investment alongside an established non-bank platform with origination infrastructure already in place. The fund acquires a diversified pool of short-duration receivables across sectors and geographies, typically with a weighted average maturity of 45 to 90 days and recycles capital continuously as invoices are paid. The return profile is quarterly income at 8 to 12% net of fees, with duration matching the payment terms of the underlying receivables rather than the fund life.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">Factoring and Receivables Finance &nbsp;·&nbsp; Sector Analysis &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">The sectors with the longest payment terms have the lowest private capital penetration. That is where the yield is.</div>
+  <div class="chart-sub">Each sector plotted by average payment terms (x-axis) versus factoring penetration rate as a percentage of estimated receivables outstanding (y-axis). Bubble size represents estimated addressable receivables pool. Labels placed outside for readability. Top-right quadrant is the structural opportunity zone for non-bank private capital post-Basel IV.</div>
+  <svg viewBox="0 0 860 520" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm01v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+    </defs>
+    <rect width="860" height="520" fill="#FFFFFF"/>
+    <rect width="860" height="520" fill="url(#wm01v2)"/>
+    <line x1="90" y1="32" x2="90" y2="360" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="90" y1="360" x2="800" y2="360" stroke="#0D0C0C" stroke-width="1.8"/>
+    <text x="20" y="200" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" transform="rotate(-90,20,200)" letter-spacing=".1em">FACTORING PENETRATION %</text>
+    <text x="445" y="400" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" letter-spacing=".1em">AVERAGE PAYMENT TERMS (DAYS)</text>
+    <text x="82" y="364" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">0%</text>
+    <text x="82" y="293" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">10%</text>
+    <text x="82" y="222" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">20%</text>
+    <text x="82" y="151" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">30%</text>
+    <text x="82" y="80" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">40%</text>
+    <text x="90" y="378" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">0</text>
+    <text x="232" y="378" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">30</text>
+    <text x="374" y="378" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">60</text>
+    <text x="516" y="378" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">90</text>
+    <text x="658" y="378" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">120</text>
+    <text x="800" y="378" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">150</text>
+    <line x1="90" y1="289" x2="800" y2="289" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="218" x2="800" y2="218" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="147" x2="800" y2="147" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="76" x2="800" y2="76" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="232" y1="32" x2="232" y2="360" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="374" y1="32" x2="374" y2="360" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="516" y1="32" x2="516" y2="360" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="658" y1="32" x2="658" y2="360" stroke="#F0ECE7" stroke-width="1"/>
+    <rect x="516" y="32" width="284" height="220" fill="#FDF8F5" rx="2" opacity="0.9"/>
+    <text x="658" y="58" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#BF1922" text-anchor="middle" letter-spacing=".12em" font-weight="700">OPPORTUNITY ZONE</text>
+    <text x="658" y="74" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle">Long terms · Low penetration · Basel IV exit</text>
+    <!-- RETAIL -->
+    <circle cx="232" cy="65" r="18" fill="#9B9390" opacity="0.65"/>
+    <line x1="232" y1="83" x2="232" y2="112" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="178" y="112" width="108" height="38" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="232" y="127" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">Retail</text>
+    <text x="232" y="142" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">30d · 36% penetration</text>
+    <!-- MANUFACTURING -->
+    <circle cx="374" cy="147" r="22" fill="#9B9390" opacity="0.6"/>
+    <line x1="374" y1="169" x2="374" y2="198" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="308" y="198" width="132" height="38" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="374" y="213" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">Manufacturing</text>
+    <text x="374" y="228" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">60d · 26% penetration</text>
+    <!-- TRANSPORT -->
+    <circle cx="445" cy="212" r="18" fill="#6B6460" opacity="0.6"/>
+    <line x1="445" y1="230" x2="445" y2="258" stroke="#6B6460" stroke-width="1.2"/>
+    <rect x="381" y="258" width="128" height="38" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="445" y="273" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">Transport</text>
+    <text x="445" y="288" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">75d · 18% penetration</text>
+    <!-- HEALTHCARE EU - FIX 1: remove black box, label text black -->
+    <circle cx="658" cy="180" r="28" fill="#BF1922" opacity="0.88"/>
+    <line x1="686" y1="180" x2="716" y2="170" stroke="#BF1922" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="716" y="154" width="136" height="42" fill="#F4F1EC" stroke="#BF1922" stroke-width="1.2" rx="2"/>
+    <text x="784" y="171" font-family="IBM Plex Mono,monospace" font-size="10" fill="#0D0C0C" text-anchor="middle" font-weight="700">Healthcare (EU)</text>
+    <text x="784" y="184" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838" text-anchor="middle">120d · 8% penetration</text>
+    <text x="784" y="194" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle" font-weight="600">€1.2tr receivables pool</text>
+    <!-- HEALTHCARE US - FIX 2: remove black box, brighter red text -->
+    <circle cx="758" cy="294" r="32" fill="#BF1922" opacity="0.95"/>
+    <line x1="726" y1="294" x2="694" y2="310" stroke="#BF1922" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="526" y="294" width="168" height="52" fill="#F4F1EC" stroke="#BF1922" stroke-width="1.2" rx="2"/>
+    <text x="610" y="313" font-family="IBM Plex Mono,monospace" font-size="10" fill="#0D0C0C" text-anchor="middle" font-weight="700">Healthcare (US)</text>
+    <text x="610" y="327" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838" text-anchor="middle">90-180d · &lt;10% penetration</text>
+    <text x="610" y="339" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle" font-weight="600">$5.3tr addressable (CMS 2024)</text>
+    <!-- CONSTRUCTION -->
+    <circle cx="730" cy="319" r="24" fill="#E32832" opacity="0.82"/>
+    <line x1="730" y1="295" x2="730" y2="258" stroke="#E32832" stroke-width="1.5"/>
+    <rect x="666" y="228" width="128" height="30" fill="#F4F1EC" stroke="#E32832" stroke-width="1.2" rx="2"/>
+    <text x="730" y="243" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">Construction</text>
+    <text x="730" y="254" font-family="IBM Plex Mono,monospace" font-size="8" fill="#3A3838" text-anchor="middle">135d · 5% penetration</text>
+    <!-- CAGR strip: no background box, all text dark -->
+    <text x="430" y="430" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">MARKET GROWTH: €4.04 trillion (2025) → €4.29tr (2026E) → €4.55tr (2027E) → €6.3tr (2031E)  ·  CAGR 6.12%</text>
+    <text x="430" y="448" font-family="IBM Plex Mono,monospace" font-size="9" fill="#BF1922" text-anchor="middle" font-weight="700">Europe 58% share  ·  Non-recourse (highest growth segment)  ·  Basel IV withdrawal creates entry point across all credit instruments</text>
+    <text x="430" y="464" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">Sources: FCI World Factoring Statistics published 5 May 2026  ·  Mordor Intelligence 2026  ·  CMS National Health Expenditure 2024</text>
+    <text x="798" y="513" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>Construction and healthcare sit in the top-right quadrant: the longest payment terms and the lowest private capital penetration in the market.</strong> US healthcare receivables alone represent a $5.3 trillion addressable pool with payment terms of 90 to 180 days against effectively sovereign-grade buyers, Medicare, Medicaid, NHS and major insurers. Basel IV is withdrawing bank capacity from precisely these sectors. The private capital provider replacing that capacity earns 8 to 14% contractual yield with duration matching the payment term of the invoice, not a fund life. The market grows at 6.12% per annum and reaches &euro;6.3 trillion by 2031. Institutional discovery has not yet begun.</div>
+  </div>
+</div>
+
+<!-- SECTION 02: WARSH FED -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">Four Dissenters. Highest Since 1992. Warsh Inherits the Trap.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">02</div><div class="sec-title">The Warsh Fed &nbsp;|&nbsp; What Institutional Paralysis Means for Private Capital</div></div>
+</div>
+<div class="prose">
+<p>Kevin Warsh's confirmation vote is expected in the week of 11 May 2026. He takes over from Jerome Powell on 15 May. He inherits an institution where four members publicly dissented at the most recent FOMC meeting, the highest level of internal disagreement since 1992. Three governors want to remove the easing bias entirely from the committee's forward guidance. One wants an immediate cut. Warsh himself has called for a new inflation framework, new communication architecture and a regime change in policy conduct. He has a committee that disagrees on all three before he walks through the door.</p>
+<div class="subhead">Why This Is a New Category of Institutional Risk</div>
+<p>The Fed has operated with a culture of consensus since the Volcker era. When chairs have faced dissent, it has almost always been one or two votes, enough to signal disagreement without fracturing the committee's public coherence. Four dissents at a single meeting is categorically different. It signals that the committee's view of the economy, inflation and the appropriate policy response has fragmented into at least three distinct camps with no obvious majority position.</p>
+<p>For institutional allocators, the practical consequence is that the Fed has temporarily lost its function as a reliable signalling mechanism for fixed income. The 10Y UST yield of 4.38% reflects a market that does not know whether the next move is a cut, a hold or a hike. When the Fed cannot signal coherently, duration pricing becomes unstable. When duration pricing is unstable, every fixed income portfolio that references the risk-free rate faces mark-to-market volatility that is not driven by economic fundamentals but by political noise inside one institution.</p>
+<div class="subhead">April Payrolls: Good News as a Trap</div>
+<p>April nonfarm payrolls came in at 115,000, nearly well above the consensus estimate of 62,000. The instinctive market response, equities to a new record and risk-on positioning, misreads the macroeconomic signal. A labour market that adds 115,000 jobs in a month where PCE inflation is above 4% and productivity grew at only 0.8% in Q1 2026 is not a healthy labour market. It is a stagflation confirmation. Strong employment removes the Fed's last argument for cutting. Above-target inflation prevents it from holding without criticism. The trap is tighter after a strong payrolls number, not looser.</p>
+<div class="subhead">EUR Private Credit: No Fed Sensitivity Required</div>
+<p>A EUR real estate debt position priced at origination, at 8 to 9% contractual yield with a first-ranking charge over physical property at 55 to 65% LTV, does not carry the Warsh uncertainty premium. The rate was agreed at closing. The collateral is a building. The loan pays whether the next Fed move is 25 basis points in either direction or no move at all. For institutional capital that has spent the last three years pricing duration off a Fed that could signal clearly, the value of an instrument that requires no Fed sensitivity is not marginal. It is structural.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">The Warsh Fed &nbsp;·&nbsp; Chair Transition Analysis &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">Every transition with elevated dissent produced above-average bond volatility in the following 12 months. The Warsh transition sits at the highest dissent point in the series.</div>
+  <div class="chart-sub">Average FOMC dissent votes per meeting at each chair transition (grey bars, left axis) versus 10Y UST annualised volatility in the 12 months following that transition (red line, right axis). Data: Federal Reserve FOMC historical voting records. Warsh 2026 bar shown in red. Post-Warsh volatility is the forward projection based on the historical correlation.</div>
+  <svg viewBox="0 0 860 420" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm02v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+    </defs>
+    <rect width="860" height="420" fill="#FFFFFF"/>
+    <rect width="860" height="420" fill="url(#wm02v2)"/>
+    <line x1="90" y1="28" x2="90" y2="300" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="90" y1="300" x2="800" y2="300" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="800" y1="28" x2="800" y2="300" stroke="#BF1922" stroke-width="1" stroke-dasharray="4 3" opacity="0.6"/>
+    <text x="82" y="303" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">0</text>
+    <text x="82" y="249" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">1</text>
+    <text x="82" y="195" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">2</text>
+    <text x="82" y="141" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">3</text>
+    <text x="82" y="87" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">4</text>
+    <text x="82" y="33" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="end" font-weight="700">5</text>
+    <text x="20" y="170" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" transform="rotate(-90,20,170)" letter-spacing=".1em">DISSENT VOTES AVG/MTG</text>
+    <text x="808" y="303" font-family="IBM Plex Mono,monospace" font-size="9" fill="#BF1922" text-anchor="start">0%</text>
+    <text x="808" y="168" font-family="IBM Plex Mono,monospace" font-size="9" fill="#BF1922" text-anchor="start">50%</text>
+    <text x="808" y="33" font-family="IBM Plex Mono,monospace" font-size="9" fill="#BF1922" text-anchor="start">100%</text>
+    <text x="830" y="170" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle" transform="rotate(90,830,170)" letter-spacing=".08em">UST VOLATILITY +12M</text>
+    <line x1="90" y1="249" x2="800" y2="249" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="195" x2="800" y2="195" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="141" x2="800" y2="141" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="87" x2="800" y2="87" stroke="#F0ECE7" stroke-width="1"/>
+    <!-- Bars -->
+    <rect x="113" y="235" width="50" height="65" fill="#9B9390" opacity="0.55" rx="1"/>
+    <text x="138" y="320" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Volcker</text>
+    <text x="138" y="332" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">1979</text>
+    <rect x="255" y="256" width="50" height="44" fill="#9B9390" opacity="0.55" rx="1"/>
+    <text x="280" y="320" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Greenspan</text>
+    <text x="280" y="332" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">1987</text>
+    <rect x="397" y="218" width="50" height="82" fill="#9B9390" opacity="0.55" rx="1"/>
+    <text x="422" y="320" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Bernanke</text>
+    <text x="422" y="332" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">2006</text>
+    <rect x="539" y="240" width="50" height="60" fill="#9B9390" opacity="0.55" rx="1"/>
+    <text x="564" y="320" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Yellen</text>
+    <text x="564" y="332" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">2014</text>
+    <rect x="627" y="202" width="50" height="98" fill="#9B9390" opacity="0.55" rx="1"/>
+    <text x="652" y="320" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Powell</text>
+    <text x="652" y="332" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">2018</text>
+    <rect x="723" y="82" width="50" height="218" fill="#BF1922" opacity="0.9" rx="1"/>
+    <!-- FIX: "4 votes" label moved above bar, no dot overlap. Value label inside bar. -->
+    <text x="748" y="76" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="700">4.0 · highest on record</text>
+    <text x="748" y="170" font-family="IBM Plex Mono,monospace" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">4.0</text>
+    <text x="748" y="184" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(255,255,255,.8)" text-anchor="middle">dissent votes</text>
+    <text x="748" y="320" font-family="IBM Plex Mono,monospace" font-size="9" fill="#BF1922" text-anchor="middle" font-weight="700">Warsh</text>
+    <text x="748" y="332" font-family="IBM Plex Mono,monospace" font-size="8" fill="#BF1922" text-anchor="middle" font-weight="700">2026</text>
+    <!-- Volatility line, NO dot on Warsh bar (removed per fix) -->
+    <polyline points="138,69 280,178 422,137 564,197 652,150" fill="none" stroke="#BF1922" stroke-width="2.2" stroke-dasharray="6 3" stroke-linejoin="round"/>
+    <!-- Warsh projected point: moved to top of bar without overlapping "High vol" text -->
+    <circle cx="748" cy="82" r="6" fill="#BF1922" stroke="#fff" stroke-width="1.5"/>
+    <!-- Legend -->
+    <rect x="90" y="350" width="14" height="10" fill="#9B9390" opacity="0.6" rx="1"/>
+    <text x="108" y="359" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838">Avg dissent votes per meeting at transition</text>
+    <line x1="370" y1="355" x2="400" y2="355" stroke="#BF1922" stroke-width="2" stroke-dasharray="5 2"/>
+    <text x="404" y="359" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922">UST annualised volatility +12m post-transition (right axis)</text>
+    <rect x="92" y="372" width="14" height="10" fill="#BF1922" opacity="0.85" rx="1"/>
+    <text x="110" y="381" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" font-weight="600">Warsh 2026: highest dissent at transition in the Fed's modern history. Four members voted against the committee consensus.</text>
+    <text x="798" y="410" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>Warsh inherits the most internally divided Fed since Volcker faced the political pressures of 1979.</strong> Every prior transition with elevated dissent produced above-average bond volatility in the following 12 months. For institutional allocators whose fixed income programme references the risk-free rate, the Warsh transition introduces a volatility premium that does not yet appear in pricing models. EUR real estate debt priced at origination carries none of it. The rate was agreed at closing. It does not move with the committee.</div>
+  </div>
+  <div class="chart-source">Source: Federal Reserve FOMC historical voting records · BLS April 2026 employment situation · BEA Q1 2026 productivity · FactSet S&amp;P 500 earnings update May 2026 · Red Pin Capital analysis</div>
+</div>
+
+<!-- SECTION 03: EUROPEAN REAL ESTATE -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">PBSA · Office to Residential · Supply Deficit. Planning Constraint. Structural Demand.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">03</div><div class="sec-title">European Real Estate &nbsp;|&nbsp; Two Structural Capital Deployment Opportunities</div></div>
+</div>
+<div class="prose">
+<p>European real estate in May 2026 offers two distinct capital deployment windows that share a common characteristic: each is driven by a structural supply deficit that planning timelines and regulatory constraints will not close quickly. For pension funds, endowments and family offices seeking contractual income secured against physical collateral in established legal jurisdictions, the entry point across both sub-sectors is better today than it has been at any point since 2018.</p>
+<div class="subhead">PBSA in Iberia: The Undersupply Nobody Is Financing</div>
+<p>Purpose-built student accommodation in Lisbon and Madrid sits at or near 100% occupancy with a waiting list dynamic in both markets. The supply deficit is structural and measurable. Lisbon has c.100,000 higher education students enrolled across its universities with fewer than 8,000 purpose-built student beds available, a ratio of c.8 beds per 100 students. The European average is c.22 beds per 100 students. Madrid has c.350,000 students enrolled and a similarly acute undersupply of purpose-built stock.</p>
+<p>The demand driver is not solely domestic. UK post-study visa restrictions introduced in January 2024 have redirected a material flow of Indian, Nigerian and South-East Asian students toward English-taught programmes in southern Europe. Portugal's universities have expanded English-medium instruction specifically to capture this flow. The University of Lisbon, NOVA University Lisbon and Instituto Superior Técnico have all increased international student intake materially since 2024. Madrid's IE University, Carlos III University and Comillas Pontifical University are experiencing equivalent demand. These are graduate students from families with demonstrated capacity to pay, seeking a managed, safe, high-quality residential environment close to their institution.</p>
+<p>Development finance for PBSA in Iberia carries entry yields on cost of 7 to 9%, against sub-5% for equivalent PBSA assets in Amsterdam, Dublin and London. The planning timeline in Lisbon for a purpose-built student block of 200 to 400 beds runs 18 to 36 months, which limits competitive response and protects the yield advantage of assets that have already cleared planning. The development finance structure: a senior secured whole loan at 65% of gross development value, drawn in tranches against construction milestones, repaid on completion and stabilisation, with a first-ranking charge over the site and the development from the day of first drawdown.</p>
+<div class="subhead">Office to Residential: The Value Arbitrage That Is Time-Limited</div>
+<p>France passed legislation in June 2025 granting mayors the legal authority to override local urban planning regulations when approving office-to-residential conversions. French senators estimated at the time of passage that the changes could unlock up to one million new homes from existing stock. In Germany, Gensler developed a building analysis tool in 2024 that compresses the feasibility assessment for office-to-residential conversion from weeks to minutes, unlocking developer interest in buildings that would previously have been assessed as too uncertain to pursue.</p>
+<p>Secondary grade office in core European cities, the B and C grade stock vacated by tenants moving to grade A ESG-compliant space, is impaired by two simultaneous forces: remote work reducing occupier demand and EPBD obligations requiring costly EPC upgrades that owners cannot justify against a weakening rental income stream. The same building, converted to residential use in a core urban location in Paris, Lisbon, Madrid or Milan, commands a residential price per square metre that in most cases exceeds the cost of acquisition plus conversion by 40 to 60%. That arbitrage is the private capital opportunity. The window is time-limited because the supply of suitable B and C grade buildings in core locations is finite and narrows with every conversion completed.</p>
+<p>Red Pin Capital is building an active pipeline of office-to-residential opportunities across southern Europe. A dedicated briefing on specific markets and deal structures follows in a forthcoming edition.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">European Real Estate &nbsp;·&nbsp; PBSA Supply Gap &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">The widest supply gap sits alongside the highest development yield. Lisbon and Madrid are the only major cities where both conditions coexist.</div>
+  <div class="chart-sub">Purpose-built student beds per 100 enrolled students (x-axis) versus development yield on cost (y-axis) across six major European cities. All labels placed outside data points for clarity. Source: Red Pin Capital analysis, Knight Frank Student Housing Report 2025, CBRE European Living Q1 2026.</div>
+  <svg viewBox="0 0 860 500" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm03v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+    </defs>
+    <rect width="860" height="500" fill="#FFFFFF"/>
+    <rect width="860" height="500" fill="url(#wm03v2)"/>
+    <line x1="90" y1="32" x2="90" y2="350" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="90" y1="350" x2="800" y2="350" stroke="#0D0C0C" stroke-width="1.8"/>
+    <text x="20" y="195" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" transform="rotate(-90,20,195)" letter-spacing=".1em">DEVELOPMENT YIELD ON COST</text>
+    <text x="445" y="388" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" letter-spacing=".1em">PURPOSE-BUILT BEDS PER 100 ENROLLED STUDENTS</text>
+    <text x="82" y="353" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">3%</text>
+    <text x="82" y="308" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">4%</text>
+    <text x="82" y="263" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">5%</text>
+    <text x="82" y="218" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">6%</text>
+    <text x="82" y="173" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">7%</text>
+    <text x="82" y="128" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">8%</text>
+    <text x="82" y="83" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">9%</text>
+    <text x="82" y="38" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">10%</text>
+    <text x="90" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">0</text>
+    <text x="208" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">5</text>
+    <text x="326" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">10</text>
+    <text x="444" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">15</text>
+    <text x="562" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">20</text>
+    <text x="680" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">25</text>
+    <text x="800" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">30</text>
+    <line x1="90" y1="308" x2="800" y2="308" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="263" x2="800" y2="263" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="218" x2="800" y2="218" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="173" x2="800" y2="173" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="128" x2="800" y2="128" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="83" x2="800" y2="83" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="208" y1="32" x2="208" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="326" y1="32" x2="326" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="444" y1="32" x2="444" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="562" y1="32" x2="562" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="680" y1="32" x2="680" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <!-- FIX 1: Red Pin focus zone enlarged to capture Madrid (x≈327,y≈146) and Barcelona (x≈398,y≈191) -->
+    <rect x="90" y="32" width="340" height="270" fill="#FDF8F5" rx="2" opacity="0.85"/>
+    <text x="235" y="56" font-family="IBM Plex Mono,monospace" font-size="10" fill="#BF1922" text-anchor="middle" letter-spacing=".1em" font-weight="700">RED PIN FOCUS ZONE</text>
+    <text x="235" y="70" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle">Low supply · High yield · Strong demand</text>
+    <!-- LISBON: x=279, y=100 -->
+    <circle cx="279" cy="100" r="22" fill="#BF1922" opacity="0.92"/>
+    <line x1="301" y1="100" x2="330" y2="100" stroke="#BF1922" stroke-width="1.5"/>
+    <rect x="330" y="80" width="130" height="42" fill="#0D0C0C" rx="2"/>
+    <text x="395" y="97" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">Lisbon</text>
+    <text x="395" y="111" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.85)" text-anchor="middle">8 beds · 8.5% yield</text>
+    <!-- MADRID: x=327, y=146. FIX 2: move label box further right so it clears the red circle -->
+    <circle cx="327" cy="146" r="20" fill="#BF1922" opacity="0.82"/>
+    <line x1="347" y1="146" x2="470" y2="130" stroke="#BF1922" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="470" y="118" width="120" height="38" fill="#0D0C0C" rx="2"/>
+    <text x="530" y="133" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">Madrid</text>
+    <text x="530" y="147" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="rgba(255,255,255,.85)" text-anchor="middle">10 beds · 7.5% yield</text>
+    <!-- BARCELONA: x=398, y=191. Label moved left, black box matching Madrid/Lisbon style -->
+    <circle cx="398" cy="191" r="17" fill="#E32832" opacity="0.7"/>
+    <line x1="381" y1="191" x2="350" y2="210" stroke="#E32832" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <rect x="210" y="198" width="140" height="38" fill="#0D0C0C" rx="2"/>
+    <text x="280" y="214" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">Barcelona</text>
+    <text x="280" y="228" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="rgba(255,255,255,.85)" text-anchor="middle">13 beds · 6.5% yield</text>
+    <!-- DUBLIN: x=516, y=236. FIX 3: move label box right and up so it clears Barcelona -->
+    <circle cx="516" cy="236" r="16" fill="#9B9390" opacity="0.7"/>
+    <line x1="532" y1="228" x2="610" y2="195" stroke="#9B9390" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <rect x="610" y="180" width="145" height="28" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="682" y="197" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Dublin · 18 beds · 5.5%</text>
+    <!-- AMSTERDAM: x=563, y=259 -->
+    <circle cx="563" cy="259" r="16" fill="#9B9390" opacity="0.6"/>
+    <line x1="563" y1="275" x2="563" y2="295" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="487" y="292" width="152" height="26" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="563" y="309" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">Amsterdam · 20 beds · 5.0%</text>
+    <!-- LONDON: x=705, y=296 -->
+    <circle cx="705" cy="296" r="15" fill="#9B9390" opacity="0.5"/>
+    <line x1="705" y1="281" x2="705" y2="262" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="641" y="248" width="128" height="16" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="705" y="259" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838" text-anchor="middle">London · 26 beds · 4.2%</text>
+    <!-- FIX 5: EU avg label, darker colour, larger font -->
+    <line x1="612" y1="32" x2="612" y2="350" stroke="#D8D2CA" stroke-width="1.5" stroke-dasharray="6 3"/>
+    <text x="612" y="46" font-family="IBM Plex Mono,monospace" font-size="10" fill="#6B6460" text-anchor="middle" font-weight="500">EU avg: 22 beds/100 students</text>
+    <text x="798" y="490" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>Lisbon and Madrid are the only major European cities that combine a supply gap below 10 beds per 100 students with a development yield above 7.5%.</strong> The planning timeline in both cities runs 18 to 36 months, which means the competitive response to current demand cannot materialise quickly. For development finance capital entering now, the structural undersupply is locked in for a minimum of two to three years regardless of new project announcements. Occupancy at stabilisation is not a risk in either market.</div>
+  </div>
+  <div class="chart-source">Source: Red Pin Capital analysis · Knight Frank Student Housing Report 2025 · CBRE European Living Sector Report Q1 2026 · Savills European PBSA Market Report 2025</div>
+</div>
+
+<!-- SECTION 04: BRANDED RESIDENCES -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">910 Active Projects. 200% Growth Since 2015. The Premium Is Real. Until It Is Not.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">04</div><div class="sec-title">Branded Residences &nbsp;|&nbsp; The Full Capital Thesis</div></div>
+</div>
+<div class="prose">
+<p>The global branded residences market reached 910 active projects in 2025, up from 323 in 2015, representing growth of 200% in a decade. According to the Savills Branded Residences Annual Report 2024 to 2025, the development pipeline contains 837 further contracted projects through to 2032. The total number of branded residential units has grown from c.27,000 to more than 162,000 over the past decade. In 2025 alone, 25 countries launched their first branded residential project and 39 new hotel brands and 19 non-hotel luxury brands entered the sector for the first time.</p>
+<div class="subhead">Why Brands Entered Real Estate</div>
+<p>The economics of brand extension into real estate are compelling for both the brand and the developer in ways that are not immediately obvious from outside the transaction. For the brand, a residential project generates three distinct value streams simultaneously. The first is a direct licence fee paid by the developer for the right to use the brand name, typically structured as a percentage of gross sales value ranging from 2 to 6% depending on brand tier and geography. The second is a management fee for operating the residential services if the brand provides those services directly, structured similarly to a hotel management agreement. The third is brand equity amplification: a luxury automotive or fashion brand that names a residential tower in Miami or Dubai generates media coverage, social content and consumer awareness at a fraction of the cost of equivalent paid advertising, reaching a buyer demographic identical to its core product customer. Porsche, Bentley, Armani and Bulgari have all confirmed publicly that their real estate ventures are as much brand marketing vehicles as revenue generators.</p>
+<p>For the developer, the brand premium is the primary economic justification. Knight Frank's verified data across comparable branded and non-branded luxury developments shows that branded residences command a price premium of 25 to 45% over non-branded equivalents in the same market and price tier. On a 200-unit development with an average unit price of $3 million, a 35% brand premium adds $210 million to gross development value. The licence fee to the brand runs typically at 3% of that GDV, or $6.3 million in this example. The developer retains $203.7 million of incremental value from the brand association against a cost of $6.3 million.</p>
+<div class="subhead">The Major Cities and the Brands Present</div>
+<p>The leading markets in 2025 were Dubai with more than 60 active projects, Miami with more than 45, Bangkok with more than 30, London with more than 20 and Saudi Arabia with more than 20 active projects. The Middle East accounts for approximately 27% of the global pipeline. Non-hotel brands now represent 17% of new scheme announcements globally, up from less than 5% in 2018. According to BRESI and Graham Associates data, more than 200 brands are actively involved in branded real estate globally, of which more than 60 are non-hospitality brands spanning fashion, automotive, food and beverage and publishing.</p>
+<p>The brands active across the top markets span hospitality, Ritz-Carlton, Four Seasons, Aman, Rosewood and Mandarin Oriental. Fashion and luxury goods include Armani, Bulgari, Missoni, Elie Saab, Fendi and Versace. Automotive includes Porsche, Bentley and Aston Martin. Food and beverage includes Nobu and Cipriani. The fastest-growing non-hospitality pipeline belongs to Pininfarina, the Turin-based automotive designer, with 30 projects under development concentrated in South America.</p>
+<div class="subhead">The Evolution: Non-Hotel Brands and the Secondary Market</div>
+<p>Non-hotel branded residences now represent approximately 30% of the global development pipeline according to Knight Frank's Residence Report 2025 to 2026. These are projects where the brand brings name, design standards and lifestyle identity without operating an adjacent hotel. The Bentley Tower in Miami features car elevators that bring vehicles directly to the apartment level. Armani Residences in Dubai embed the brand's aesthetic philosophy at every surface. These projects are not selling accommodation. They are selling entry into a branded lifestyle community at a price point that signals clearly to the buyer's peers.</p>
+<p>For branded residences where brand-geography fit is correct, the secondary market data supports the premium durability thesis. Four Seasons, Ritz-Carlton and Aman residences consistently trade at premiums to the original sale price in markets where the brand has genuine recognition among buyers. Management continuity, the same standards, the same service culture, the same amenity offering, is valued by secondary buyers purchasing a known product rather than a speculative one. This liquidity advantage compounds: a branded residence in a market where the brand resonates has a materially larger pool of motivated secondary buyers, translating into faster sales, lower discounting and better realised prices for sellers.</p>
+<div class="subhead">When Brand-Geography Mismatch Destroys Value</div>
+<p>The 25 to 45% premium is not automatic. It is contingent on three conditions being met simultaneously: the brand must be recognisable to the target buyer population; the brand's lifestyle values must align with what that buyer population seeks in a primary or secondary residence; and the brand must not already be so ubiquitous in the target market that the scarcity premium disappears.</p>
+<p>Brand-geography mismatch takes two distinct forms. The first is unfamiliarity: a brand with strong recognition in North America or Western Europe that is effectively unknown to buyers in its target geography. A development in Bangkok or Kuala Lumpur branded by a European fashion house with limited retail presence in South-East Asia generates no premium because the buyer cannot value what they do not recognise. The second is cultural misalignment: some buyer cultures do not respond to the aspirational cues that branded residences are designed to transmit. In several East Asian markets, buyers place primary value on location, floor area and building specification rather than brand association. The brand premium that the developer prices in is simply not paid because the buyer does not make purchasing decisions that way.</p>
+<p>The secondary market is where brand-geography mismatch becomes most visible. A branded residence that sold at a 40% premium on launch in a market where the brand did not resonate with buyers subsequently trades at a discount to comparable non-branded stock because the pool of motivated buyers is smaller, not larger. Developers who have experienced this outcome in markets across South-East Asia and parts of Eastern Europe have disclosed it in earnings presentations under the heading of slower-than-expected absorption.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">Branded Residences &nbsp;·&nbsp; Global Brand-Geography Analysis &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">Brand premium is real. But geography determines whether it accrues or destroys value on the secondary market.</div>
+  <div class="chart-sub">Price premium achieved (y-axis) versus brand recognition score among the local HNW buyer population (x-axis) by market. The dashed diagonal marks equilibrium. Points above the line signal overpriced brand extension. Points below signal sustainable premium. All city labels placed outside the data points.</div>
+  <svg viewBox="0 0 860 500" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm04v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+    </defs>
+    <rect width="860" height="500" fill="#FFFFFF"/>
+    <rect width="860" height="500" fill="url(#wm04v2)"/>
+    <line x1="90" y1="32" x2="90" y2="330" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="90" y1="330" x2="800" y2="330" stroke="#0D0C0C" stroke-width="1.8"/>
+    <text x="82" y="333" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">0%</text>
+    <text x="82" y="284" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">10%</text>
+    <text x="82" y="234" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">20%</text>
+    <text x="82" y="184" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">30%</text>
+    <text x="82" y="135" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">40%</text>
+    <text x="82" y="85" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">50%</text>
+    <text x="82" y="35" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">60%</text>
+    <text x="20" y="185" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" transform="rotate(-90,20,185)" letter-spacing=".1em">PRICE PREMIUM VS NON-BRANDED</text>
+    <text x="90" y="348" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">0%</text>
+    <text x="268" y="348" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">25%</text>
+    <text x="445" y="348" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">50%</text>
+    <text x="623" y="348" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">75%</text>
+    <text x="800" y="348" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">100%</text>
+    <text x="445" y="366" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" letter-spacing=".1em">BRAND RECOGNITION AMONG LOCAL HNW BUYER POPULATION</text>
+    <line x1="90" y1="284" x2="800" y2="284" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="234" x2="800" y2="234" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="184" x2="800" y2="184" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="135" x2="800" y2="135" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="85" x2="800" y2="85" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="268" y1="32" x2="268" y2="330" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="445" y1="32" x2="445" y2="330" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="623" y1="32" x2="623" y2="330" stroke="#F0ECE7" stroke-width="1"/>
+    <!-- Equilibrium diagonal -->
+    <line x1="90" y1="330" x2="800" y2="32" stroke="#D8D2CA" stroke-width="1.8" stroke-dasharray="7 4"/>
+    <!-- Equilibrium line label: placed at bottom right of diagonal, clear of all circles -->
+    <rect x="640" y="300" width="158" height="26" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="719" y="316" font-family="IBM Plex Mono,monospace" font-size="9" fill="#9B9390" text-anchor="middle">↑ Dashed line = equilibrium</text>
+    <!-- DUBAI: x=715, y=131. FIX 5: move label above, clear of Miami -->
+    <circle cx="715" cy="131" r="22" fill="#1A5C38" opacity="0.82"/>
+    <line x1="715" y1="109" x2="715" y2="60" stroke="#1A5C38" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="624" y="36" width="182" height="34" fill="#F4F1EC" stroke="#1A5C38" stroke-width="1" rx="2"/>
+    <text x="715" y="50" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">Dubai  88% · +40%</text>
+    <text x="715" y="64" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">60+ active projects · Fit confirmed</text>
+    <!-- MIAMI: x=687, y=141. FIX 4: move label left so it clears Dubai -->
+    <circle cx="687" cy="141" r="20" fill="#1A5C38" opacity="0.72"/>
+    <line x1="667" y1="141" x2="560" y2="152" stroke="#1A5C38" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="406" y="130" width="174" height="38" fill="#F4F1EC" stroke="#1A5C38" stroke-width="1" rx="2"/>
+    <text x="493" y="147" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="700">Miami  84% · +38%</text>
+    <text x="493" y="161" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">45+ active projects · Fit confirmed</text>
+    <!-- LONDON: x=658, y=156 -->
+    <circle cx="658" cy="156" r="18" fill="#1A5C38" opacity="0.62"/>
+    <line x1="658" y1="174" x2="658" y2="200" stroke="#1A5C38" stroke-width="1.2"/>
+    <rect x="596" y="200" width="124" height="24" fill="#F4F1EC" stroke="#1A5C38" stroke-width="1" rx="2"/>
+    <text x="658" y="214" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle">London · 80% · +35%</text>
+    <!-- SINGAPORE: x=587, y=191. FIX 6: extend line and move label further down -->
+    <circle cx="587" cy="191" r="16" fill="#1A5C38" opacity="0.55"/>
+    <line x1="587" y1="207" x2="587" y2="265" stroke="#1A5C38" stroke-width="1.2" stroke-dasharray="4 3"/>
+    <rect x="523" y="265" width="128" height="22" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="587" y="279" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838" text-anchor="middle">Singapore · 70% · +28%</text>
+    <!-- BANGKOK: x=480, y=201 -->
+    <circle cx="480" cy="201" r="15" fill="#9B9390" opacity="0.6"/>
+    <line x1="480" y1="216" x2="480" y2="238" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="416" y="238" width="128" height="22" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="480" y="252" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838" text-anchor="middle">Bangkok · 55% · +26%</text>
+    <!-- MISMATCH A: x=317, y=111. FIX 2: include country, enlarge box -->
+    <circle cx="317" cy="111" r="20" fill="#BF1922" opacity="0.88"/>
+    <line x1="305" y1="93" x2="280" y2="68" stroke="#BF1922" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <rect x="90" y="34" width="190" height="58" fill="#0D0C0C" rx="2"/>
+    <text x="185" y="51" font-family="IBM Plex Mono,monospace" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">Thailand (resort market)</text>
+    <text x="185" y="64" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="rgba(255,255,255,.85)" text-anchor="middle">32% recognition · +44% asked</text>
+    <text x="185" y="76" font-family="IBM Plex Mono,monospace" font-size="8" fill="#FF6060" text-anchor="middle">Brand-geography mismatch</text>
+    <text x="185" y="87" font-family="IBM Plex Mono,monospace" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle">Secondary discount expected</text>
+    <!-- MISMATCH B: x=232, y=141. FIX 3: include country, enlarge box -->
+    <circle cx="232" cy="141" r="18" fill="#BF1922" opacity="0.75"/>
+    <line x1="232" y1="159" x2="232" y2="192" stroke="#BF1922" stroke-width="1.2"/>
+    <rect x="130" y="192" width="204" height="48" fill="#F4F1EC" stroke="#BF1922" stroke-width="1.2" rx="2"/>
+    <text x="232" y="208" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="700">Vietnam / Eastern Europe market</text>
+    <text x="232" y="221" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle">20% recognition · +38% asked</text>
+    <text x="232" y="233" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">Brand-geography mismatch</text>
+    <!-- FIX 1: Replace black bottom strip with clean HTML-style table rendered as SVG -->
+    <rect x="90" y="390" width="720" height="84" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="450" y="406" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle" letter-spacing=".12em">ACTIVE PROJECTS 2025  ·  BRAND FIT ASSESSMENT</text>
+    <!-- Dividers -->
+    <line x1="234" y1="412" x2="234" y2="468" stroke="#D8D2CA" stroke-width="1"/>
+    <line x1="378" y1="412" x2="378" y2="468" stroke="#D8D2CA" stroke-width="1"/>
+    <line x1="522" y1="412" x2="522" y2="468" stroke="#D8D2CA" stroke-width="1"/>
+    <line x1="666" y1="412" x2="666" y2="468" stroke="#D8D2CA" stroke-width="1"/>
+    <!-- Dubai -->
+    <text x="162" y="430" font-family="IBM Plex Mono,monospace" font-size="12" fill="#0D0C0C" text-anchor="middle" font-weight="700">60+</text>
+    <text x="162" y="446" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="600">Dubai</text>
+    <text x="162" y="460" font-family="IBM Plex Mono,monospace" font-size="8" fill="#1A5C38" text-anchor="middle">Brand fit: Strong</text>
+    <!-- Miami -->
+    <text x="306" y="430" font-family="IBM Plex Mono,monospace" font-size="12" fill="#0D0C0C" text-anchor="middle" font-weight="700">45+</text>
+    <text x="306" y="446" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="600">Miami</text>
+    <text x="306" y="460" font-family="IBM Plex Mono,monospace" font-size="8" fill="#1A5C38" text-anchor="middle">Brand fit: Strong</text>
+    <!-- Bangkok -->
+    <text x="450" y="430" font-family="IBM Plex Mono,monospace" font-size="12" fill="#0D0C0C" text-anchor="middle" font-weight="700">30+</text>
+    <text x="450" y="446" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="600">Bangkok</text>
+    <text x="450" y="460" font-family="IBM Plex Mono,monospace" font-size="8" fill="#9B9390" text-anchor="middle">Brand fit: Selective</text>
+    <!-- London -->
+    <text x="594" y="430" font-family="IBM Plex Mono,monospace" font-size="12" fill="#0D0C0C" text-anchor="middle" font-weight="700">20+</text>
+    <text x="594" y="446" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="600">London</text>
+    <text x="594" y="460" font-family="IBM Plex Mono,monospace" font-size="8" fill="#1A5C38" text-anchor="middle">Brand fit: Strong</text>
+    <!-- Saudi -->
+    <text x="738" y="430" font-family="IBM Plex Mono,monospace" font-size="12" fill="#0D0C0C" text-anchor="middle" font-weight="700">20+</text>
+    <text x="738" y="446" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="600">Saudi Arabia</text>
+    <text x="738" y="460" font-family="IBM Plex Mono,monospace" font-size="8" fill="#9B9390" text-anchor="middle">Brand fit: Emerging</text>
+    <text x="798" y="492" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>The 25 to 45% price premium of branded residences over non-branded equivalents is real in markets where the brand is genuinely recognised by the local HNW buyer population.</strong> Where it is not, where the developer has imported a brand that means nothing to the buyer writing the cheque, the premium is fictional at launch and a discount on the secondary market. The markets where brand-geography fit is weakest are not always the obvious ones. The investor who understands this dynamic before it appears in the absorption data structures correctly from the outset.</div>
+  </div>
+  <div class="chart-source">Source: Knight Frank Branded Residences Report 2025-2026 · Savills Branded Residences Annual Report 2024-2025 · BRESI · Graham Associates · Red Pin Capital analysis</div>
+</div>
+
+<!-- SECTION 05: LONGEVITY -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">4IR &nbsp;·&nbsp; $8.49 Billion in 2024. Big Pharma Entered 2025. Hospitality and Real Estate Are the Infrastructure Layer.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">05</div><div class="sec-title">Longevity &nbsp;|&nbsp; The Asset Class That Private Markets Are Building Right Now</div></div>
+</div>
+<div class="prose">
+<p>The longevity sector raised $8.49 billion across 331 deals in 2024, according to Longevity.Technology's 2024 Annual Longevity Investment Report published in May 2025. That figure represents more than double the $3.82 billion invested in 2023 and marked the sector's transition from niche academic interest into a mainstream institutional investment category. The 2024 peak was not the end of the story. It was the trigger for what came next.</p>
+<div class="subhead">What the 2024 Peak Triggered in 2025</div>
+<p>The signal in 2025 was not the total funding number. It was who started writing the cheques. Eli Lilly invested in NewLimit's Series B extension, the first direct investment by a top-five global pharmaceutical company in a cellular reprogramming business. AbbVie Ventures led Oisin Biotechnologies' Series A. OpenAI and Retro Biosciences deepened their collaboration on AI-designed proteins used in stem cell reprogramming. Manulife launched a $350 million Longevity Institute committed through 2030, representing major institutional insurance capital entering longevity for the first time. Retro Biosciences raised $1 billion in Q1 2025, the single largest longevity funding round since Altos Labs' $3 billion launch round in 2022. Function Health closed a $298 million Series B in Q4 2025 at a $2.5 billion valuation, the largest disclosed venture round among private longevity companies. NewLimit raised $175 million across two tranches in 2025.</p>
+<p>These are not angel-round cheques. These are institutional-scale capital commitments from the largest pharmaceutical companies in the world and the largest insurance company in North America. The sector has passed the point where its participants need to argue the hypothesis. They are now arguing execution.</p>
+<div class="subhead">The Three Layers of the Longevity Economy</div>
+<p>The longevity economy operates across three distinct layers that have different risk profiles and different capital requirements. The biotech layer, cellular reprogramming, senotherapeutics, epigenetic intervention, remains primarily a venture capital domain because the timelines are long and the binary risk is high. The consumer diagnostics layer, biological age testing, whole-body MRI platforms, wearable biometric tracking, is generating recurring revenue, demonstrated consumer adoption and data assets that compound in value. Function Health, ŌURA and their equivalents are platform businesses now, not science projects. The infrastructure layer, longevity clinics, wellness residences, diagnostic centre networks, integrated health platforms, is the layer closest to private equity deployment and the layer where Red Pin Capital is building its operational focus.</p>
+<div class="subhead">Longevity Hospitality and Real Estate: The Infrastructure Layer</div>
+<p>Longevity clinics are scaling into a definable asset class. A network of 10 to 20 longevity clinics across high-income urban markets, each serving 300 to 500 clients at an average annual spend of $15,000 to $50,000, generates $45 million to $1 billion in annual revenue with the margin profile of a medical practice and the data asset of a technology platform. Fountain Life, Human Longevity Inc. and Circulate Health are all expanding clinic networks across the US, creating the physical infrastructure for preventive healthspan medicine that institutional capital can acquire or lend against.</p>
+<p>The adjacency to hospitality and real estate is direct and structural. The longevity residence model, a managed residential environment where high-net-worth clients live in proximity to comprehensive longevity medicine services, is emerging as a distinct product category at the intersection of luxury hospitality, residential real estate and preventive medicine. The client is already defined. The price point is already validated. The operational model borrows from branded residences on one side and longevity clinics on the other. Red Pin Capital is tracking this intersection across the United States, the Middle East and Spain, where climate, HNW resident population and regulatory environment create favourable conditions. A dedicated briefing on the European longevity residence opportunity follows in a forthcoming edition.</p>
+<div class="subhead">The Demographic Foundation</div>
+<p>The macro case is not speculative. The global population aged 60 and older reaches 1.4 billion by 2030, according to the World Health Organisation. The number of people aged 80 and older will nearly triple by 2050. US annual healthcare expenditure reached c.$5.3 trillion in 2024, of which approximately 85% related to chronic disease, precisely the conditions that longevity medicine is designed to prevent rather than treat. The economic argument for moving the budget from treatment to prevention is straightforward. The capital required to build the infrastructure that makes prevention commercially accessible is where private investment is being deployed.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">Longevity Investment &nbsp;·&nbsp; 4IR Sector Analysis &nbsp;·&nbsp; 2019 to 2024 &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">$8.49 billion in 2024. Big pharma entered 2025. The infrastructure layer, clinics, residences, diagnostics, is the PE entry point.</div>
+  <div class="chart-sub">Annual investment into the longevity sector 2019 to 2024, broken down by stage: early-stage VC, later-stage VC and PE plus big pharma. The 2024 bar highlighted in red. Source: Longevity.Technology 2024 Annual Report (published May 2025). 2025 data shows continued big pharma and institutional entry rather than a new aggregate total.</div>
+  <svg viewBox="0 0 860 400" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm05v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+    </defs>
+    <rect width="860" height="400" fill="#FFFFFF"/>
+    <rect width="860" height="400" fill="url(#wm05v2)"/>
+
+    <line x1="90" y1="28" x2="90" y2="300" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="90" y1="300" x2="800" y2="300" stroke="#0D0C0C" stroke-width="1.8"/>
+
+    <!-- Y: 0-9bn, each bn = 272/9 = 30.2px -->
+    <text x="82" y="303" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$0</text>
+    <text x="82" y="242" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$2bn</text>
+    <text x="82" y="182" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$4bn</text>
+    <text x="82" y="121" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$6bn</text>
+    <text x="82" y="60" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$8bn</text>
+    <text x="82" y="34" font-family="IBM Plex Mono,monospace" font-size="9" fill="#BF1922" text-anchor="end">$9bn</text>
+    <text x="20" y="170" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" transform="rotate(-90,20,170)" letter-spacing=".1em">ANNUAL INVESTMENT ($BN)</text>
+
+    <!-- Grid -->
+    <line x1="90" y1="242" x2="800" y2="242" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="182" x2="800" y2="182" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="121" x2="800" y2="121" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="60" x2="800" y2="60" stroke="#F0ECE7" stroke-width="1"/>
+
+    <!-- Scale: y = 300 - value*30.2, bar width=80px -->
+    <!-- 6 years: 2019,2020,2021,2022,2023,2024. x centres spaced: 90+(i+1)*118-32 → 141,259,377,495,613,731 -->
+
+    <!-- 2019: $2.1bn total: early 1.4 h=42, late 0.7 h=21 -->
+    <rect x="101" y="258" width="80" height="42" fill="#D8D2CA" rx="1"/>
+    <rect x="101" y="237" width="80" height="21" fill="#9B9390" rx="1"/>
+    <text x="141" y="318" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">2019</text>
+    <text x="141" y="228" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">$2.1bn</text>
+
+    <!-- 2020: $2.6bn: early 1.7 h=51, late 0.9 h=27 -->
+    <rect x="219" y="249" width="80" height="51" fill="#D8D2CA" rx="1"/>
+    <rect x="219" y="222" width="80" height="27" fill="#9B9390" rx="1"/>
+    <text x="259" y="318" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">2020</text>
+    <text x="259" y="214" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">$2.6bn</text>
+
+    <!-- 2021: $6.4bn (includes Altos $3bn): early 3.4 h=103, late 2.6 h=79, pe 0.4 h=12 -->
+    <rect x="337" y="197" width="80" height="103" fill="#D8D2CA" rx="1"/>
+    <rect x="337" y="118" width="80" height="79" fill="#9B9390" rx="1"/>
+    <rect x="337" y="106" width="80" height="12" fill="#BF1922" opacity="0.55" rx="1"/>
+    <text x="377" y="318" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">2021</text>
+    <text x="377" y="98" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">$6.4bn</text>
+
+    <!-- 2022: $5.8bn: early 3.5 h=106, late 1.9 h=57, pe 0.4 h=12 -->
+    <rect x="455" y="194" width="80" height="106" fill="#D8D2CA" rx="1"/>
+    <rect x="455" y="137" width="80" height="57" fill="#9B9390" rx="1"/>
+    <rect x="455" y="125" width="80" height="12" fill="#BF1922" opacity="0.55" rx="1"/>
+    <text x="495" y="318" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">2022</text>
+    <text x="495" y="117" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">$5.8bn</text>
+
+    <!-- 2023: $3.82bn: early 2.4 h=72, late 1.2 h=36, pe 0.22 h=7 -->
+    <rect x="573" y="228" width="80" height="72" fill="#D8D2CA" rx="1"/>
+    <rect x="573" y="192" width="80" height="36" fill="#9B9390" rx="1"/>
+    <rect x="573" y="185" width="80" height="7" fill="#BF1922" opacity="0.6" rx="1"/>
+    <text x="613" y="318" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">2023</text>
+    <text x="613" y="177" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">$3.82bn</text>
+
+    <!-- 2024: $8.49bn: early 5.0 h=151, late 2.56 h=77, pe/pharma 0.93 h=28 -->
+    <rect x="691" y="149" width="80" height="151" fill="#D8D2CA" rx="1"/>
+    <rect x="691" y="72" width="80" height="77" fill="#9B9390" rx="1"/>
+    <rect x="691" y="44" width="80" height="28" fill="#BF1922" opacity="0.9" rx="1"/>
+    <text x="731" y="318" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="700">2024</text>
+    <text x="731" y="36" font-family="IBM Plex Mono,monospace" font-size="10" fill="#BF1922" text-anchor="middle" font-weight="700">$8.49bn · 331 deals</text>
+
+    <!-- Legend -->
+    <rect x="90" y="336" width="14" height="10" fill="#D8D2CA" rx="1"/>
+    <text x="108" y="345" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838">Early-stage VC</text>
+    <rect x="220" y="336" width="14" height="10" fill="#9B9390" rx="1"/>
+    <text x="238" y="345" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838">Later-stage VC</text>
+    <rect x="350" y="336" width="14" height="10" fill="#BF1922" opacity="0.85" rx="1"/>
+    <text x="368" y="345" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" font-weight="600">PE and big pharma, entering at scale in 2025</text>
+
+    <text x="798" y="390" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>$8.49 billion in 2024. Eli Lilly, AbbVie and Manulife entering in 2025. The longevity sector is at the transition point where private credit was in 2005 and branded residences were in 2012.</strong> The infrastructure layer, clinical networks, diagnostic platforms, longevity residences, is generating the kind of seasoned cash flows and proprietary data assets that private equity can underwrite. Red Pin Capital's focus is on the European longevity residence and clinical infrastructure opportunity: the built environment where the longevity economy lives.</div>
+  </div>
+  <div class="chart-source">Source: Longevity.Technology 2024 Annual Longevity Investment Report published May 2025 · New Market Pitch Longevity Funding Trends updated April 2026 · New Market Pitch Q4 2025 Longevity Market Update · AltStreet Longevity Funding Landscape 2026 · Red Pin Capital analysis</div>
+</div>
+
+<!-- SECTION 06: MUSIC IP -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">$11 Billion Paid Out in 2025. Artists Received a Fraction. The Catalogue Is the Asset.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">06</div><div class="sec-title">Music IP and Catalogues &nbsp;|&nbsp; The Full Monetisation Picture</div></div>
+</div>
+<div class="prose">
+<p>Spotify paid more than $11 billion to the music industry in 2025, the largest annual royalty payment from any single retailer in the history of recorded music, according to Spotify's own verified disclosure published in January 2026. Independent artists and labels accounted for half of all royalties paid. Spotify's total revenue in Q4 2025 alone was &euro;4.5 billion. The platform paid out approximately two-thirds of its revenue to rights holders. The arithmetic that this produces for the individual artist is one of the defining structural inequalities in modern creative commerce.</p>
+<div class="subhead">The Waterfall: From Stream to Artist Pocket</div>
+<p>An artist with 100 million streams on Spotify in a calendar year earns approximately $400,000 from the platform before any other party takes their share, based on an average per-stream rate of $0.004. That $400,000 does not reach the artist. It reaches the rights holder. The path from rights holder to artist runs through a chain of intermediaries, each of which extracts a fee and introduces a delay.</p>
+<p>The label typically holds the master recording copyright and takes 70 to 85% of master royalties under a traditional recording contract, leaving the artist with 15 to 30% of master income. The publisher holds the composition copyright and typically takes 25% of composition royalties under a publishing deal. The distributor takes 10 to 20% of net receipts for placing the music on platforms. The collection society takes an administrative fee of 10 to 15% of collections. The result: on $400,000 of platform income, an artist on a traditional label deal with standard publishing and distribution arrangements receives between $20,000 and $60,000. The label, publisher, distributor and collection society collectively retain $340,000 to $380,000.</p>
+<p>The platform did not create this inequality. It made it visible by creating a direct, measurable stream-to-revenue relationship for the first time in the history of recorded music. The inequality existed when music was sold on physical media. Streaming made it quantifiable.</p>
+<div class="subhead">The Catalogue Business: What It Is and How It Is Valued</div>
+<p>A music catalogue is a portfolio of intellectual property rights, master recordings, composition copyrights or both, that generates royalty income across multiple channels: streaming, sync licensing for film and television, performance royalties when music is played in public or broadcast, mechanical royalties when music is reproduced and, increasingly, AI training licensing. The income is contractual, predictable and not correlated with traditional financial markets. A catalogue of hit songs from the 1970s earns royalties whether the S&amp;P 500 is at 5,000 or 9,000.</p>
+<p>Catalogue values are expressed as a multiple of net publisher's share, which is the annual income flowing to the owner of the composition copyright after collection society fees. Peak multiples in the 2021 market reached 18 to 25 times NPS, driven by low interest rates and institutional demand following a series of high-profile acquisitions. The market has repriced materially. Verified 2026 acquisition multiples for tier-one catalogues run at 12 to 18 times NPS, according to Chartlex's live tracker updated 28 April 2026. Mid-market catalogues trade at 8 to 12 times. This repricing is the entry point for institutional capital.</p>
+<p>The acquisition structure at institutional scale has been validated. Blackstone acquired Hipgnosis Songs Fund for $1.58 billion in July 2024, giving the portfolio of 45,000 songs across 145 catalogues an enterprise value of approximately $2.2 billion. Blackstone subsequently completed two asset-backed securitisations: $1.47 billion in November 2024 and $372 million in July 2025, the first music ABS transactions to carry public credit ratings from Fitch and Standard &amp; Poor's. Warner Music and Bain Capital announced a joint acquisition vehicle of up to $1.2 billion earmarked for catalogue acquisitions in 2026. The institutional market is active and growing.</p>
+<div class="subhead">The Investment Thesis: Mid-Market Catalogues Before Emerging Market Growth Re-Rates the Asset</div>
+<p>The thesis rests on two drivers. The first is the current multiple discount relative to the 2021 peak, creating an entry point 30 to 40% below what the same assets would have cost three years ago. The second is the structural growth of streaming in emerging markets, India, Brazil, Nigeria, Indonesia, which has not yet been priced into most catalogue valuations because the royalty income from those markets remains modest at current per-stream rates. As streaming penetration grows and per-stream royalty rates in emerging markets increase, the income stream from catalogues with strong emerging market listening profiles grows materially without any change to the underlying asset. The catalogue owner who acquired at 12 times NPS in 2026 benefits from that income growth without paying a premium for it at point of acquisition.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">Music IP &nbsp;·&nbsp; Artist Revenue Waterfall &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">100 million streams. $400,000 to the rights holder. $20,000 to $60,000 to the artist. The catalogue owner receives the $400,000 first.</div>
+  <div class="chart-sub">Verified waterfall of $400,000 in Spotify streaming income from 100 million streams through the intermediary chain to the artist, based on standard industry deal terms and verified royalty rates per Spotify Loud &amp; Clear 2025.</div>
+  <svg viewBox="0 0 860 400" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm06v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+    </defs>
+    <rect width="860" height="400" fill="#FFFFFF"/>
+    <rect width="860" height="400" fill="url(#wm06v2)"/>
+    <!-- Step labels above -->
+    <text x="118" y="18" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle" font-weight="600">Platform</text>
+    <text x="118" y="30" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">Payout</text>
+    <text x="246" y="18" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="600">Label</text>
+    <text x="246" y="30" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle">takes 80%</text>
+    <text x="374" y="18" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="600">Publisher</text>
+    <text x="374" y="30" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle">takes 25%</text>
+    <text x="502" y="18" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="600">Distributor</text>
+    <text x="502" y="30" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="middle">takes 15%</text>
+    <text x="630" y="18" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#1A5C38" text-anchor="middle" font-weight="700">Artist</text>
+    <text x="630" y="30" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#1A5C38" text-anchor="middle">receives</text>
+    <!-- Step 1: Platform $400k -->
+    <rect x="63" y="70" width="110" height="240" fill="#D8D2CA" opacity="0.75" rx="2"/>
+    <text x="118" y="180" font-family="IBM Plex Mono,monospace" font-size="13" fill="#0D0C0C" text-anchor="middle" font-weight="700">$400,000</text>
+    <text x="118" y="196" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle">100M streams</text>
+    <text x="118" y="209" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">$0.004/stream</text>
+    <!-- FIX 3: arrows shortened to stay between bars, not overlapping -->
+    <line x1="178" y1="190" x2="186" y2="190" stroke="#D8D2CA" stroke-width="2"/>
+    <polygon points="186,185 191,190 186,195" fill="#D8D2CA"/>
+    <!-- Step 2: Label -->
+    <rect x="191" y="70" width="110" height="192" fill="#BF1922" opacity="0.2" rx="1"/>
+    <text x="246" y="150" font-family="IBM Plex Mono,monospace" font-size="11" fill="#0D0C0C" text-anchor="middle" font-weight="700">-$320,000</text>
+    <text x="246" y="165" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle">label retains 80%</text>
+    <rect x="191" y="262" width="110" height="48" fill="#9B9390" opacity="0.6" rx="2"/>
+    <text x="246" y="289" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">$80,000</text>
+    <text x="246" y="302" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="rgba(255,255,255,.85)" text-anchor="middle">remaining</text>
+    <line x1="306" y1="286" x2="314" y2="286" stroke="#9B9390" stroke-width="2"/>
+    <polygon points="314,281 319,286 314,291" fill="#9B9390"/>
+    <!-- Step 3: Publisher -->
+    <rect x="319" y="262" width="110" height="12" fill="#BF1922" opacity="0.35" rx="1"/>
+    <text x="374" y="258" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">-$20,000</text>
+    <rect x="319" y="274" width="110" height="36" fill="#9B9390" opacity="0.55" rx="2"/>
+    <text x="374" y="296" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">$60,000</text>
+    <text x="374" y="308" font-family="IBM Plex Mono,monospace" font-size="8" fill="rgba(255,255,255,.85)" text-anchor="middle">remaining</text>
+    <line x1="434" y1="292" x2="442" y2="292" stroke="#9B9390" stroke-width="2"/>
+    <polygon points="442,287 447,292 442,297" fill="#9B9390"/>
+    <!-- Step 4: Distributor -->
+    <rect x="447" y="274" width="110" height="9" fill="#BF1922" opacity="0.3" rx="1"/>
+    <text x="502" y="269" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">-$9,000</text>
+    <rect x="447" y="283" width="110" height="27" fill="#9B9390" opacity="0.5" rx="2"/>
+    <text x="502" y="300" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">$51,000</text>
+    <line x1="562" y1="296" x2="570" y2="296" stroke="#9B9390" stroke-width="2"/>
+    <polygon points="570,291 575,296 570,301" fill="#9B9390"/>
+    <!-- Step 5: Artist -->
+    <rect x="575" y="286" width="110" height="24" fill="#1A5C38" opacity="0.85" rx="2"/>
+    <text x="630" y="302" font-family="IBM Plex Mono,monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">$20k - $60k</text>
+    <!-- FIX 1+2: Remove black box, replace with light background and black text -->
+    <rect x="63" y="324" width="780" height="58" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="453" y="340" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle">Platform generated $1.1bn from 100M streams across all formats  ·  Artist received: $20,000 to $60,000  ·  Catalogue owner received: $400,000</text>
+    <text x="453" y="356" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle" font-weight="700">The catalogue is the asset. The artist is the input. At current deal terms, the artist receives between 5% and 15% of the income generated by their own work. Red Pin is actively exploring structures in which artists retain a meaningful economic interest in their catalogue whilst accessing institutional capital, aligning musician and investor incentives rather than separating them.</text>
+    <text x="453" y="370" font-family="IBM Plex Mono,monospace" font-size="8" fill="#6B6460" text-anchor="middle">Catalogue entry multiples 2026: 12-18x NPS (tier-1)  ·  8-12x NPS (mid-market)  ·  Down from 18-25x peak 2021  ·  Source: Chartlex updated 28 April 2026</text>
+    <text x="798" y="392" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>The waterfall was designed this way.</strong> The label, publisher, distributor and collection society collectively retain $340,000 to $380,000 of every $400,000 in streaming income. The catalogue owner sits at the top of the waterfall: they receive the $400,000 before the artist receives anything. Blackstone understood this when it acquired Hipgnosis Songs Fund. Warner and Bain understood it when they announced a $1.2 billion catalogue vehicle. The entry point in 2026 at 12 to 18 times NPS versus 18 to 25 times in 2021 is the most attractive since the institutional market for music IP formed.</div>
+  </div>
+  <div class="subhead" style="margin-top:22px;">A note on artist alignment</div>
+  <div class="prose" style="margin-top:10px;">
+    <p>The standard catalogue acquisition removes the artist from the asset entirely. They receive a lump sum, the investor owns the income stream, and the musician who created the work participates in nothing that follows. Red Pin is actively developing structures that change this: partial catalogue sales where the artist retains a meaningful equity stake and participates in the emerging market repricing thesis alongside institutional capital; royalty-backed advances secured against future income streams rather than outright sales, so the artist retains ownership and the asset reverts fully once the advance is repaid; and pooled catalogue vehicles where multiple artists contribute rights in exchange for equity in a professionally managed, institutionally capitalised fund. If you are an artist, a manager or a rights holder who wants institutional capital access without surrendering your catalogue permanently, we would like to speak with you. Contact KC@redpincapital.com.</p>
+  </div>
+  <div class="chart-source">Source: Spotify Loud &amp; Clear annual report 2025 (published January 2026) · Chartlex Music Catalog Acquisitions Tracker updated 28 April 2026 · Music Business Worldwide · Red Pin Capital analysis</div>
+</div>
+
+<!-- SECTION 07: YOUTUBE PARADOX -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">491 Million Users. $0.75 CPM. The 40-to-1 Ratio That Global Brands Have Not Solved.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">07</div><div class="sec-title">The YouTube Paradox &nbsp;|&nbsp; The Emerging Market IP Opportunity</div></div>
+</div>
+<div class="prose">
+<p>India has 491 million YouTube users, the largest national audience on the platform globally as of 2026. The average YouTube CPM in India, the cost per 1,000 ad impressions paid by advertisers, runs between $0.70 and $0.83, according to verified data from multiple creator analytics platforms. The average CPM in the United States is $32.75. The ratio is approximately 40 to 1.</p>
+<p>A practical illustration. A UK creator with 42,000 subscribers in a content niche earns c.$4,820 per month at an average CPM of $18.40. An Indian creator in the identical niche with 84,000 subscribers, twice the audience, earns c.$340 per month at an average CPM of $1.60. The earnings gap is 1,150%. The only variable is the geography of the audience.</p>
+<div class="subhead">Why the Gap Exists and Why It Is Structurally Mispriced</div>
+<p>The CPM gap between India and the US reflects a real difference in advertiser competition and audience purchasing power in the domestic Indian market. US advertisers bid aggressively for US audiences because the average transaction value of a US consumer in financial services, software and e-commerce is materially higher than the average transaction value of an Indian consumer in the same categories. The platform's auction mechanism prices the Indian audience accordingly.</p>
+<p>The structural mispricing is not in the CPM for domestic Indian advertisers. It is in the CPM for global brands whose strategic objective is to reach Indian consumers. Samsung is building a manufacturing campus in India with a $2.5 billion investment and has explicitly identified India as its largest growth market. Unilever generates approximately 14% of global revenue from India. LVMH opened 30 new doors across India between 2023 and 2025. These are global companies that have allocated billions to building commercial presence in India. They are simultaneously paying $0.75 per 1,000 impressions to reach Indian consumers on YouTube, a price set by an auction mechanism that prices the Indian audience at 1/40th of the US audience regardless of what the specific advertiser actually wants to achieve.</p>
+<p>There is no mechanism for Samsung to signal that it will pay more than $0.75 per thousand to reach the precise audience it has spent $2.5 billion to be physically adjacent to. That gap between what a brand wants to pay and what the platform's auction extracts from it is the structural mispricing this thesis addresses.</p>
+<div class="subhead">The Investment Thesis: Emerging Market IP Before the Reprice</div>
+<p>The opportunity is not in building a new advertising platform. It is in owning the content and IP that reaches the emerging market audiences that global brands are actively trying to reach, before the advertising infrastructure catches up with brand intent.</p>
+<p>Indian music catalogues, Nollywood film IP, Brazilian content platforms and Indonesian creator networks are being valued today on current CPM. Those valuations will not persist as advertising infrastructure in these markets matures. YouTube's own data shows that India's average CPM is growing at approximately 15 to 18% per year. At that growth rate, Indian CPM reaches $3 to $4 by 2030, still below the US but at a multiple of current levels that transforms the economics of Indian content IP from a marginal asset to a material one.</p>
+<p>The investor who owned logistics real estate before nearshoring was priced in did not need to predict the exact timing of the supply chain restructuring. They only needed to understand that the structural forces making it inevitable were already in motion. The same logic applies to emerging market content IP in 2026. The catalogue acquisition framework that has been proved in Western music IP applies directly here. Mid-market Indian music catalogues are available at acquisition multiples that have not yet been influenced by institutional interest. The entry window closes as CPM growth and institutional awareness compound together.</p>
+</div>
+
+<div class="chart-wrap">
+  <div class="chart-eyebrow">YouTube Paradox &nbsp;·&nbsp; Emerging Market IP &nbsp;·&nbsp; May 2026</div>
+  <div class="chart-headline">The world's largest digital audience is priced at $0.75 per thousand. Global brands pay billions to reach that same audience through other channels.</div>
+  <div class="chart-sub">X-axis: YouTube monthly active users (millions). Y-axis: average CPM ($). Bubble size represents estimated global brand advertiser spend targeting that country's consumers. All labels placed outside bubbles. The dashed arrow shows where India would be priced if the auction reflected brand intent rather than geography.</div>
+  <svg viewBox="0 0 860 480" style="min-width:320px;width:100%;display:block;">
+    <defs>
+      <pattern id="wm07v2" x="0" y="0" width="200" height="80" patternUnits="userSpaceOnUse" patternTransform="rotate(-28)">
+        <text x="0" y="38" font-family="IBM Plex Mono,monospace" font-size="10" fill="#9B9390" opacity="0.09" font-weight="300" letter-spacing=".1em">© RED PIN CAPITAL 2026</text>
+      </pattern>
+      <marker id="arrowR" markerWidth="9" markerHeight="9" refX="6" refY="4.5" orient="auto"><path d="M0,0 L0,9 L9,4.5z" fill="#BF1922"/></marker>
+    </defs>
+    <rect width="860" height="480" fill="#FFFFFF"/>
+    <rect width="860" height="480" fill="url(#wm07v2)"/>
+    <line x1="90" y1="30" x2="90" y2="350" stroke="#0D0C0C" stroke-width="1.8"/>
+    <line x1="90" y1="350" x2="800" y2="350" stroke="#0D0C0C" stroke-width="1.8"/>
+    <text x="82" y="353" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$0</text>
+    <text x="82" y="273" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$10</text>
+    <text x="82" y="193" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$20</text>
+    <text x="82" y="113" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$30</text>
+    <text x="82" y="46" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="end">$40</text>
+    <text x="18" y="195" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" transform="rotate(-90,18,195)" letter-spacing=".1em">AVERAGE CPM (USD)</text>
+    <text x="90" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">0</text>
+    <text x="232" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">100M</text>
+    <text x="374" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">200M</text>
+    <text x="516" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">300M</text>
+    <text x="658" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">400M</text>
+    <text x="800" y="368" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#3A3838" text-anchor="middle">500M</text>
+    <text x="445" y="386" font-family="IBM Plex Mono,monospace" font-size="9" fill="#6B6460" text-anchor="middle" letter-spacing=".1em">YOUTUBE MONTHLY ACTIVE USERS (MILLIONS)</text>
+    <line x1="90" y1="273" x2="800" y2="273" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="193" x2="800" y2="193" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="90" y1="113" x2="800" y2="113" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="232" y1="30" x2="232" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="374" y1="30" x2="374" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="516" y1="30" x2="516" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <line x1="658" y1="30" x2="658" y2="350" stroke="#F0ECE7" stroke-width="1"/>
+    <!-- Australia -->
+    <circle cx="116" cy="60" r="16" fill="#1A5C38" opacity="0.7"/>
+    <line x1="132" y1="60" x2="155" y2="60" stroke="#1A5C38" stroke-width="1.2"/>
+    <rect x="155" y="46" width="130" height="28" fill="#F4F1EC" stroke="#1A5C38" stroke-width="1" rx="2"/>
+    <text x="220" y="58" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">Australia</text>
+    <text x="220" y="70" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">18M users · $36.21</text>
+    <!-- UK -->
+    <circle cx="140" cy="203" r="18" fill="#1A5C38" opacity="0.65"/>
+    <line x1="158" y1="203" x2="180" y2="203" stroke="#1A5C38" stroke-width="1.2"/>
+    <rect x="180" y="189" width="130" height="28" fill="#F4F1EC" stroke="#1A5C38" stroke-width="1" rx="2"/>
+    <text x="245" y="201" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#0D0C0C" text-anchor="middle" font-weight="600">United Kingdom</text>
+    <text x="245" y="213" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#6B6460" text-anchor="middle">35M users · $18.40</text>
+    <!-- Germany -->
+    <circle cx="161" cy="250" r="17" fill="#9B9390" opacity="0.65"/>
+    <line x1="178" y1="250" x2="200" y2="250" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="200" y="238" width="124" height="24" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="262" y="252" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Germany · 50M · $12.50</text>
+    <!-- USA -->
+    <circle cx="473" cy="88" r="32" fill="#1A5C38" opacity="0.78"/>
+    <line x1="499" y1="70" x2="528" y2="52" stroke="#1A5C38" stroke-width="1.5"/>
+    <rect x="528" y="36" width="148" height="38" fill="#0D0C0C" rx="2"/>
+    <text x="602" y="52" font-family="IBM Plex Mono,monospace" font-size="10.5" fill="#fff" text-anchor="middle" font-weight="700">United States</text>
+    <text x="602" y="66" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.85)" text-anchor="middle">270M users · $32.75 CPM</text>
+    <!-- Brazil -->
+    <circle cx="303" cy="334" r="26" fill="#9B9390" opacity="0.6"/>
+    <line x1="303" y1="308" x2="303" y2="285" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="237" y="268" width="132" height="20" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="303" y="281" font-family="IBM Plex Mono,monospace" font-size="9" fill="#3A3838" text-anchor="middle">Brazil · 150M · $2.00</text>
+    <!-- FIX 3: Nigeria box smaller width -->
+    <circle cx="154" cy="330" r="14" fill="#9B9390" opacity="0.5"/>
+    <line x1="154" y1="316" x2="154" y2="298" stroke="#9B9390" stroke-width="1.2"/>
+    <rect x="100" y="282" width="108" height="18" fill="#F4F1EC" stroke="#D8D2CA" stroke-width="1" rx="2"/>
+    <text x="154" y="293" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#3A3838" text-anchor="middle">Nigeria · 45M · $2.50</text>
+    <!-- FIX 1: INDIA box moved up above x-axis line. FIX 2: "Largest YouTube" text brighter -->
+    <circle cx="787" cy="340" r="42" fill="#BF1922" opacity="0.90"/>
+    <line x1="745" y1="330" x2="700" y2="320" stroke="#BF1922" stroke-width="2"/>
+    <rect x="530" y="295" width="170" height="50" fill="#0D0C0C" rx="2"/>
+    <text x="615" y="312" font-family="IBM Plex Mono,monospace" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">INDIA</text>
+    <text x="615" y="328" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.9)" text-anchor="middle">491M users · $0.75 CPM</text>
+    <text x="615" y="340" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#FF8080" text-anchor="middle">Largest YouTube audience globally</text>
+    <!-- Arrow where India should be priced -->
+    <line x1="787" y1="298" x2="787" y2="218" stroke="#BF1922" stroke-width="2" stroke-dasharray="6 3" marker-end="url(#arrowR)"/>
+    <rect x="684" y="188" width="172" height="52" fill="#F4F1EC" stroke="#BF1922" stroke-width="1.5" rx="2"/>
+    <text x="770" y="204" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="700">Where brand intent</text>
+    <text x="770" y="218" font-family="IBM Plex Mono,monospace" font-size="9.5" fill="#BF1922" text-anchor="middle" font-weight="700">would price India</text>
+    <text x="770" y="232" font-family="IBM Plex Mono,monospace" font-size="9" fill="#0D0C0C" text-anchor="middle">$8-12 CPM vs $0.75 today</text>
+    <!-- Bottom strip -->
+    <rect x="90" y="404" width="720" height="46" fill="#0D0C0C" rx="2"/>
+    <text x="450" y="422" font-family="IBM Plex Mono,monospace" font-size="9" fill="rgba(255,255,255,.88)" text-anchor="middle" font-weight="500">India CPM growing 15-18% per year · At that rate, Indian CPM reaches $3-4 by 2030 · Still below US but a 4-5x increase from today</text>
+    <text x="450" y="440" font-family="IBM Plex Mono,monospace" font-size="9" fill="#FF6060" text-anchor="middle" font-weight="700">The investor who owns Indian content IP today at valuations priced on $0.75 CPM captures the full upside of that repricing</text>
+    <text x="798" y="472" font-family="IBM Plex Mono,monospace" font-size="8.5" fill="#BF1922" text-anchor="end" font-weight="700" letter-spacing=".05em">© RED PIN CAPITAL 2026</text>
+  </svg>
+  <div class="chart-verdict">
+    <div class="verdict-bar"></div>
+    <div class="verdict-text"><strong>India has the world's largest YouTube audience and a CPM of $0.75 per thousand impressions.</strong> Samsung, Unilever and every major global consumer company has explicitly identified India as a strategic growth market. The gap exists because the platform prices geography, not brand intent. The investor who owns Indian content IP today at valuations priced on $0.75 CPM benefits from the full upside of the advertising infrastructure reprice without having built the infrastructure that causes it.</div>
+  </div>
+  <div class="chart-source">Source: Lenos YouTube CPM Rates by Country 2026 · upGrowth YouTube CPM India Guide 2026 · upGrowth YouTube CPM by Country 2026 · Red Pin Capital analysis</div>
+</div>
+
+<!-- SECTION 08: GEOPOLITICS BRIEF -->
+<div class="sec-head" style="margin-top:48px;">
+  <div class="sec-head-top"><div class="sec-tag">Ceasefire Holds. Strait Stays Closed. Oil Trades on 24-Hour Signals.</div></div>
+  <div class="sec-head-bottom"><div class="sec-num">08</div><div class="sec-title">Geopolitics &nbsp;|&nbsp; The Limbo That Is More Disruptive Than Either Resolution</div></div>
+</div>
+<div class="prose">
+<p>Iran's ceasefire proposal of 1 May 2026 is holding as of 9 May. The Strait of Hormuz remains closed. The IEA has confirmed that the conflict has removed c.14 million barrels per day from effective global supply availability, though physical volumes moving through alternative routes have partially offset this. Brent crude traded between $95 and $110 in a single week based entirely on diplomatic signal changes. This is not a market being priced on supply and demand fundamentals. It is a market being priced on the daily political weather in Tehran, Washington and Islamabad.</p>
+<p>The Trump-Xi summit opened in Beijing on 14 May, the first US presidential visit to China in nearly a decade. The Warsh nomination has consumed domestic political bandwidth at exactly the moment the administration needed to project coherent foreign policy. The result is a geopolitical environment where the two most consequential events of the month proceed in parallel without a clear US strategic narrative connecting them.</p>
+<p>The investment consequence is unchanged from Edition 05. Resolution weakens the dollar and widens the cross-currency window for USD capital deploying into EUR assets. Continued closure drives Gulf petrodollar surpluses into European physical real estate, the mechanism documented in 1973 and 1979. A Beijing deal structurally weakens the dollar. A breakdown drives safe-haven flows into European hard assets. The limbo state is in some ways the most disruptive scenario for dollar-denominated asset allocation because it prevents the market from pricing either outcome cleanly. For capital already deployed in EUR hard asset income, the limbo is irrelevant. The contractual return accrues regardless.</p>
+</div>
+
+</div><!-- /main -->
+
+<!-- CAPITAL FORMATION -->
+<div class="cf">
+  <div class="cf-inner">
+    <div class="cf-eyebrow">Capital Formation &nbsp;&middot;&nbsp; Red Pin Capital</div>
+    <div class="cf-title">Eight Theses. One Capital Stack. How to Work With Us.</div>
+    <div class="cf-intro">Red Pin Capital is a principal investor. We originate, underwrite and execute transactions across Real Estate and Real Assets, Structured Credit, the 4th Industrial Revolution and Sports, Media and Entertainment. This edition covers eight investment theses simultaneously. Each represents an active area of deployment or evaluation. Co-investment is available through dedicated SPV structures for investors who want direct access to specific transactions at deal level.</div>
+    <div class="cf-grid">
+      <div class="cf-card">
+        <div class="cf-pillar">Real Estate and Real Assets</div>
+        <div class="cf-card-title">PBSA development finance in Lisbon and Madrid. Office-to-residential in core European cities. Longevity hospitality and residence infrastructure across the United States.</div>
+        <div class="cf-card-body">
+          <p>We are actively originating development finance opportunities across PBSA and office-to-residential conversion in southern Europe, where the supply deficit, the planning timeline and the buyer demand create conditions that do not exist in northern European markets at comparable yields. In longevity, our focus is on the built environment: the clinical, hospitality and residential infrastructure where the longevity economy operates. Sponsors with relevant assets in these categories should write to us directly.</p>
+        </div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-pillar">Structured Credit and Receivables</div>
+        <div class="cf-card-title">US healthcare receivables. EUR private credit. Short-duration contractual income secured against named investment-grade buyers including Medicare, Medicaid and major insurers.</div>
+        <div class="cf-card-body">
+          <p>Our primary structured credit focus is US healthcare receivables, a $5.3 trillion addressable market with payment terms of 90 to 180 days and effectively sovereign credit risk on the buyer side. Basel IV is withdrawing bank capacity from this market. We are building positions alongside established non-bank origination platforms that have existing infrastructure in place. For investors seeking quarterly contractual income with duration matching payment terms rather than a fund life, this is the instrument to understand in 2026.</p>
+        </div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-pillar">4IR: Longevity and Music IP</div>
+        <div class="cf-card-title">Longevity hospitality and residence infrastructure: clinical networks, wellness residences, diagnostic platforms in Europe. Music IP: mid-market catalogue acquisition in Western and emerging markets.</div>
+        <div class="cf-card-body">
+          <p>$8.49 billion invested in longevity in 2024. Eli Lilly, AbbVie and Manulife entering in 2025. The PE transition is beginning. Our focus is on the European longevity residence and clinical infrastructure opportunity across the United States, the Middle East and Spain, where climate, HNW population and regulatory environment create favourable conditions. In music IP, the entry point at 12 to 18 times NPS is the most attractive since the institutional market formed. We are evaluating mid-market catalogues with strong emerging market listening profiles.</p>
+        </div>
+      </div>
+      <div class="cf-card">
+        <div class="cf-pillar">Sponsor and Investor Dialogue</div>
+        <div class="cf-card-title">Selective engagement with sponsors who have assets requiring capital solutions that banks cannot provide at the right terms or speed.</div>
+        <div class="cf-card-body">
+          <p>We do not need a formal information memorandum to begin a conversation. We need to understand the asset, the capital requirement and the timeline. If there is a fit, we move quickly. We have committed capital in as few as 14 days from first conversation on transactions where documentation is in order. Co-investment access is available through dedicated SPV structures. Investors participate in specific transactions with full knowledge of the asset, the structure and the expected return profile.</p>
+        </div>
+      </div>
+    </div>
+    <div class="cf-cta">
+      <div class="cf-cta-text"><strong>KC@redpincapital.com</strong> &nbsp;&middot;&nbsp; All enquiries treated with discretion.</div>
+      <a href="mailto:KC@redpincapital.com?utm_source=newsletter&utm_medium=edition06&utm_campaign=capital_formation" class="cf-cta-link">Get in Touch</a>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="closing-bagehot">
+  <p>Zugzwang is the position where you must move and every move makes it worse. The Fed must act and every action is wrong. The strait must resolve and neither party can afford to resolve it. The equity market must price the future and the data to price it does not yet exist. The investor who recognises a zugzwang position does not try to solve it. They step outside the board. EUR hard asset income, factoring receivables against investment-grade buyers, mid-market music catalogues before the emerging market reprice, longevity infrastructure before institutional capital arrives, none of these require the Fed to move correctly, the strait to open or the equity multiple to normalise. They accrue regardless. The position that does not require a move is the position worth having when everyone else is forced to move.</p>
+  <p style="margin-top:20px;font-family:var(--serif);font-size:clamp(18px,2.4vw,26px);font-weight:700;color:var(--red);font-style:italic;border-left:3px solid var(--red);padding-left:18px;line-height:1.3;">The board is frozen.<br>The return is not.</p>
+</div>
+
+<!-- DISTRIBUTION FORM -->
+<div class="dist-section">
+  <div class="dist-inner">
+    <div class="dist-hdr">Join the Distribution</div>
+    <div class="dist-sub">The Butterfly Effect is distributed every Friday to qualified investors, family offices, wealth managers and real estate sponsors. To receive future editions directly, complete the form below or write to <a href="mailto:KC@redpincapital.com?utm_source=newsletter&utm_medium=edition06&utm_campaign=distribution" style="color:var(--red);">KC@redpincapital.com</a>.</div>
+    <div class="fg">
+      <div class="ff"><label>First Name *</label><input type="text" id="f" placeholder="First name" autocomplete="given-name"></div>
+      <div class="ff"><label>Last Name *</label><input type="text" id="l" placeholder="Last name" autocomplete="family-name"></div>
+      <div class="ff"><label>Email Address *</label><input type="email" id="e" placeholder="your@email.com" autocomplete="email"></div>
+      <div class="ff"><label>Firm</label><input type="text" id="o" placeholder="Firm or institution" autocomplete="organization"></div>
+      <div class="ff"><label>Role</label><input type="text" id="r" placeholder="Your role" autocomplete="organization-title"></div>
+      <div class="ff"><label>Primary Focus</label>
+        <select id="s">
+          <option value="">Select...</option>
+          <option>Family Office / Private Capital</option>
+          <option>Institutional Investor</option>
+          <option>Real Estate Sponsor / Developer</option>
+          <option>Wealth Manager / RIA</option>
+          <option>Private Equity / Credit</option>
+          <option>Music / Media / Entertainment</option>
+          <option>Other</option>
+        </select>
+      </div>
+    </div>
+    <button class="dist-btn" onclick="sub()">Request Distribution</button>
+    <div id="ds" style="display:none;margin-top:12px;font-family:var(--mono);font-size:10px;color:var(--red);letter-spacing:.08em;">Thank you. We will add you to the next distribution. KC@redpincapital.com</div>
+  </div>
+</div>
+<script>
+function sub(){
+  var fn=document.getElementById('f').value.trim();
+  var ln=document.getElementById('l').value.trim();
+  var em=document.getElementById('e').value.trim();
+  var org=document.getElementById('o').value.trim()||'Not provided';
+  var role=document.getElementById('r').value.trim()||'Not provided';
+  var foc=document.getElementById('s').value||'Not provided';
+  if(!fn||!ln){alert('Please enter your name.');return;}
+  var at=em.indexOf('@'),dot=em.lastIndexOf('.');
+  if(at<1||dot<=at+1||dot>=em.length-1){alert('Please enter a valid email address.');return;}
+  var sub=encodeURIComponent('Butterfly Effect Distribution Request - '+fn+' '+ln);
+  var body=encodeURIComponent('Name: '+fn+' '+ln+'\nEmail: '+em+'\nFirm: '+org+'\nRole: '+role+'\nFocus: '+foc);
+  var a=document.createElement('a');
+  a.href='mailto:KC@redpincapital.com?subject='+sub+'&body='+body;
+  a.style.display='none';document.body.appendChild(a);a.click();document.body.removeChild(a);
+  document.getElementById('ds').style.display='block';
+}
+</script>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="ft">Legal Disclaimer &nbsp;&middot;&nbsp; Red Pin Capital</div>
+    <div class="fb">
+      <p>This publication is issued by Red Pin Capital for informational purposes only. It does not constitute investment advice, a solicitation or an offer to buy or sell any security, investment instrument or financial product. The information contained herein is believed to be reliable as of the date of publication but Red Pin Capital makes no warranty, express or implied, as to its accuracy, completeness or timeliness. Nothing in this publication should be construed as legal, tax, regulatory or accounting advice. Past performance is not indicative of future results. All investments carry risk, including the possible loss of capital.</p>
+      <p>Market data and financial figures contained herein are sourced from publicly available third-party sources including FCI (published 5 May 2026), Longevity.Technology, Chartlex, Spotify, Music Business Worldwide, upGrowth, Lenos, Knight Frank, Savills, CBRE, BLS, BEA, Federal Reserve, FactSet and others as noted. Red Pin Capital has not independently verified all such data. This publication is distributed to qualified investors and market professionals and is not intended for retail distribution. &copy; Red Pin Capital 2026. All rights reserved. Reproduction in whole or in part without permission is prohibited.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
