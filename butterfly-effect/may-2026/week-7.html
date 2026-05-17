@@ -409,6 +409,100 @@ body{background:#FFFFFF !important;}
   }
 }
 
+
+/* Lede / opening block */
+.lede {
+  background: #F8F6F2;
+  border-top: 1px solid #D8D2CA;
+  border-bottom: 1px solid #D8D2CA;
+  padding: 36px 0;
+}
+.lede-inner {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+.lede-eyebrow {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: #BF1922;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.lede-body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #0D0C0C;
+  line-height: 1.72;
+  margin: 0 0 14px 0;
+}
+.lede-contact {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: .14em;
+  color: #6B6460;
+  text-transform: uppercase;
+}
+.lede-contact-link {
+  color: #BF1922;
+  text-decoration: none;
+  font-weight: 600;
+}
+.lede-contact-link:hover {
+  text-decoration: underline;
+}
+
+@media(max-width:768px){
+  .lede { padding: 26px 0; }
+  .lede-inner { padding: 0 14px; }
+  .lede-body { font-size: 14px !important; line-height: 1.7 !important; }
+  .lede-eyebrow { font-size: 8.5px !important; }
+}
+@media(max-width:640px){
+  .lede { padding: 22px 0; }
+  .lede-body { font-size: 13.5px !important; }
+}
+@media(max-width:380px){
+  .lede-body { font-size: 13px !important; }
+}
+
+/* ===========================================
+   FIX: Section headlines tabbed right on mobile
+   Cause: .sec-head had padding-left:16px from hover-pin effect.
+   Combined with .main 14px padding = 30px from screen edge.
+   Body paragraphs sit at 14px only.
+   Fix: zero out .sec-head padding-left on mobile so headlines align flush left with body
+   =========================================== */
+@media(max-width:768px){
+  .sec-head {
+    padding-left: 0 !important;
+  }
+  .sec-head::before {
+    /* Keep the hover-pin functional but flush at the edge of .main padding */
+    left: -8px;
+  }
+}
+
+
+/* Tighten section heading flex alignment on mobile - reduce gap between num and title */
+@media(max-width:768px){
+  .sec-head-bottom {
+    gap: 8px !important;
+  }
+  .sec-num {
+    font-size: 8px !important;
+  }
+}
+@media(max-width:640px){
+  .sec-head-bottom {
+    gap: 6px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -454,6 +548,15 @@ body{background:#FFFFFF !important;}
 <span class="ti">Isomorphic Labs $2.1B Series B &middot; 12<sup>th</sup> May 2026 &middot; Thrive / Temasek / MGX / UK Sovereign AI Fund</span><span class="ts">|</span>
 <span class="ti">Global unicorns 1,680 &middot; $8.6 trillion aggregate &middot; PitchBook Q1 2026 Tracker</span><span class="ts">|</span>
 </div></div></div>
+
+<!-- LEDE / OPENING -->
+<div class="lede">
+  <div class="lede-inner">
+    <div class="lede-eyebrow">Red Pin Capital &nbsp;&middot;&nbsp; The Butterfly Effect &nbsp;&middot;&nbsp; Edition 07</div>
+    <p class="lede-body">Red Pin Capital is a global alternatives investment firm and holding company, allocating across Real Estate and Real Assets, Structured Credit, growth strategies in the 4th Industrial Revolution and Sports, Media and Entertainment. Through The Butterfly Effect we identify how shifts in macro conditions, capital availability and technology create persistent dislocations and the opportunities to deploy capital into mispriced assets and constrained segments in private markets.</p>
+    <div class="lede-contact">Contact: <a href="mailto:KC@redpincapital.com?utm_source=newsletter&amp;utm_medium=edition07&amp;utm_campaign=lede" class="lede-contact-link">KC@redpincapital.com</a></div>
+  </div>
+</div>
 
 <!-- DATA STRIP -->
 <div class="ds-outer">
@@ -630,7 +733,7 @@ body{background:#FFFFFF !important;}
 <div style="background:#F8F6F2;padding:56px 48px 48px 48px;max-width:920px;margin:0 auto;">
   <div class="sec-head" style="margin-top:0;margin-bottom:28px;">
     <div class="sec-head-top"><div class="sec-tag">Foreword &nbsp;&middot;&nbsp; Red Pin Capital Editorial &nbsp;&middot;&nbsp; Edition 07</div></div>
-    <div class="sec-head-bottom"><div class="sec-num" style="visibility:hidden;">00</div><div class="sec-title">Editorial &nbsp;|&nbsp; The State Is Back As a Counterparty</div></div>
+    <div class="sec-head-bottom"><div class="sec-num" style="display:none;">00</div><div class="sec-title">Editorial &nbsp;|&nbsp; The State Is Back As a Counterparty</div></div>
   </div>
 
   <div style="border-left:4px solid #BF1922;padding-left:24px;margin-bottom:22px;">
