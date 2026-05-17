@@ -378,6 +378,37 @@ body{background:#FFFFFF !important;}
   div[style*="padding:48px 36px 44px 36px"] h2{font-size:22px !important;}
 }
 
+
+/* Editorial body paragraphs: match standard prose font system, with mobile scaling */
+.editorial-body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #0D0C0C;
+  line-height: 1.78;
+}
+@media(max-width:768px){
+  .editorial-body {
+    font-size: 14px !important;
+    line-height: 1.72 !important;
+  }
+  /* Tighten Editorial container padding on mobile to match other sections */
+  div[style*="background:#F8F6F2"] {
+    padding: 32px 18px 28px 18px !important;
+  }
+}
+@media(max-width:640px){
+  .editorial-body {
+    font-size: 13.5px !important;
+    line-height: 1.72 !important;
+  }
+}
+@media(max-width:380px){
+  .editorial-body {
+    font-size: 13px !important;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -607,9 +638,9 @@ body{background:#FFFFFF !important;}
     
   </div>
 
-  <p style="font-family:var(--sans);font-size:15px;font-weight:400;color:#0D0C0C;line-height:1.75;margin:0 0 20px 0;">For a decade governments borrowed at sovereign cost and outsourced execution to no one in particular. That arrangement is now over. The four projects that define the next decade of strategic competition, NATO rearmament, European energy reindustrialisation, AI grade power infrastructure in the United States, the build out of critical minerals supply chains across the Indo Pacific, share the same uncomfortable feature: they need private balance sheets at scale, they need them quickly and no sovereign on its own can write the cheque.</p>
+  <p class="editorial-body" style="margin:0 0 20px 0;">For a decade governments borrowed at sovereign cost and outsourced execution to no one in particular. That arrangement is now over. The four projects that define the next decade of strategic competition, NATO rearmament, European energy reindustrialisation, AI grade power infrastructure in the United States, the build out of critical minerals supply chains across the Indo Pacific, share the same uncomfortable feature: they need private balance sheets at scale, they need them quickly and no sovereign on its own can write the cheque.</p>
 
-  <p style="font-family:var(--sans);font-size:15px;font-weight:400;color:#0D0C0C;line-height:1.75;margin:0;">The implication for allocators reads cleanly. Over the next five years the most interesting risk in the system is no longer the corporate credit cycle or the venture cycle but what we have been calling sovereign adjacent infrastructure: assets where the state sits as the anchor counterparty, where policy is the durable moat and where the capital structure remains privately negotiated. Red Pin Capital is positioning across four lanes, each chosen because the underlying cash flow profile is durable enough to be underwritten alongside a state. Real assets and real estate sit alongside structured credit; growth and 4th Industrial Revolution Strategies sit alongside sports, media and entertainment.</p>
+  <p class="editorial-body" style="margin:0;">The implication for allocators reads cleanly. Over the next five years the most interesting risk in the system is no longer the corporate credit cycle or the venture cycle but what we have been calling sovereign adjacent infrastructure: assets where the state sits as the anchor counterparty, where policy is the durable moat and where the capital structure remains privately negotiated. Red Pin Capital is positioning across four lanes, each chosen because the underlying cash flow profile is durable enough to be underwritten alongside a state. Real assets and real estate sit alongside structured credit; growth and 4th Industrial Revolution Strategies sit alongside sports, media and entertainment.</p>
 
   
 </div>
