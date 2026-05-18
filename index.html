@@ -14,7 +14,7 @@
 <meta name="color-scheme" content="light">
 <meta name="description" content="The Butterfly Effect. Weekly market intelligence from Red Pin Capital for institutional investors, family offices and qualifying private investors.">
 <meta property="og:title" content="Red Pin Capital | The Butterfly Effect">
-<meta property="og:description" content="Weekly market intelligence. Real estate and real assets. Structured credit. Growth strategies in the 4th Industrial Revolution. Sports, media and entertainment.">
+<meta property="og:description" content="Weekly market intelligence. Real estate and real assets. Structured credit. Growth strategies in the 4th Industrial Revolution. Sports media and entertainment. Private market secondaries.">
 <meta property="og:type" content="website">
 <title>Red Pin Capital | The Butterfly Effect</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,15 +64,20 @@ a{color:inherit;text-decoration:none;}
 .section-intro{font-family:"Inter",sans-serif;font-size:15.5px;font-weight:300;color:#6B6460;line-height:1.7;max-width:680px;margin-bottom:48px;}
 .pillar-grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid #E5DDD2;}
 @media(min-width:920px){.pillar-grid{grid-template-columns:repeat(5,1fr);}}
-.pillar{padding:32px 24px 30px;border-bottom:1px solid #E5DDD2;position:relative;background:#FFFFFF;transition:background .18s ease;}
+.pillar{padding:32px 24px 30px;border-bottom:1px solid #E5DDD2;position:relative;background:#FFFFFF;transition:background .18s ease,transform .18s ease;display:flex;flex-direction:column;text-align:left;border-left:0;border-top:0;border-right:0;font-family:inherit;width:100%;cursor:pointer;-webkit-tap-highlight-color:transparent;color:inherit;}
 .pillar:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:#BF1922;transform:scaleX(0);transform-origin:left;transition:transform .25s ease;}
-.pillar:hover:before{transform:scaleX(1);}
-.pillar:hover{background:#FAF8F4;}
+.pillar:hover:before,.pillar:focus-visible:before{transform:scaleX(1);}
+.pillar:hover,.pillar:focus-visible{background:#FAF8F4;outline:0;}
+.pillar:focus-visible{box-shadow:inset 0 0 0 2px #BF1922;}
 @media(min-width:920px){.pillar{border-right:1px solid #E5DDD2;}.pillar:last-child{border-right:none;}}
 .pillar-num{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.2em;color:#BF1922;margin-bottom:18px;}
 .pillar-title{font-family:"Playfair Display",Georgia,serif;font-size:18px;font-weight:700;color:#0D0C0C;line-height:1.22;margin-bottom:12px;letter-spacing:-.005em;}
-.pillar-desc{font-family:"Inter",sans-serif;font-size:12.5px;font-weight:300;color:#6B6460;line-height:1.65;}
-@media(max-width:600px){.pillars{padding:56px 24px 48px;}.section-headline{font-size:26px;line-height:1.18;}.section-intro{font-size:14.5px;margin-bottom:32px;}.pillar{padding:26px 22px 24px;}.pillar-title{font-size:18px;}.pillar-desc{font-size:13px;}}
+.pillar-desc{font-family:"Inter",sans-serif;font-size:12.5px;font-weight:300;color:#6B6460;line-height:1.65;flex-grow:1;margin-bottom:18px;}
+.pillar-cta{font-family:"IBM Plex Mono",monospace;font-size:9.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#BF1922;margin-top:auto;opacity:0;transform:translateX(-4px);transition:opacity .2s ease,transform .2s ease;}
+.pillar:hover .pillar-cta,.pillar:focus-visible .pillar-cta{opacity:1;transform:translateX(0);}
+@media(hover:none){.pillar-cta{opacity:1;transform:translateX(0);}}
+@media(max-width:600px){.pillars{padding:56px 24px 48px;}.section-headline{font-size:26px;line-height:1.18;}.section-intro{font-size:14.5px;margin-bottom:32px;}.pillar{padding:26px 22px 24px;}.pillar-title{font-size:18px;}.pillar-desc{font-size:13px;margin-bottom:14px;}.pillar-cta{font-size:9px;letter-spacing:.18em;}}
+@media(min-width:601px) and (max-width:919px){.pillar-grid{grid-template-columns:repeat(2,1fr);}.pillar{border-right:1px solid #E5DDD2;}.pillar:nth-child(2n){border-right:none;}.pillar:last-child{border-right:none;}}
 
 /* ============================================
    EDITIONS
@@ -113,13 +118,14 @@ a{color:inherit;text-decoration:none;}
 
 /* Theme filter chips */
 .theme-filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 40px 0;padding:0 0 28px 0;border-bottom:1px solid #E5DDD2;}
-.chip{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0D0C0C;background:transparent;border:1px solid #D8D2CA;padding:10px 16px;cursor:pointer;transition:all .15s ease;-webkit-tap-highlight-color:transparent;min-height:38px;}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#0D0C0C;background:transparent;border:1px solid #D8D2CA;padding:10px 16px;cursor:pointer;transition:all .15s ease;-webkit-tap-highlight-color:transparent;min-height:38px;white-space:nowrap;}
 .chip:hover{border-color:#0D0C0C;}
 .chip.active{background:#0D0C0C;color:#FFFFFF;border-color:#0D0C0C;}
 .chip.active:hover{background:#BF1922;border-color:#BF1922;}
 .edition.hidden,.month-label.hidden{display:none;}
 .month-label.empty{display:none;}
-@media(max-width:600px){.theme-filter{gap:6px;margin-bottom:32px;padding-bottom:22px;}.chip{font-size:9.5px;padding:9px 12px;letter-spacing:.14em;min-height:36px;}}
+@media(min-width:601px) and (max-width:919px){.chip{font-size:9.5px;padding:9px 13px;letter-spacing:.14em;}}
+@media(max-width:600px){.theme-filter{gap:6px;margin-bottom:32px;padding-bottom:22px;}.chip{font-size:9px;padding:9px 11px;letter-spacing:.12em;min-height:34px;}}
 
 /* ============================================
    CLOSING (Distribution + Brand consolidated)
@@ -197,31 +203,36 @@ a{color:inherit;text-decoration:none;}
     <h2 class="section-headline">Five pillars. One thesis. Capital allocated where structure meets asymmetry.</h2>
     <p class="section-intro">Red Pin Capital allocates across five interlocking pillars. The Butterfly Effect tracks each one weekly, surfacing the regulatory shifts, capital flows and macro context that shape institutional positioning. These are also the opportunities where we deploy capital.</p>
     <div class="pillar-grid">
-      <div class="pillar">
+      <button type="button" class="pillar" data-pillar-theme="real-estate">
         <div class="pillar-num">01</div>
         <div class="pillar-title">Real Estate &amp; Real Assets</div>
         <div class="pillar-desc">Lifestyle and branded luxury residential. Longevity-led living. PBSA. Hospitality. Across Europe, the US and Asia. The capital stack from senior debt through equity.</div>
-      </div>
-      <div class="pillar">
+        <div class="pillar-cta">View editions &rarr;</div>
+      </button>
+      <button type="button" class="pillar" data-pillar-theme="credit">
         <div class="pillar-num">02</div>
         <div class="pillar-title">Structured Credit</div>
         <div class="pillar-desc">Direct lending, asset backed finance and special situations investing focused on dislocated and capacity constrained segments of the global credit markets.</div>
-      </div>
-      <div class="pillar">
+        <div class="pillar-cta">View editions &rarr;</div>
+      </button>
+      <button type="button" class="pillar" data-pillar-theme="tech-growth">
         <div class="pillar-num">03</div>
         <div class="pillar-title">4th Industrial Revolution Strategies</div>
         <div class="pillar-desc">Growth strategies in AI infrastructure, applied biotech, longevity and digital identity. Energy transition through microgrids, floating power and the grid capacity bottleneck. Late-stage growth at scale.</div>
-      </div>
-      <div class="pillar">
+        <div class="pillar-cta">View editions &rarr;</div>
+      </button>
+      <button type="button" class="pillar" data-pillar-theme="sports-media">
         <div class="pillar-num">04</div>
-        <div class="pillar-title">Sports, Media &amp; Entertainment</div>
+        <div class="pillar-title">Sports Media &amp; Entertainment</div>
         <div class="pillar-desc">Franchise capital. Media rights. Music IP. Women's sports. The institutional re-rating of cultural assets that previously sat outside the portfolio.</div>
-      </div>
-      <div class="pillar">
+        <div class="pillar-cta">View editions &rarr;</div>
+      </button>
+      <button type="button" class="pillar" data-pillar-theme="secondaries">
         <div class="pillar-num">05</div>
         <div class="pillar-title">Private Market Secondaries</div>
         <div class="pillar-desc">LP secondaries, GP-led continuation vehicles and single-asset deals. Curated access through RPC SPVs to the most institutionally-relevant private companies. Concentrated exposure to the names that define the next decade.</div>
-      </div>
+        <div class="pillar-cta">View editions &rarr;</div>
+      </button>
     </div>
   </div>
 </section>
@@ -229,7 +240,7 @@ a{color:inherit;text-decoration:none;}
 <!-- ============================================
      EDITIONS
      ============================================ -->
-<section class="editions-wrap">
+<section class="editions-wrap" id="editions">
   <div class="editions-inner">
 
     <div class="editions-head">
@@ -243,15 +254,16 @@ a{color:inherit;text-decoration:none;}
     <!-- Theme filter chips -->
     <div class="theme-filter" role="tablist">
       <button class="chip active" data-theme="all" type="button">All Editions</button>
-      <button class="chip" data-theme="real-estate" type="button">Real Estate</button>
+      <button class="chip" data-theme="real-estate" type="button">Real Estate &amp; Real Assets</button>
       <button class="chip" data-theme="credit" type="button">Structured Credit</button>
-      <button class="chip" data-theme="tech-growth" type="button">Growth &amp; 4IR</button>
-      <button class="chip" data-theme="sports-media" type="button">Sports, Media</button>
+      <button class="chip" data-theme="tech-growth" type="button">4th Industrial Revolution</button>
+      <button class="chip" data-theme="sports-media" type="button">Sports Media &amp; Entertainment</button>
+      <button class="chip" data-theme="secondaries" type="button">Private Market Secondaries</button>
       <button class="chip" data-theme="geopolitics" type="button">Geopolitics</button>
     </div>
 
     <!-- CURRENT EDITION -->
-    <div class="featured" data-themes="real-estate credit tech-growth sports-media geopolitics">
+    <div class="featured" data-themes="real-estate credit tech-growth sports-media secondaries geopolitics">
       <div class="feat-tag">Current Edition</div>
       <div class="feat-meta"><strong>15 May 2026</strong> &nbsp;&middot;&nbsp; Edition 07</div>
       <h3 class="feat-title">The New Sovereign Trade. Governments need private balance sheets. Private capital needs strategic assets.</h3>
@@ -310,7 +322,7 @@ a{color:inherit;text-decoration:none;}
       </div>
     </div>
 
-    <div class="edition" data-themes="geopolitics real-estate tech-growth sports-media credit">
+    <div class="edition" data-themes="geopolitics real-estate tech-growth sports-media credit secondaries">
       <div class="ed-date">3 April 2026<strong>Edition 01</strong></div>
       <div class="ed-body">
         <div class="ed-title">We bounced. Five weeks down. One week up. Breathe. But keep your coat on.</div>
@@ -355,6 +367,8 @@ a{color:inherit;text-decoration:none;}
   const chips = document.querySelectorAll('.chip');
   const editions = document.querySelectorAll('.edition, .featured');
   const monthLabels = document.querySelectorAll('.month-label');
+  const pillars = document.querySelectorAll('.pillar');
+  const editionsSection = document.getElementById('editions');
 
   function applyFilter(theme){
     editions.forEach(function(ed){
@@ -388,11 +402,33 @@ a{color:inherit;text-decoration:none;}
     });
   }
 
+  function setActiveChip(theme){
+    chips.forEach(function(c){
+      if(c.getAttribute('data-theme') === theme){
+        c.classList.add('active');
+      } else {
+        c.classList.remove('active');
+      }
+    });
+  }
+
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
-      chips.forEach(function(c){ c.classList.remove('active'); });
-      chip.classList.add('active');
+      setActiveChip(chip.getAttribute('data-theme'));
       applyFilter(chip.getAttribute('data-theme'));
+    });
+  });
+
+  // Pillar boxes: clicking a pillar filters editions by that theme and scrolls to them
+  pillars.forEach(function(pillar){
+    pillar.addEventListener('click', function(){
+      const theme = pillar.getAttribute('data-pillar-theme');
+      if(!theme) return;
+      setActiveChip(theme);
+      applyFilter(theme);
+      if(editionsSection){
+        editionsSection.scrollIntoView({behavior:'smooth',block:'start'});
+      }
     });
   });
 })();
